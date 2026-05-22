@@ -1,0 +1,857 @@
+/* Match innovativeassociates.com.au custom CSS + Laravel overrides */
+
+.header__btn {
+    display: none;
+}
+
+.page-header__home-link {
+    display: none;
+}
+
+.site-footer__shape-2 {
+    bottom: 5%;
+}
+
+/* Footer — dark theme (matches innovativeassociates.com.au post-831) */
+.tax-zimed-footer,
+.tax-zimed-footer .elementor-section,
+.tax-zimed-footer .elementor-column,
+.tax-zimed-footer .elementor-widget-wrap,
+.tax-zimed-footer .elementor-widget-container {
+    background-color: #272839 !important;
+}
+
+.tax-zimed-footer {
+    color: #b8bcc8;
+}
+
+.tax-zimed-footer .elementor-element-273731a {
+    padding: 28px 0 0 !important;
+}
+
+.tax-zimed-footer .elementor-widget-text-editor,
+.tax-zimed-footer .elementor-widget-text-editor .elementor-widget-container {
+    color: #b8bcc8 !important;
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+.tax-zimed-footer .elementor-heading-title {
+    color: #ff8a3d !important;
+    font-size: 22px !important;
+    font-weight: 600 !important;
+    margin-bottom: 12px;
+}
+
+.tax-zimed-footer .elementor-icon-list-text {
+    color: #b8bcc8 !important;
+    transition: color 0.2s ease;
+}
+
+.tax-zimed-footer .elementor-icon-list-item a {
+    color: #b8bcc8 !important;
+}
+
+.tax-zimed-footer .elementor-icon-list-item a:hover .elementor-icon-list-text,
+.tax-zimed-footer .elementor-icon-list-item a:focus-visible .elementor-icon-list-text {
+    color: #7eb8ff !important;
+}
+
+.tax-zimed-footer .elementor-icon-list-icon {
+    color: #9aa0b0 !important;
+}
+
+.tax-zimed-footer .elementor-icon-list-icon i {
+    color: inherit !important;
+}
+
+.tax-zimed-footer .elementor-button {
+    background-color: #2ecc71 !important;
+    color: #ffffff !important;
+    border: none !important;
+    border-radius: 4px !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    padding: 14px 28px !important;
+}
+
+.tax-zimed-footer .elementor-button:hover,
+.tax-zimed-footer .elementor-button:focus-visible {
+    background-color: #27ae60 !important;
+    color: #ffffff !important;
+}
+
+.tax-zimed-footer .elementor-divider-separator {
+    border-top-color: rgba(255, 255, 255, 0.12) !important;
+}
+
+.tax-zimed-footer .elementor-element-e3d5a1b,
+.tax-zimed-footer .elementor-element-e3d5a1b .elementor-column,
+.tax-zimed-footer .elementor-element-e3d5a1b .elementor-widget-wrap {
+    background-color: #1a1c28 !important;
+}
+
+.tax-zimed-footer .elementor-element-e3d5a1b {
+    padding: 18px 0 22px !important;
+    margin-top: 8px;
+}
+
+.tax-zimed-footer .elementor-element-1e62f70 .elementor-widget-container,
+.tax-zimed-footer .elementor-element-55703c9 .elementor-widget-container {
+    color: #9aa0b0 !important;
+    font-size: 14px;
+}
+
+.tax-zimed-footer .elementor-element-55703c9 a {
+    color: #e74c3c !important;
+    font-weight: 600;
+}
+
+.tax-zimed-footer .elementor-element-55703c9 a:hover {
+    color: #ff6b6b !important;
+}
+
+.tax-zimed-footer .elementor-element-6c72338,
+.tax-zimed-footer .elementor-element-08e4766 {
+    display: inline-block;
+    margin-right: 12px;
+}
+
+.tax-zimed-footer .elementor-element-6c72338 img,
+.tax-zimed-footer .elementor-element-08e4766 img {
+    max-height: 72px;
+    width: auto;
+}
+
+.page-header h2 {
+    font-size: 50px;
+}
+
+img {
+    width: auto;
+}
+
+@media (min-width: 1300px) {
+    .container {
+        max-width: 1400px;
+    }
+}
+
+@media (max-width: 767px) {
+    .banner-one .container {
+        background-image: url(https://innovativeassociates.com.au/wp-content/uploads/2021/05/mobilebg.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .service-two__text {
+        display: none;
+    }
+
+    .banner-one .banner-one__moc {
+        display: none;
+    }
+
+    .contact-one__infos {
+        margin-left: -40px;
+    }
+
+    .contact-one__infos-single,
+    .cta-three__box {
+        flex-direction: initial;
+    }
+
+    .cta-three__box-content {
+        padding-left: 20px;
+    }
+
+    .elementor img {
+        max-width: 80%;
+    }
+
+    .contact-one__infos-single p {
+        font-size: 14px;
+    }
+}
+
+.page-header {
+    background-image: url(https://innovativeassociates.com.au/wp-content/uploads/2021/03/page-header-bg-4.jpg) !important;
+}
+
+.side-menu__content {
+    display: none;
+}
+
+@media (max-width: 425px) {
+    .main-nav__logo-box .side-menu__toggler {
+        margin-left: 60px;
+    }
+}
+
+.cta-two__style-three__list {
+    display: none;
+}
+
+/* Laravel flash messages in contact form */
+.contact-one__form [role="alert"] {
+    margin-bottom: 20px;
+    padding: 12px 16px;
+    border-radius: 4px;
+    font-size: 14px;
+    list-style: disc inside;
+}
+
+.contact-one__form [role="alert"] ul {
+    margin: 0;
+    padding: 0;
+}
+
+.cta-two__style-three-summery p {
+    color: #7c7d8a;
+    text-align: justify;
+}
+
+.tax-partners-row {
+    padding: 50px 0 70px;
+    background: #f4f7ff;
+}
+
+.tax-partners-row__logo {
+    max-height: 120px;
+    width: auto;
+    max-width: 100%;
+    margin: 0 auto;
+    display: block;
+}
+
+.section-pad-sm {
+    padding: 40px 0;
+}
+
+body.page-about .cta-four + .cta-two__style-three {
+    margin-top: 0;
+}
+
+/* Meet the team — member profile page */
+.tax-team-profile {
+    padding: 40px 0 72px;
+}
+
+.tax-team-profile__inner {
+    max-width: 820px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.tax-team-profile__eyebrow {
+    margin: 0 0 10px;
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: #7c7d8a;
+}
+
+.tax-team-profile__position {
+    margin: 0 0 12px;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1.45;
+    color: #0b1f3f;
+}
+
+.tax-team-profile__name {
+    margin: 0 0 28px;
+    font-size: 38px;
+    font-weight: 700;
+    line-height: 1.15;
+    color: #0b1f3f;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+}
+
+.tax-team-profile__photo {
+    width: min(100%, 340px);
+    margin: 0 auto 32px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 12px 36px rgba(11, 31, 63, 0.12);
+}
+
+.tax-team-profile__photo img {
+    display: block;
+    width: 100%;
+    height: 420px;
+    object-fit: cover;
+    object-position: top center;
+}
+
+.tax-team-profile__bio {
+    margin: 0 0 32px;
+    font-size: 16px;
+    line-height: 1.75;
+    color: #555;
+    text-align: justify;
+}
+
+.tax-team-profile__bio p {
+    margin-bottom: 1rem;
+}
+
+.tax-team-profile__bio p:last-child {
+    margin-bottom: 0;
+}
+
+.tax-team-profile__contact-zone {
+    display: flex;
+    justify-content: center;
+    padding-top: 8px;
+}
+
+.tax-team-profile__contact {
+    margin: 0;
+}
+
+.tax-team-profile__empty {
+    color: #7c7d8a;
+    font-style: italic;
+    text-align: center;
+}
+
+/* Meet the team — listing */
+.tax-team-office-heading {
+    padding: 20px 0 10px;
+    text-align: center;
+}
+
+.tax-team-office-heading__title {
+    font-size: 36px;
+    font-weight: 600;
+    margin: 0;
+}
+
+.tax-team-grid {
+    padding: 24px 0 64px;
+}
+
+.tax-team-grid__row {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 32px 28px;
+    align-items: start;
+}
+
+.tax-team-grid__empty {
+    grid-column: 1 / -1;
+    margin: 0;
+    padding: 24px 0;
+    text-align: center;
+    font-size: 16px;
+    color: #7c7d8a;
+}
+
+.tax-team-grid__col {
+    min-width: 0;
+}
+
+.tax-team-card {
+    height: 100%;
+    padding: 0;
+}
+
+.tax-team-card__panel {
+    max-width: 300px;
+    margin: 0 auto;
+    padding: 32px 28px 28px;
+    border-radius: 999px 999px 48px 48px;
+    background: linear-gradient(180deg, #f8fafc 0%, #ffffff 55%);
+    border: 1px solid #e8ecf3;
+    box-shadow: 0 8px 28px rgba(11, 31, 63, 0.06);
+}
+
+.tax-team-card__photo {
+    width: 220px;
+    height: 290px;
+    margin: 0 auto 22px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 6px 20px rgba(11, 31, 63, 0.1);
+}
+
+.tax-team-card__photo-link {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.tax-team-card__photo img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    border-radius: 0;
+    margin: 0;
+}
+
+.tax-team-card__contact-zone {
+    display: flex;
+    justify-content: center;
+    min-height: 52px;
+    margin-top: 6px;
+}
+
+.tax-team-grid__row--cards {
+    justify-items: center;
+}
+
+.tax-team-card__name {
+    font-size: 28px;
+    font-weight: 700;
+    margin: 12px 0 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+}
+
+.tax-team-card__name a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.tax-team-card__name a:hover {
+    color: #6a26ed;
+}
+
+.tax-team-card__role {
+    font-size: 16px;
+    color: #7c7d8a;
+    margin: 0 0 18px;
+    line-height: 1.5;
+}
+
+/* Meet the team — navy contact icon buttons */
+.tax-contact-icons {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+
+.tax-contact-icons--center {
+    justify-content: center;
+}
+
+.tax-team-card__contact {
+    justify-content: center;
+    margin: 14px 0 10px;
+}
+
+.tax-contact-icons__btn {
+    position: relative;
+    z-index: 2;
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background-color: #0b1f3f;
+    color: #ffffff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    line-height: 1;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+    box-shadow: 0 2px 8px rgba(11, 31, 63, 0.25);
+    flex-shrink: 0;
+}
+
+.tax-contact-icons__btn .tax-contact-icons__svg {
+    display: block;
+    width: 22px;
+    height: 22px;
+}
+
+.tax-contact-icons__btn:hover,
+.tax-contact-icons__btn:focus {
+    background-color: #163a6b;
+    color: #ffffff;
+    transform: translateY(-2px);
+}
+
+.tax-contact-icons__btn:focus-visible {
+    outline: 2px solid #6a26ed;
+    outline-offset: 3px;
+}
+
+.tax-contact-icons__btn--disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+@media (max-width: 991px) {
+    .tax-team-grid__row {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 767px) {
+    .tax-team-profile__name {
+        font-size: 30px;
+    }
+
+    .tax-team-profile__photo img {
+        height: 360px;
+    }
+
+    .tax-team-card__panel {
+        max-width: 100%;
+        padding: 24px 20px 22px;
+        border-radius: 32px;
+    }
+
+    .tax-team-card__photo {
+        width: 200px;
+        height: 260px;
+    }
+
+    .tax-team-office-heading__title {
+        font-size: 28px;
+    }
+
+    .tax-team-grid__row {
+        grid-template-columns: 1fr;
+        max-width: 360px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+/* Disclaimer */
+.tax-disclaimer-content {
+    padding: 50px 0 70px;
+}
+
+.tax-disclaimer-content__heading {
+    font-size: 28px;
+    font-weight: 700;
+    margin: 0 0 20px;
+    line-height: 1.35;
+}
+
+.tax-disclaimer-content__heading:not(:first-child) {
+    margin-top: 40px;
+}
+
+.tax-disclaimer-content__text {
+    font-size: 16px;
+    line-height: 1.75;
+    color: #555;
+}
+
+.tax-disclaimer-content__text p {
+    margin-bottom: 1.25rem;
+    text-align: justify;
+}
+
+.elementor-1287 .tax-disclaimer-content__text,
+.elementor-37 .elementor-text-editor {
+    font-size: 18px;
+    line-height: 36px;
+    color: #000000;
+}
+
+/* Services page */
+.service-page__grid {
+    padding-top: 50px;
+    padding-bottom: 70px;
+}
+
+.service-page .service-two__single {
+    margin-bottom: 30px;
+}
+
+/* Service detail pages (accounting, etc.) */
+.tax-service-detail {
+    padding: 30px 0;
+}
+
+.tax-service-detail__hero-image {
+    padding: 20px 0 10px;
+}
+
+.tax-service-detail__tagline {
+    font-size: 22px;
+    font-weight: 600;
+    margin: 0 0 20px;
+    line-height: 1.4;
+}
+
+.tax-service-detail__heading {
+    font-size: 28px;
+    font-weight: 700;
+    margin: 30px 0 20px;
+    line-height: 1.35;
+}
+
+.tax-service-detail__intro p,
+.tax-service-detail__closing .elementor-text-editor p {
+    font-size: 18px;
+    line-height: 36px;
+    color: #000000;
+    text-align: justify;
+    margin-bottom: 1.25rem;
+}
+
+.tax-service-detail .elementor-icon-list-items {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.tax-service-detail .elementor-icon-list-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 14px;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #555;
+}
+
+.tax-service-detail .elementor-icon-list-icon {
+    color: var(--thm-base, #9361ff);
+    flex-shrink: 0;
+    margin-top: 3px;
+}
+
+.tax-service-detail .icon__list-style-two .elementor-icon-list-icon {
+    color: var(--thm-base, #9361ff);
+}
+
+.tax-service-detail__closing {
+    padding-bottom: 60px;
+}
+
+.tax-service-detail__body {
+    padding-bottom: 60px;
+}
+
+.tax-service-detail__hero-image .w-100 {
+    max-width: 768px;
+    margin: 0 auto;
+    display: block;
+}
+
+.tax-service-detail__topics {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1.5rem;
+}
+
+.tax-service-detail__topics li {
+    font-size: 18px;
+    line-height: 36px;
+    font-weight: 600;
+    color: #000000;
+    margin-bottom: 0.25rem;
+}
+
+.tax-service-detail__body a {
+    color: var(--thm-base, #9361ff);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.tax-service-detail__body a:hover {
+    text-decoration: underline;
+}
+
+/* Mentoring page */
+.tax-mentoring__pdf {
+    margin: 1.5rem 0 2rem;
+    border: 1px solid #e8e8ef;
+    border-radius: 4px;
+    overflow: hidden;
+    background: #f4f7ff;
+}
+
+.tax-mentoring__pdf iframe {
+    display: block;
+    border: 0;
+    min-height: 500px;
+}
+
+/* Perspective page */
+.tax-perspective {
+    padding: 50px 0 70px;
+}
+
+.tax-perspective__content {
+    padding-bottom: 0;
+}
+
+.tax-perspective__content strong {
+    font-weight: 700;
+    color: #000000;
+}
+
+/* Calculator page */
+.tax-calculator {
+    padding: 40px 0 70px;
+}
+
+.tax-calculator-tabs .elementor-widget-tabs .elementor-tab-desktop-title.elementor-active,
+.tax-calculator-tabs .elementor-tab-desktop-title.elementor-active {
+    background-color: #f4f7ff;
+}
+
+.tax-calculator-tabs__iframe {
+    display: block;
+    width: 100%;
+    border: 0;
+    min-height: 615px;
+}
+
+.tax-calculator-tabs__iframe--jotform {
+    min-height: 450px;
+}
+
+/* Tax lodgement page */
+.tax-lodgement {
+    padding: 40px 0 70px;
+}
+
+.tax-lodgement__embed iframe {
+    display: block;
+    min-width: 100%;
+    max-width: 100%;
+    width: 100%;
+    min-height: 539px;
+    height: 539px;
+    border: none;
+}
+
+/* Contact page – office map cards (elementor-45) */
+.elementor-45 .elementor-element.elementor-element-aff0cb4 > .elementor-container {
+    max-width: 1300px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.elementor-45 .elementor-element.elementor-element-6fbd63e .elementor-widget-container,
+.elementor-45 .elementor-element.elementor-element-899018a .elementor-widget-container {
+    text-align: center !important;
+}
+
+.elementor-45 .elementor-element.elementor-element-6fbd63e iframe,
+.elementor-45 .elementor-element.elementor-element-899018a iframe {
+    display: block !important;
+    width: 100% !important;
+    max-width: 430px !important;
+    height: 430px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    border: 0 !important;
+}
+
+@media (max-width: 767px) {
+    .elementor-45 .elementor-element.elementor-element-6fbd63e iframe,
+    .elementor-45 .elementor-element.elementor-element-899018a iframe {
+        max-width: 100% !important;
+        height: 380px !important;
+    }
+}
+
+.contact-one__form-wrap .alert,
+.contact-one__form-wrap [role="alert"] {
+    margin-bottom: 1.25rem;
+}
+
+/* Tax nav – Inngroup button (after Contact) */
+.main-nav__navigation-box .menu-item-inngroup {
+    display: flex;
+    align-items: center;
+}
+
+.main-nav__navigation-box .main-nav__inngroup-btn {
+    display: inline-block;
+    padding: 11px 24px;
+    margin-left: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1;
+    white-space: nowrap;
+    border-radius: 4px;
+}
+
+.main-nav__navigation-box .main-nav__inngroup-btn:hover {
+    color: #ffffff;
+}
+
+/* Contact form — success notice (replaces theme giant checkmark) */
+.contact-one__form-wrap .wpcf7-response-output,
+.contact-form-validated::before,
+.contact-form-validated::after,
+.tax-contact-form.validated::before,
+.tax-contact-form.validated::after {
+    display: none !important;
+    content: none !important;
+}
+
+.tax-contact-success {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 22px 24px;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #ecfdf5 0%, #f0fdf4 100%);
+    border: 1px solid #6ee7b7;
+    box-shadow: 0 4px 18px rgba(16, 185, 129, 0.12);
+    max-width: 100%;
+}
+
+.tax-contact-success__icon {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    color: #ffffff;
+    box-shadow: 0 2px 8px rgba(5, 150, 105, 0.35);
+}
+
+.tax-contact-success__title {
+    margin: 0 0 6px;
+    font-size: 18px;
+    font-weight: 700;
+    color: #065f46;
+    line-height: 1.3;
+}
+
+.tax-contact-success__text {
+    margin: 0;
+    font-size: 15px;
+    line-height: 1.6;
+    color: #047857;
+}
+
+.tax-contact-errors {
+    margin-bottom: 1.25rem;
+    padding: 14px 18px;
+    border-radius: 8px;
+    background: #fef2f2;
+    border: 1px solid #fecaca;
+    font-size: 14px;
+    color: #991b1b;
+}
+
+.tax-contact-errors ul {
+    margin: 0;
+    padding-left: 1.25rem;
+}

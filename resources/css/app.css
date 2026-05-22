@@ -1,0 +1,114 @@
+@import './tax-innovative-home.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    html {
+        scroll-behavior: smooth;
+    }
+}
+
+@layer components {
+    .glass {
+        @apply border border-white/20 bg-white/10 shadow-xl backdrop-blur-xl;
+    }
+
+    .glass-light {
+        @apply border border-white/40 bg-white/70 shadow-lg backdrop-blur-xl;
+    }
+
+    .glass-dark {
+        @apply border border-white/10 bg-white/5 shadow-2xl backdrop-blur-xl;
+    }
+
+    .glass-gold {
+        @apply border border-loan-gold/30 bg-loan-gold/10 shadow-xl backdrop-blur-xl;
+    }
+
+    .btn-primary {
+        @apply inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-semibold transition-all duration-300;
+    }
+
+    .reveal {
+        @apply translate-y-8 opacity-0 transition-all duration-700 ease-out;
+    }
+
+    .reveal.visible {
+        @apply translate-y-0 opacity-100;
+    }
+
+    .nav-link {
+        @apply text-sm font-medium transition-colors duration-200 hover:text-tax-teal;
+    }
+
+    .section-pad {
+        @apply px-4 py-16 sm:px-6 lg:px-8 lg:py-24 2xl:py-32;
+    }
+
+    .container-wide {
+        @apply mx-auto w-full max-w-8xl 2xl:max-w-9xl;
+    }
+
+    [x-cloak] {
+        display: none !important;
+    }
+
+    /* About page — Our Principle (two-column: image | content) */
+    .tax-about-principle {
+        @apply bg-white py-14 sm:py-16 lg:py-20;
+    }
+
+    .tax-about-principle__inner {
+        @apply flex flex-col items-start gap-10 px-4 sm:px-6 lg:flex-row lg:gap-14 lg:px-8;
+    }
+
+    .tax-about-principle__image {
+        @apply w-full shrink-0 lg:w-[42%] lg:max-w-[440px];
+    }
+
+    .tax-about-principle__image img {
+        @apply block h-auto w-full max-w-full object-cover;
+    }
+
+    .tax-about-principle__content {
+        @apply w-full lg:flex-1 lg:max-w-[620px];
+    }
+
+    .tax-about-principle__title {
+        @apply text-[2rem] font-bold leading-tight text-[#1a1a2e] sm:text-[2.25rem] lg:text-[2.5rem];
+        font-family: 'Barlow', ui-sans-serif, system-ui, sans-serif;
+    }
+
+    .tax-about-principle__title-accent {
+        @apply inline-block border-b-[5px] border-[#512da8] pb-0.5;
+    }
+
+    .tax-about-principle__text {
+        @apply mt-5 text-[15px] leading-[1.75] text-[#5c5c5c] sm:text-base;
+        font-family: 'Barlow', ui-sans-serif, system-ui, sans-serif;
+    }
+
+    .tax-about-principle__text + .tax-about-principle__text {
+        @apply mt-4;
+    }
+
+    .tax-about-principle__list {
+        @apply mt-7 space-y-3.5;
+    }
+
+    .tax-about-principle__list li {
+        @apply flex items-center gap-3 text-[15px] font-medium text-[#333333] sm:text-base;
+        font-family: 'Barlow', ui-sans-serif, system-ui, sans-serif;
+    }
+
+    .tax-about-principle__check {
+        @apply flex h-[18px] w-[18px] shrink-0 items-center justify-center bg-[#ea384d] text-[11px] font-bold leading-none text-white;
+    }
+
+    .tax-about-principle__btn {
+        @apply mt-8 inline-block rounded bg-[#ea384d] px-7 py-3.5 text-[15px] font-semibold text-white transition hover:bg-[#d42f44];
+        font-family: 'Barlow', ui-sans-serif, system-ui, sans-serif;
+    }
+}

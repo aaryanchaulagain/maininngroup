@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 845 321" role="img" aria-labelledby="title">
+  <title>Free personal consultation</title>
+  <defs>
+    <linearGradient id="bg2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#e8f0f8"/>
+      <stop offset="100%" style="stop-color:#5a9fd4"/>
+    </linearGradient>
+  </defs>
+  <rect width="845" height="321" fill="url(#bg2)"/>
+  <g fill="#072f4c" opacity="0.88">
+    <circle cx="320" cy="130" r="42"/>
+    <path d="M260 220c0-48 36-72 60-72s60 24 60 72H260z"/>
+    <circle cx="520" cy="125" r="38"/>
+    <path d="M465 215c0-42 32-64 55-64s55 22 55 64H465z"/>
+    <path d="M395 175h180a20 20 0 0 1 20 20v8a20 20 0 0 1-20 20H395a20 20 0 0 1-20-20v-8a20 20 0 0 1 20-20z" fill="#094978" opacity="0.25"/>
+    <ellipse cx="485" cy="195" rx="55" ry="18" fill="#fff" opacity="0.5"/>
+    <path d="M430 195h110" stroke="#072f4c" stroke-width="6" stroke-linecap="round"/>
+    <path d="M455 180c12-8 28-8 40 0" fill="none" stroke="#072f4c" stroke-width="5" stroke-linecap="round"/>
+  </g>
+</svg>

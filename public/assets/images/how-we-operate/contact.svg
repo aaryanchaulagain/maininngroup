@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 845 321" role="img" aria-labelledby="title">
+  <title>Contact by phone or email</title>
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#dceefb"/>
+      <stop offset="100%" style="stop-color:#7eb8e8"/>
+    </linearGradient>
+  </defs>
+  <rect width="845" height="321" fill="url(#bg)"/>
+  <g fill="#094978" opacity="0.9">
+    <path d="M280 95h95v130H280V95zm20 20v90h55v-90h-55zm115-20c44 0 80 33 80 74s-36 74-80 74-80-33-80-74 36-74 80-74zm0 28c-28 0-50 21-50 46s22 46 50 46 50-21 50-46-22-46-50-46zm0 24c-14 0-25 10-25 22s11 22 25 22 25-10 25-22-11-22-25-22z"/>
+    <path d="M520 108h120l-60 105-60-105zm30 25h60l-30 52-30-52z" transform="translate(40 0)"/>
+    <rect x="555" y="118" width="90" height="70" rx="6" fill="none" stroke="#094978" stroke-width="8"/>
+    <path d="M585 148h60M585 168h40" stroke="#094978" stroke-width="8" stroke-linecap="round"/>
+  </g>
+</svg>

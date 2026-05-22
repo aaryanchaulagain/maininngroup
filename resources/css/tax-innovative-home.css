@@ -1,0 +1,600 @@
+/* Innovative Associates homepage clone — tax site */
+
+.tax-inn-page {
+    font-family: 'Barlow', ui-sans-serif, system-ui, sans-serif;
+    color: #2d3448;
+}
+
+/* —— Navbar (reference: zimed transparent / sticky) —— */
+.inn-nav--transparent {
+    background-color: transparent;
+    box-shadow: none;
+}
+
+.inn-nav--sticky {
+    background-color: #ffffff;
+    box-shadow: 0 2px 16px rgba(16, 45, 94, 0.08);
+}
+
+.inn-nav__link {
+    font-family: 'Barlow', sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 1;
+    color: #ffffff;
+    letter-spacing: 0;
+    transition: color 0.3s ease;
+}
+
+.inn-nav__link--dark {
+    color: #102d5e;
+}
+
+.inn-nav__link:hover {
+    color: #ee3158;
+}
+
+.inn-nav__link--dark:hover {
+    color: #ee3158;
+}
+
+.inn-nav__dropdown-link {
+    display: block;
+    padding: 10px 22px;
+    font-family: 'Barlow', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 22px;
+    color: #102d5e;
+    transition: color 0.2s ease, background 0.2s ease;
+}
+
+.inn-nav__dropdown-link:hover {
+    color: #ee3158;
+    background-color: #f4f6f9;
+}
+
+/* —— Hero (reference: full viewport + #102d5e overlay) —— */
+.inn-hero__overlay {
+    background-color: rgba(16, 45, 94, 0.72);
+}
+
+.inn-hero__eyebrow {
+    display: inline-block;
+    margin-bottom: 22px;
+    padding: 8px 18px;
+    font-family: 'Barlow', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #ffffff;
+    background-color: rgba(0, 0, 0, 0.28);
+}
+
+.inn-hero__title {
+    max-width: 900px;
+    font-family: 'Barlow', sans-serif;
+    font-size: 60px;
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: 0;
+    color: #ffffff;
+}
+
+.inn-hero__subtitle {
+    max-width: 780px;
+    margin-top: 25px;
+    font-family: 'Barlow', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 30px;
+    letter-spacing: 0;
+    color: #ffffff;
+}
+
+.inn-hero__btn {
+    display: inline-block;
+    margin-top: 38px;
+    border: 2px solid #ffffff;
+    border-radius: 0;
+    padding: 14px 40px;
+    font-family: 'Barlow', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1;
+    letter-spacing: 0;
+    color: #ffffff;
+    background-color: transparent;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.inn-hero__btn:hover {
+    background-color: #ffffff;
+    color: #102d5e;
+    border-color: #ffffff;
+}
+
+@media (max-width: 1023px) {
+    .inn-hero__title {
+        font-size: 42px;
+        line-height: 1.15;
+    }
+
+    .inn-hero__subtitle {
+        font-size: 16px;
+        line-height: 28px;
+        margin-top: 20px;
+    }
+
+    .inn-hero__btn {
+        margin-top: 30px;
+        padding: 12px 32px;
+    }
+}
+
+@media (max-width: 767px) {
+    .inn-hero__title {
+        font-size: 34px;
+    }
+
+    .inn-hero__eyebrow {
+        font-size: 11px;
+        letter-spacing: 0.16em;
+        margin-bottom: 18px;
+    }
+}
+
+.tax-inn-carousel {
+    padding: 0;
+    background: #f4f5f8;
+}
+
+.tax-inn-carousel__track {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+}
+
+.tax-inn-carousel__track::-webkit-scrollbar {
+    display: none;
+}
+
+.tax-inn-carousel__slide {
+    flex: 0 0 100%;
+    scroll-snap-align: start;
+}
+
+.tax-inn-carousel__slide img {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 520px;
+    object-fit: cover;
+}
+
+.tax-inn-section {
+    padding: 4.5rem 1rem;
+}
+
+@media (min-width: 1024px) {
+    .tax-inn-section {
+        padding: 5.5rem 2rem;
+    }
+}
+
+.tax-inn-section--gray {
+    background: #f4f5f8;
+}
+
+.tax-inn-section__title {
+    margin-bottom: 2.5rem;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #2d3448;
+}
+
+.tax-inn-services {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    gap: 1.5rem;
+}
+
+@media (min-width: 640px) {
+    .tax-inn-services {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .tax-inn-services {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.75rem;
+    }
+}
+
+.tax-inn-service-card {
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    border: 1px solid #e8ebf0;
+    box-shadow: 0 4px 24px rgba(45, 52, 72, 0.06);
+    text-align: center;
+    transition: box-shadow 0.2s;
+}
+
+.tax-inn-service-card:hover {
+    box-shadow: 0 8px 32px rgba(45, 52, 72, 0.1);
+}
+
+.tax-inn-service-card__body {
+    flex: 1;
+    padding: 2.5rem 1.75rem 1.5rem;
+}
+
+.tax-inn-service-card__icon {
+    display: flex;
+    height: 72px;
+    width: 72px;
+    margin: 0 auto 1.25rem;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #1b9ce3;
+}
+
+.tax-inn-service-card__icon img {
+    height: 36px;
+    width: 36px;
+    object-fit: contain;
+}
+
+.tax-inn-service-card__name {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #2d3448;
+}
+
+.tax-inn-service-card__line {
+    width: 48px;
+    height: 3px;
+    margin: 0.75rem auto 1rem;
+    background: #1b9ce3;
+}
+
+.tax-inn-service-card__desc {
+    font-size: 0.95rem;
+    line-height: 1.65;
+    color: #6b7280;
+}
+
+.tax-inn-service-card__footer {
+    border-top: 1px solid #eef0f4;
+    padding: 1rem;
+}
+
+.tax-inn-service-card__link {
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #6b7280;
+}
+
+.tax-inn-service-card__link:hover {
+    color: #1b9ce3;
+}
+
+.tax-inn-core {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+}
+
+.tax-inn-core::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.92);
+}
+
+.tax-inn-core__inner {
+    position: relative;
+    z-index: 1;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.tax-inn-core__grid {
+    display: grid;
+    gap: 2rem;
+}
+
+@media (min-width: 768px) {
+    .tax-inn-core__grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.tax-inn-core-card {
+    text-align: center;
+    padding: 1.5rem 1rem;
+}
+
+.tax-inn-core-card__icon {
+    height: 64px;
+    width: auto;
+    margin: 0 auto 1rem;
+}
+
+.tax-inn-core-card h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #2d3448;
+}
+
+.tax-inn-core-card p {
+    margin-top: 0.75rem;
+    font-size: 0.95rem;
+    line-height: 1.65;
+    color: #6b7280;
+}
+
+.tax-inn-team__grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    gap: 2rem;
+}
+
+@media (min-width: 640px) {
+    .tax-inn-team__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .tax-inn-team__grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.tax-inn-team-card {
+    text-align: center;
+}
+
+.tax-inn-team-card img {
+    margin: 0 auto;
+    height: 220px;
+    width: 220px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.tax-inn-team-card h3 {
+    margin-top: 1rem;
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+.tax-inn-team-card p {
+    margin-top: 0.25rem;
+    font-size: 0.9rem;
+    color: #1b9ce3;
+    font-weight: 600;
+}
+
+.tax-inn-testi {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    padding: 5rem 1rem;
+}
+
+.tax-inn-testi::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(45, 52, 72, 0.88);
+}
+
+.tax-inn-testi__inner {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    color: #fff;
+}
+
+.tax-inn-testi__title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #fff;
+}
+
+.tax-inn-testi__quote {
+    margin-top: 2rem;
+    font-size: 1.05rem;
+    line-height: 1.75;
+    font-style: italic;
+}
+
+.tax-inn-testi__author {
+    margin-top: 1.5rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #1b9ce3;
+}
+
+.tax-inn-testi__dots {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.tax-inn-testi__dot {
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.35);
+    border: none;
+    cursor: pointer;
+}
+
+.tax-inn-testi__dot.is-active {
+    background: #ea384d;
+}
+
+.tax-inn-contact {
+    position: relative;
+    background: #f4f5f8;
+}
+
+.tax-inn-contact__grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    gap: 3rem;
+}
+
+@media (min-width: 1024px) {
+    .tax-inn-contact__grid {
+        grid-template-columns: 1fr 1fr;
+        align-items: start;
+    }
+}
+
+.tax-inn-contact__info h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #2d3448;
+}
+
+.tax-inn-contact__info p {
+    margin-top: 0.5rem;
+    font-size: 0.95rem;
+    line-height: 1.65;
+    color: #6b7280;
+}
+
+.tax-inn-contact__info-item {
+    margin-top: 1.75rem;
+}
+
+.tax-inn-contact-form {
+    background: #fff;
+    padding: 2rem;
+    box-shadow: 0 8px 40px rgba(45, 52, 72, 0.08);
+}
+
+.tax-inn-contact-form h3 {
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.tax-inn-contact-form input,
+.tax-inn-contact-form textarea {
+    width: 100%;
+    border: 1px solid #dde1e8;
+    padding: 0.75rem 1rem;
+    font-size: 0.95rem;
+    font-family: inherit;
+    outline: none;
+}
+
+.tax-inn-contact-form input:focus,
+.tax-inn-contact-form textarea:focus {
+    border-color: #1b9ce3;
+}
+
+.tax-inn-contact-form .field {
+    margin-bottom: 1rem;
+}
+
+.tax-inn-contact-form button {
+    width: 100%;
+    border: none;
+    background: #ea384d;
+    padding: 0.9rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #fff;
+    cursor: pointer;
+}
+
+.tax-inn-contact-form button:hover {
+    background: #d42f44;
+}
+
+.tax-inn-site-footer {
+    background: #1e2533;
+    color: rgba(255, 255, 255, 0.8);
+    padding: 3.5rem 1rem 2rem;
+    font-size: 0.9rem;
+}
+
+.tax-inn-site-footer__grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    gap: 2.5rem;
+}
+
+@media (min-width: 768px) {
+    .tax-inn-site-footer__grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.tax-inn-site-footer h2 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #ff7043;
+}
+
+.tax-inn-site-footer ul {
+    margin-top: 1rem;
+    list-style: none;
+    padding: 0;
+}
+
+.tax-inn-site-footer li {
+    margin-top: 0.5rem;
+}
+
+.tax-inn-site-footer a:hover {
+    color: #fff;
+}
+
+.tax-inn-site-footer__copy {
+    max-width: 1200px;
+    margin: 2.5rem auto 0;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.tax-inn-scroll-top {
+    position: fixed;
+    right: 1.25rem;
+    bottom: 1.25rem;
+    z-index: 40;
+    display: flex;
+    height: 48px;
+    width: 48px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #ea384d;
+    color: #fff;
+    box-shadow: 0 4px 16px rgba(234, 56, 77, 0.4);
+}
