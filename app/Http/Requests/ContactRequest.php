@@ -18,8 +18,12 @@ class ContactRequest extends FormRequest
         $subject = $this->sanitizeString($this->input('subject'));
         $department = $this->sanitizeString($this->input('department'));
         $desiredDate = $this->sanitizeString($this->input('desired_date'));
+        $serviceInterest = $this->sanitizeString($this->input('service_interest'));
 
         $prefix = [];
+        if ($serviceInterest) {
+            $prefix[] = 'Area of interest: '.$this->serviceInterestLabel($serviceInterest);
+        }
         if ($department) {
             $prefix[] = "Department: {$department}";
         }
@@ -48,7 +52,7 @@ class ContactRequest extends FormRequest
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'email', 'max:255'],
             'phone' => [
-                Rule::requiredIf(fn () => in_array($this->input('source_domain'), ['loan', 'tax'], true)),
+                Rule::requiredIf(fn () => in_array($this->input('source_domain'), ['loan', 'tax', 'advisory'], true)),
                 'nullable',
                 'string',
                 'max:30',
@@ -62,9 +66,59 @@ class ContactRequest extends FormRequest
                 'max:255',
             ],
             'message' => ['required', 'string', 'max:5000'],
+            'service_interest' => [
+                Rule::requiredIf(fn () => $this->input('source_domain') === 'advisory'),
+                'nullable',
+                'string',
+                Rule::in([
+                    'business-advisory',
+                    'insurance',
+                    'risk-management',
+                    'business-consulting',
+                    'strategic-planning',
+                    'general-inquiry',
+                ]),
+            ],
             'website' => ['nullable', 'max:0'],
-            'source_domain' => ['required', Rule::in(['main', 'tax', 'loan'])],
+            'source_domain' => ['required', Rule::in(['main', 'tax', 'loan', 'advisory'])],
         ];
+    }
+
+    public function messages(): array
+    {
+        return [
+            'name.required' => 'Please enter your full name.',
+            'email.required' => 'Please enter your email address.',
+            'email.email' => 'Please enter a valid email address.',
+            'phone.required' => 'Please enter your phone number.',
+            'message.required' => 'Please tell us how we can help.',
+            'service_interest.required' => 'Please select an area of interest.',
+            'service_interest.in' => 'Please select a valid service from the list.',
+        ];
+    }
+
+    public function attributes(): array
+    {
+        return [
+            'name' => 'full name',
+            'email' => 'email address',
+            'phone' => 'phone number',
+            'message' => 'message',
+            'service_interest' => 'area of interest',
+        ];
+    }
+
+    protected function serviceInterestLabel(string $value): string
+    {
+        return match ($value) {
+            'business-advisory' => 'Business Advisory',
+            'insurance' => 'Insurance',
+            'risk-management' => 'Risk Management',
+            'business-consulting' => 'Business Consulting',
+            'strategic-planning' => 'Strategic Planning',
+            'general-inquiry' => 'General enquiry',
+            default => $value,
+        };
     }
 
     public function sanitizedPayload(): array

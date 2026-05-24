@@ -9,7 +9,7 @@
         // Learn more → tax / loan sites (hosts from DOMAIN_TAX / DOMAIN_LOAN in .env)
         $taxUrl = domain_url('tax', '/');
         $loanUrl = domain_url('loan', '/');
-        $taxAdvisoryUrl = domain_url('tax', '/services/advisory');
+        $advisoryUrl = domain_url('advisory', '/');
 
         $expertiseRow1 = [
             [
@@ -59,7 +59,7 @@
                 'text' =>
                     'Whether you want to invest or refinance, we help you plan, grow, and meet your legal and corporate obligations.',
                 'style' => 'gradient',
-                'href' => $taxAdvisoryUrl,
+                'href' => $advisoryUrl,
             ],
         ];
     @endphp
@@ -105,10 +105,11 @@
                                     <x-main.enfold.service-card :href="$loanUrl" title="Home Loans"
                                         text="Whether you're first home buyer or simply buying an investment property to build your portfolio. We'll present you the best product available in the market and hold your hand along the way."
                                         style="gradient-mid"
-                                        button-label="Innovative Loan" />
-                                    <x-main.enfold.service-card :href="$touchUrl" title="Business Advisory"
+                                        button-label="Innovative Finance" />
+                                    <x-main.enfold.service-card :href="$advisoryUrl" title="Business Advisory"
                                         text="Our business advisory services provide strategic guidance to help businesses overcome challenges, improve performance, and unlock growth opportunities. We work closely with clients to deliver practical solutions that drive efficiency, profitability, and long-term success."
-                                        style="gradient-dark" />
+                                        style="gradient-dark"
+                                        button-label="Innovative Advisory" />
                                 </div>
                             </div>
                         </div>

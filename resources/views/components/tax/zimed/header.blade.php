@@ -34,7 +34,18 @@
                                 </li>
                             </ul>
                         </li>
-                        <li class="menu-item menu-item-has-children {{ in_array($active, ['services', 'services-accounting', 'services-mortgage', 'services-advisory'], true) ? 'current-menu-ancestor current-menu-parent' : '' }}">
+                        @php
+                            $serviceNavActive = in_array($active, [
+                                'services',
+                                'services-accounting',
+                                'services-mortgage',
+                                'services-advisory',
+                                'services-bas-gst',
+                                'services-smsf',
+                                'services-compliance',
+                            ], true);
+                        @endphp
+                        <li class="menu-item menu-item-has-children {{ $serviceNavActive ? 'current-menu-ancestor current-menu-parent' : '' }}">
                             <a href="{{ route('tax.services.index') }}" @if($active === 'services') aria-current="page" @endif>Services</a>
                             <ul class="sub-menu">
                                 <li class="menu-item {{ $active === 'services-accounting' ? 'current-menu-item' : '' }}">
@@ -45,6 +56,15 @@
                                 </li>
                                 <li class="menu-item {{ $active === 'services-advisory' ? 'current-menu-item' : '' }}">
                                     <a href="{{ route('tax.services.advisory') }}" @if($active === 'services-advisory') aria-current="page" @endif>Business advisory Service</a>
+                                </li>
+                                <li class="menu-item {{ $active === 'services-bas-gst' ? 'current-menu-item' : '' }}">
+                                    <a href="{{ route('tax.services.bas-gst') }}" @if($active === 'services-bas-gst') aria-current="page" @endif>BAS / GST</a>
+                                </li>
+                                <li class="menu-item {{ $active === 'services-smsf' ? 'current-menu-item' : '' }}">
+                                    <a href="{{ route('tax.services.smsf') }}" @if($active === 'services-smsf') aria-current="page" @endif>SMSF</a>
+                                </li>
+                                <li class="menu-item {{ $active === 'services-compliance' ? 'current-menu-item' : '' }}">
+                                    <a href="{{ route('tax.services.compliance') }}" @if($active === 'services-compliance') aria-current="page" @endif>Compliance</a>
                                 </li>
                             </ul>
                         </li>

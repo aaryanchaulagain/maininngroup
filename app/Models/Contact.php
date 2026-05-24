@@ -64,6 +64,7 @@ class Contact extends Model
         return match ($this->source_domain) {
             'tax' => 'INN Group Tax',
             'loan' => 'INN Group Loan',
+            'advisory' => 'Business Advisory',
             default => 'INN Group',
         };
     }

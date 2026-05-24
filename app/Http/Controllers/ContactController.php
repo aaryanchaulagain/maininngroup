@@ -20,10 +20,15 @@ class ContactController extends Controller
             'status' => Contact::STATUS_PENDING,
         ]);
 
-        $this->mailService->sendAdminLeadNotification($contact);
+        try {
+            $this->mailService->sendAdminLeadNotification($contact);
+        } catch (\Throwable $e) {
+            report($e);
+        }
 
         $message = match ($request->input('source_domain')) {
             'loan' => 'Thank you for your message. It has been sent.',
+            'advisory' => 'Thank you. Our advisory team will be in touch shortly.',
             'tax' => 'Your form has been submitted. Our team will be in touch shortly.',
             default => 'Your form has been submitted. Our team will be in touch shortly.',
         };

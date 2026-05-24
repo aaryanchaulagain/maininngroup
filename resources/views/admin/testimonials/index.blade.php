@@ -3,7 +3,7 @@
 @section('content')
 <div class="mb-4 flex justify-between">
     <h2 class="font-semibold">Testimonials</h2>
-    <a href="{{ route('admin.testimonials.create') }}" class="btn-primary bg-inn-navy text-white text-sm">+ Add</a>
+    <a href="{{ admin_route('testimonials.create') }}" class="btn-primary bg-inn-navy text-white text-sm">+ Add</a>
 </div>
 <p class="mb-4 text-sm text-slate-600">Shown on the loan <strong>About</strong> page and the featured card on the loan <strong>Home</strong> page (mark one as “Featured on home”).</p>
 <table class="w-full rounded-xl border border-slate-200 bg-white text-sm">
@@ -26,9 +26,9 @@
                 <td class="px-4 py-3">{{ $t->is_featured ? 'Yes' : '—' }}</td>
                 <td class="px-4 py-3">{{ $t->active ? 'Active' : 'Hidden' }}</td>
                 <td class="px-4 py-3 text-right">
-                    <a href="{{ route('admin.testimonials.edit', $t) }}" class="text-tax-teal hover:underline">Edit</a>
+                    <a href="{{ admin_route('testimonials.edit', $t) }}" class="text-tax-teal hover:underline">Edit</a>
                     <span class="mx-2 text-slate-300">|</span>
-                    <form method="POST" action="{{ route('admin.testimonials.destroy', $t) }}" class="inline" onsubmit="return confirm('Delete testimonial from {{ $t->author }}?');">
+                    <form method="POST" action="{{ admin_route('testimonials.destroy', $t) }}" class="inline" onsubmit="return confirm('Delete testimonial from {{ $t->author }}?');">
                         @csrf
                         @method('DELETE')
                         <button type="submit" class="text-red-600 hover:text-red-800 hover:underline">Delete</button>

@@ -29,6 +29,9 @@
                         <a href="{{ route('tax.services.accounting') }}" class="block px-4 py-2 text-sm hover:bg-tax-mint/30">Accounting & Taxation</a>
                         <a href="{{ route('tax.services.mortgage') }}" class="block px-4 py-2 text-sm hover:bg-tax-mint/30">Mortgage & Loan</a>
                         <a href="{{ route('tax.services.advisory') }}" class="block px-4 py-2 text-sm hover:bg-tax-mint/30">Business Advisory</a>
+                        <a href="{{ route('tax.services.bas-gst') }}" class="block px-4 py-2 text-sm hover:bg-tax-mint/30">BAS / GST</a>
+                        <a href="{{ route('tax.services.smsf') }}" class="block px-4 py-2 text-sm hover:bg-tax-mint/30">SMSF</a>
+                        <a href="{{ route('tax.services.compliance') }}" class="block px-4 py-2 text-sm hover:bg-tax-mint/30">Compliance</a>
                     </div>
                 </div>
             </div>
@@ -55,6 +58,9 @@
             <a href="{{ route('tax.services.accounting') }}">Accounting & Taxation</a>
             <a href="{{ route('tax.services.mortgage') }}">Mortgage & Loan</a>
             <a href="{{ route('tax.services.advisory') }}">Business Advisory</a>
+            <a href="{{ route('tax.services.bas-gst') }}">BAS / GST</a>
+            <a href="{{ route('tax.services.smsf') }}">SMSF</a>
+            <a href="{{ route('tax.services.compliance') }}">Compliance</a>
             <a href="{{ route('tax.mentoring') }}">Mentoring</a>
             <a href="{{ route('tax.perspective') }}">Perspective</a>
             <a href="{{ route('tax.calculator') }}">Calculator</a>

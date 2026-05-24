@@ -13,7 +13,7 @@
 
 <div class="mb-4 flex justify-between">
     <h2 class="font-semibold">Team members</h2>
-    <a href="{{ route('admin.teams.create') }}" class="btn-primary bg-inn-navy text-white text-sm">+ Add member</a>
+    <a href="{{ admin_route('teams.create') }}" class="btn-primary bg-inn-navy text-white text-sm">+ Add member</a>
 </div>
 
 <p class="mb-4 max-w-3xl text-sm text-slate-600">
@@ -35,7 +35,7 @@
         @forelse($teams as $t)
             <tr class="{{ ! $t->active ? 'bg-slate-50 text-slate-500' : '' }}">
                 <td class="px-4 py-3">
-                    <a href="{{ route('admin.teams.intro.edit', $t) }}" class="font-medium text-inn-navy hover:text-tax-teal hover:underline">{{ $t->name }}</a>
+                    <a href="{{ admin_route('teams.intro.edit', $t) }}" class="font-medium text-inn-navy hover:text-tax-teal hover:underline">{{ $t->name }}</a>
                     @if ($t->slug && $t->source_domain === 'tax')
                         <div class="mt-0.5 font-mono text-xs text-slate-400">/aboutus/team/{{ $t->slug }}</div>
                     @endif
@@ -50,14 +50,14 @@
                     @if (filled($t->bio))
                         <span class="text-emerald-700">Added</span>
                     @else
-                        <a href="{{ route('admin.teams.intro.edit', $t) }}" class="text-amber-700 hover:underline">Add intro</a>
+                        <a href="{{ admin_route('teams.intro.edit', $t) }}" class="text-amber-700 hover:underline">Add intro</a>
                     @endif
                 </td>
                 <td class="px-4 py-3">{{ $t->active ? 'Yes' : 'No' }}</td>
                 <td class="px-4 py-3 text-right whitespace-nowrap">
-                    <a href="{{ route('admin.teams.edit', $t) }}" class="text-tax-teal hover:underline">Edit card</a>
+                    <a href="{{ admin_route('teams.edit', $t) }}" class="text-tax-teal hover:underline">Edit card</a>
                     <span class="mx-2 text-slate-300">|</span>
-                    <form method="POST" action="{{ route('admin.teams.destroy', $t) }}" class="inline" onsubmit="return confirm('Delete {{ $t->name }}?');">
+                    <form method="POST" action="{{ admin_route('teams.destroy', $t) }}" class="inline" onsubmit="return confirm('Delete {{ $t->name }}?');">
                         @csrf
                         @method('DELETE')
                         <button type="submit" class="text-red-600 hover:underline">Delete</button>

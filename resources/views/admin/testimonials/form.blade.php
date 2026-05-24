@@ -1,18 +1,11 @@
 @extends('layouts.admin')
 @section('page-title', $testimonial->exists ? 'Edit testimonial' : 'New testimonial')
 @section('content')
-<form method="POST" enctype="multipart/form-data" action="{{ $testimonial->exists ? route('admin.testimonials.update', $testimonial) : route('admin.testimonials.store') }}" class="max-w-2xl space-y-4 rounded-xl border bg-white p-6">
+<form method="POST" enctype="multipart/form-data" action="{{ $testimonial->exists ? admin_route('testimonials.update', $testimonial) : admin_route('testimonials.store') }}" class="max-w-2xl space-y-4 rounded-xl border bg-white p-6">
     @csrf
     @if($testimonial->exists) @method('PUT') @endif
 
-    <p>
-        <label class="text-sm font-medium">Domain</label>
-        <select name="source_domain" class="mt-1 block w-full rounded border px-3 py-2">
-            @foreach(['loan','tax','main'] as $d)
-                <option value="{{ $d }}" @selected(old('source_domain', $testimonial->source_domain ?? 'loan') === $d)>{{ $d }}</option>
-            @endforeach
-        </select>
-    </p>
+    <x-admin.source-domain-field :value="old('source_domain', $testimonial->source_domain)" :locked="$siteLocked ?? false" />
     <p><label class="text-sm font-medium">Headline</label><input name="title" value="{{ old('title', $testimonial->title) }}" required placeholder="Phenomenal" class="mt-1 block w-full rounded border px-3 py-2"></p>
     <p><label class="text-sm font-medium">Quote</label><textarea name="quote" rows="5" required class="mt-1 block w-full rounded border px-3 py-2">{{ old('quote', $testimonial->quote) }}</textarea></p>
     <p><label class="text-sm font-medium">Author name</label><input name="author" value="{{ old('author', $testimonial->author) }}" required placeholder="Dharma Adhikari" class="mt-1 block w-full rounded border px-3 py-2"></p>

@@ -34,6 +34,9 @@ return Application::configure(basePath: dirname(__DIR__))
     ->withMiddleware(function (Middleware $middleware) {
         $middleware->redirectGuestsTo('/login');
         $middleware->redirectUsersTo('/admin');
+        $middleware->alias([
+            'admin.site' => \App\Http\Middleware\AssignAdminSite::class,
+        ]);
     })
     ->withExceptions(function (Exceptions $exceptions) {
         //

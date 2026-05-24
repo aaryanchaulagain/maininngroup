@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Admin\Concerns\HandlesAdminSite;
 use App\Http\Controllers\Controller;
 use App\Models\Article;
 use Illuminate\Http\RedirectResponse;
@@ -12,16 +13,23 @@ use Illuminate\View\View;
 
 class ArticleController extends Controller
 {
+    use HandlesAdminSite;
+
     public function index(): View
     {
         return view('admin.articles.index', [
-            'articles' => Article::latest()->paginate(15),
+            'articles' => Article::forDomain($this->adminSiteKey())->latest()->paginate(15),
+            'adminSite' => $this->adminSite(),
         ]);
     }
 
     public function create(): View
     {
-        return view('admin.articles.form', ['article' => new Article]);
+        return view('admin.articles.form', [
+            'article' => new Article(['source_domain' => $this->adminSiteKey()]),
+            'adminSite' => $this->adminSite(),
+            'siteLocked' => true,
+        ]);
     }
 
     public function store(Request $request): RedirectResponse
@@ -32,37 +40,48 @@ class ArticleController extends Controller
 
         Article::create($data);
 
-        return redirect()->route('admin.articles.index')->with('success', 'Article created.');
+        return $this->redirectToAdmin('articles.index', [], 'success', 'Article created.');
     }
 
     public function edit(Article $article): View
     {
-        return view('admin.articles.form', compact('article'));
+        $this->assertModelForSite($article);
+
+        return view('admin.articles.form', [
+            'article' => $article,
+            'adminSite' => $this->adminSite(),
+            'siteLocked' => true,
+        ]);
     }
 
     public function update(Request $request, Article $article): RedirectResponse
     {
+        $this->assertModelForSite($article);
+
         $data = $this->validated($request);
         $data['slug'] = Str::slug($data['slug'] ?? $data['title']);
         $data['image'] = $this->resolveImage($request, $article);
 
         $article->update($data);
 
-        return redirect()->route('admin.articles.index')->with('success', 'Article updated.');
+        return $this->redirectToAdmin('articles.index', [], 'success', 'Article updated.');
     }
 
     public function destroy(Article $article): RedirectResponse
     {
+        $this->assertModelForSite($article);
         $this->deleteStoredImage($article->image);
         $article->delete();
 
-        return redirect()->route('admin.articles.index')->with('success', 'Article deleted.');
+        return $this->redirectToAdmin('articles.index', [], 'success', 'Article deleted.');
     }
 
     protected function validated(Request $request): array
     {
+        $domain = $this->adminSiteKey();
+
         $data = $request->validate([
-            'source_domain' => 'required|in:main,tax,loan',
+            'source_domain' => 'required|in:tax,loan',
             'title' => 'required|string|max:255',
             'slug' => 'nullable|string|max:255',
             'excerpt' => 'nullable|string',
@@ -74,6 +93,7 @@ class ArticleController extends Controller
             'published_at' => 'nullable|date',
         ]);
 
+        $data['source_domain'] = $domain;
         $data['published'] = $request->boolean('published');
         unset($data['image_file'], $data['remove_image']);
 

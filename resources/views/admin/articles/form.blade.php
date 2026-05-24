@@ -1,13 +1,10 @@
 @extends('layouts.admin')
 @section('page-title', $article->exists ? 'Edit article' : 'New article')
 @section('content')
-<form method="POST" enctype="multipart/form-data" action="{{ $article->exists ? route('admin.articles.update', $article) : route('admin.articles.store') }}" class="max-w-2xl space-y-4 rounded-xl border bg-white p-6">
+<form method="POST" enctype="multipart/form-data" action="{{ $article->exists ? admin_route('articles.update', $article) : admin_route('articles.store') }}" class="max-w-2xl space-y-4 rounded-xl border bg-white p-6">
     @csrf
     @if($article->exists) @method('PUT') @endif
-    <p><label class="text-sm font-medium">Domain</label>
-    <select name="source_domain" class="mt-1 block w-full rounded border px-3 py-2">
-        @foreach(['loan','tax','main'] as $d)<option value="{{ $d }}" @selected(old('source_domain',$article->source_domain)===$d)>{{ $d }}</option>@endforeach
-    </select></p>
+    <x-admin.source-domain-field :value="old('source_domain', $article->source_domain)" :locked="$siteLocked ?? false" />
     <p><label class="text-sm font-medium">Title</label><input name="title" value="{{ old('title',$article->title) }}" required class="mt-1 block w-full rounded border px-3 py-2"></p>
     <p><label class="text-sm font-medium">Slug</label><input name="slug" value="{{ old('slug',$article->slug) }}" class="mt-1 block w-full rounded border px-3 py-2"></p>
     <p><label class="text-sm font-medium">Excerpt</label><textarea name="excerpt" rows="2" class="mt-1 block w-full rounded border px-3 py-2">{{ old('excerpt',$article->excerpt) }}</textarea></p>

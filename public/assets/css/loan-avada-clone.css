@@ -11,6 +11,12 @@
     /* Areas of Expertise – matches innovativewealth.com.au */
     --loan-expertise-light: #554ade;
     --loan-expertise-dark: #3429ad;
+    --loan-expertise-mid: #4035b8;
+    /* Service landing pages (Home / Investment Loan) */
+    --loan-svc-bg-alt: #eef0fc;
+    --loan-svc-bg-soft: #f4f5fd;
+    --loan-svc-border: #d8daf5;
+    --loan-svc-icon-bg: linear-gradient(135deg, #eef0fc 0%, #dce0f8 100%);
 }
 
 body {
@@ -115,6 +121,651 @@ body {
 .fusion-header-wrapper .fusion-logo {
     margin-top: 0 !important;
     margin-bottom: 0 !important;
+}
+
+/* Text site title (no logo image) */
+.loan-brand-wrap {
+    flex-shrink: 0;
+}
+
+a.loan-brand {
+    display: flex !important;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none !important;
+    line-height: 1.2;
+}
+
+a.loan-brand:hover .loan-brand__title,
+a.loan-brand:focus-visible .loan-brand__title {
+    color: var(--loan-gold, #d4a853);
+}
+
+.loan-brand__mark {
+    flex-shrink: 0;
+    width: 4px;
+    height: 44px;
+    border-radius: 2px;
+    background: linear-gradient(180deg, #6b2d8a 0%, #d4a853 100%);
+}
+
+.loan-brand__text {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.loan-brand__title {
+    font-family: "Roboto Slab", Georgia, serif;
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: #1a1a2e;
+    transition: color 0.2s ease;
+}
+
+.loan-brand__sub {
+    font-family: Lato, Roboto, sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: #6b2d8a;
+}
+
+@media (max-width: 640px) {
+    .loan-brand__title {
+        font-size: 17px;
+    }
+
+    .loan-brand__mark {
+        height: 36px;
+    }
+}
+
+/* Services page intro */
+.loan-services-intro {
+    padding: 2.5rem 15px 0;
+    background: #fff;
+}
+
+.loan-services-intro__inner {
+    max-width: 720px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.loan-services-intro__title {
+    margin: 0;
+    font-family: "Roboto Slab", Georgia, serif;
+    font-size: clamp(28px, 4vw, 38px);
+    font-weight: 700;
+    color: #1a1a2e;
+}
+
+.loan-services-intro__lead {
+    margin: 1rem 0 0;
+    font-size: 17px;
+    line-height: 1.7;
+    color: #555;
+}
+
+.loan-services-page .loan-home-expertise {
+    padding-top: 2rem;
+}
+
+.loan-services-nav-cards {
+    padding: 0 15px 1.5rem;
+    background: #fff;
+}
+
+.loan-services-nav-cards__grid {
+    display: grid;
+    gap: 12px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+@media (min-width: 640px) {
+    .loan-services-nav-cards__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 992px) {
+    .loan-services-nav-cards__grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.loan-services-nav-cards__card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 16px 18px;
+    text-decoration: none !important;
+    background: linear-gradient(135deg, #6b2d8a 0%, #4a1f5c 100%);
+    color: #fff !important;
+    border-radius: 4px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.loan-services-nav-cards__card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 24px rgba(107, 45, 138, 0.35);
+    color: #fff !important;
+}
+
+.loan-services-nav-cards__title {
+    font-weight: 700;
+    font-size: 15px;
+}
+
+.loan-services-nav-cards__arrow {
+    opacity: 0.85;
+    font-size: 18px;
+}
+
+.loan-home-expertise__card-title a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.loan-home-expertise__card-title a:hover {
+    text-decoration: underline;
+}
+
+.loan-home-expertise__card--dark .loan-home-expertise__card-title a {
+    color: #fff;
+}
+
+/* Individual finance service pages */
+.loan-finance-svc__hero {
+    padding: 2.5rem 15px;
+    background: linear-gradient(135deg, #1a1a2e 0%, #4a1f5c 55%, #6b2d8a 100%);
+    color: #fff;
+}
+
+.loan-finance-svc__hero-inner {
+    max-width: 720px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.loan-finance-svc__icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.12);
+    font-size: 22px;
+    color: #d4a853;
+}
+
+.loan-finance-svc__title {
+    margin: 1rem 0 0;
+    font-family: "Roboto Slab", Georgia, serif;
+    font-size: clamp(28px, 4vw, 40px);
+    font-weight: 700;
+}
+
+.loan-finance-svc__tagline {
+    margin: 0.5rem 0 0;
+    font-size: 18px;
+    font-weight: 600;
+    color: #d4a853;
+}
+
+.loan-finance-svc__lead {
+    margin: 1rem 0 0;
+    font-size: 16px;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.loan-finance-svc__cta {
+    display: inline-block;
+    margin-top: 1.5rem;
+    padding: 14px 28px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-size: 13px;
+    color: #1a1a2e !important;
+    background: #d4a853;
+    border-radius: 4px;
+    text-decoration: none !important;
+    transition: background 0.2s ease;
+}
+
+.loan-finance-svc__cta:hover {
+    background: #e8c47a;
+    color: #1a1a2e !important;
+}
+
+.loan-finance-svc__body {
+    padding: 2.5rem 15px 3rem;
+    background: #f7f5f9;
+}
+
+.loan-finance-svc__body-inner {
+    max-width: 640px;
+    margin: 0 auto;
+}
+
+.loan-finance-svc__heading {
+    margin: 0 0 1rem;
+    font-family: "Roboto Slab", Georgia, serif;
+    font-size: 24px;
+    color: #1a1a2e;
+}
+
+.loan-finance-svc__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.loan-finance-svc__list li {
+    position: relative;
+    padding: 0.5rem 0 0.5rem 1.5rem;
+    font-size: 16px;
+    line-height: 1.55;
+    color: #444;
+    border-bottom: 1px solid #e8e4ec;
+}
+
+.loan-finance-svc__list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.95rem;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #6b2d8a;
+}
+
+.loan-finance-svc__contact {
+    margin: 1.5rem 0 0;
+    font-size: 16px;
+}
+
+.loan-finance-svc__contact a {
+    color: #6b2d8a;
+    font-weight: 700;
+}
+
+/* —— Loan service landing pages (Home Loan, Investment Loan) —— */
+.loan-svc-lp-kicker {
+    margin: 0 0 10px;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--loan-expertise-light);
+}
+
+.loan-svc-lp-hero .loan-svc-lp-kicker,
+.loan-svc-lp-cta__box .loan-svc-lp-kicker {
+    color: rgba(255, 255, 255, 0.82);
+}
+
+.loan-svc-lp-kicker--light {
+    color: rgba(255, 255, 255, 0.75);
+}
+
+.loan-svc-lp-h2 {
+    margin: 0;
+    font-family: "Roboto Slab", Georgia, serif;
+    font-size: clamp(26px, 3.5vw, 34px);
+    font-weight: 700;
+    line-height: 1.25;
+    color: #1a1a2e;
+}
+
+.loan-svc-lp-h2--light {
+    color: #fff !important;
+}
+
+.loan-svc-lp-lead {
+    margin: 0.65rem 0 0;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--loan-expertise-dark);
+}
+
+.loan-svc-lp-head {
+    margin-bottom: 2rem;
+}
+
+.loan-svc-lp-head--center {
+    text-align: center;
+}
+
+.loan-svc-lp-prose p {
+    margin: 0 0 1rem;
+    font-size: 16px;
+    line-height: 1.75;
+    color: #555;
+}
+
+.loan-svc-lp-prose p:last-child {
+    margin-bottom: 0;
+}
+
+.loan-svc-lp-prose--dark p {
+    color: #444;
+}
+
+.loan-svc-lp-prose--light p {
+    color: rgba(255, 255, 255, 0.9) !important;
+}
+
+.loan-svc-lp-prose--center {
+    text-align: center;
+}
+
+.loan-svc-lp-prose--center p {
+    text-align: center;
+}
+
+.loan-svc-lp-hero {
+    padding: 2.5rem 15px 3rem;
+    background: linear-gradient(135deg, var(--loan-expertise-dark) 0%, var(--loan-expertise-mid) 45%, var(--loan-expertise-light) 100%);
+    color: #fff !important;
+}
+
+.loan-svc-lp-hero__inner {
+    max-width: 820px;
+    margin: 0 auto;
+}
+
+.loan-svc-lp-hero__title {
+    margin: 0;
+    font-family: "Roboto Slab", Georgia, serif;
+    font-size: clamp(28px, 4vw, 42px);
+    font-weight: 700;
+    line-height: 1.15;
+    color: #fff !important;
+}
+
+.loan-svc-lp-hero .loan-svc-lp-prose p {
+    color: rgba(255, 255, 255, 0.92) !important;
+}
+
+.loan-svc-lp-hero__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 1.75rem;
+}
+
+.loan-svc-lp-hero__actions--center {
+    justify-content: center;
+}
+
+.loan-svc-lp-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 26px;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    text-decoration: none !important;
+    color: #fff !important;
+    background: var(--loan-coral);
+    border-radius: 4px;
+    border: 2px solid var(--loan-coral);
+    transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.loan-svc-lp-btn:hover {
+    background: var(--loan-coral-dark);
+    border-color: var(--loan-coral-dark);
+    color: #fff !important;
+}
+
+.loan-svc-lp-btn--outline {
+    background: transparent !important;
+    color: #fff !important;
+    border-color: rgba(255, 255, 255, 0.85);
+}
+
+.loan-svc-lp-btn--outline:hover {
+    background: #fff !important;
+    color: var(--loan-expertise-dark) !important;
+}
+
+.loan-svc-lp-block {
+    padding: 2.75rem 15px;
+    background: #fff;
+}
+
+.loan-svc-lp-block--alt {
+    background: var(--loan-svc-bg-alt);
+}
+
+.loan-svc-lp-block--dark {
+    background: linear-gradient(145deg, var(--loan-expertise-dark) 0%, var(--loan-expertise-light) 100%);
+}
+
+.loan-svc-lp-block__inner {
+    max-width: 1170px;
+    margin: 0 auto;
+}
+
+.loan-svc-lp-block__inner--narrow {
+    max-width: 760px;
+}
+
+.loan-svc-lp-cards {
+    display: grid;
+    gap: 1.25rem;
+}
+
+@media (min-width: 640px) {
+    .loan-svc-lp-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .loan-svc-lp-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.loan-svc-lp-card {
+    padding: 1.5rem 1.35rem;
+    background: #fff;
+    border: 1px solid var(--loan-svc-border);
+    border-top: 3px solid var(--loan-expertise-light);
+    border-radius: 4px;
+    box-shadow: 0 6px 20px rgba(52, 41, 173, 0.06);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.loan-svc-lp-block--alt .loan-svc-lp-card {
+    background: #fff;
+}
+
+.loan-svc-lp-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 28px rgba(85, 74, 222, 0.14);
+}
+
+.loan-svc-lp-card__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: var(--loan-svc-icon-bg);
+    color: var(--loan-expertise-light);
+    font-size: 18px;
+}
+
+.loan-svc-lp-card__title {
+    margin: 1rem 0 0.5rem;
+    font-family: "Roboto Slab", Georgia, serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: #1a1a2e;
+}
+
+.loan-svc-lp-card__text {
+    margin: 0 0 0.6rem;
+    font-size: 15px;
+    line-height: 1.6;
+    color: #555;
+}
+
+.loan-svc-lp-card__text:last-child {
+    margin-bottom: 0;
+}
+
+.loan-svc-lp-split {
+    display: grid;
+    gap: 2rem;
+    align-items: start;
+}
+
+@media (min-width: 992px) {
+    .loan-svc-lp-split {
+        grid-template-columns: 0.95fr 1.05fr;
+    }
+}
+
+.loan-svc-lp-why {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 1rem;
+}
+
+.loan-svc-lp-why li {
+    padding: 1.15rem 1.25rem;
+    background: var(--loan-svc-bg-soft);
+    border-left: 4px solid var(--loan-expertise-light);
+    border-radius: 0 4px 4px 0;
+}
+
+.loan-svc-lp-why strong {
+    display: block;
+    font-size: 15px;
+    color: #1a1a2e;
+    margin-bottom: 0.35rem;
+}
+
+.loan-svc-lp-why span {
+    display: block;
+    font-size: 14px;
+    line-height: 1.55;
+    color: #555;
+}
+
+.loan-svc-lp-checklist {
+    list-style: none;
+    margin: 0 0 1.25rem;
+    padding: 0;
+}
+
+.loan-svc-lp-checklist li {
+    position: relative;
+    padding: 0.45rem 0 0.45rem 1.5rem;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #444;
+}
+
+.loan-svc-lp-checklist li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.85rem;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--loan-expertise-light);
+    box-shadow: 0 0 0 3px rgba(85, 74, 222, 0.18);
+}
+
+.loan-svc-lp-cta {
+    padding: 2.5rem 15px 3.5rem;
+    background: var(--loan-svc-bg-alt);
+}
+
+.loan-svc-lp-cta__box {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 2.5rem 2rem;
+    text-align: center;
+    border-radius: 6px;
+    background: linear-gradient(135deg, var(--loan-expertise-dark) 0%, var(--loan-expertise-light) 100%);
+    box-shadow: 0 16px 40px rgba(52, 41, 173, 0.2);
+}
+
+.loan-svc-lp-cta__title {
+    margin: 0;
+    font-family: "Roboto Slab", Georgia, serif;
+    font-size: clamp(24px, 3vw, 32px);
+    font-weight: 700;
+    color: #fff !important;
+    line-height: 1.2;
+}
+
+.loan-svc-lp-cta .loan-svc-lp-btn--outline {
+    border-color: #fff;
+}
+
+/* Beat Avada .post-content heading/paragraph colors on blue bands */
+.loan-svc-lp .post-content .loan-svc-lp-hero,
+.loan-svc-lp .post-content .loan-svc-lp-block--dark,
+.loan-svc-lp .post-content .loan-svc-lp-cta__box {
+    color: #fff !important;
+}
+
+.loan-svc-lp .post-content .loan-svc-lp-hero h1,
+.loan-svc-lp .post-content .loan-svc-lp-hero .loan-svc-lp-hero__title,
+.loan-svc-lp .post-content .loan-svc-lp-block--dark h2,
+.loan-svc-lp .post-content .loan-svc-lp-block--dark .loan-svc-lp-h2--light,
+.loan-svc-lp .post-content .loan-svc-lp-cta__box h2,
+.loan-svc-lp .post-content .loan-svc-lp-cta__box .loan-svc-lp-cta__title {
+    color: #fff !important;
+}
+
+.loan-svc-lp .post-content .loan-svc-lp-hero p,
+.loan-svc-lp .post-content .loan-svc-lp-hero .loan-svc-lp-prose p,
+.loan-svc-lp .post-content .loan-svc-lp-block--dark .loan-svc-lp-prose--light p,
+.loan-svc-lp .post-content .loan-svc-lp-cta__box .loan-svc-lp-prose--light p,
+.loan-svc-lp .post-content .loan-svc-lp-cta__box .loan-svc-lp-prose p {
+    color: rgba(255, 255, 255, 0.92) !important;
+}
+
+.loan-svc-lp .post-content .loan-svc-lp-hero .loan-svc-lp-kicker,
+.loan-svc-lp .post-content .loan-svc-lp-block--dark .loan-svc-lp-kicker--light,
+.loan-svc-lp .post-content .loan-svc-lp-cta__box .loan-svc-lp-kicker {
+    color: rgba(255, 255, 255, 0.82) !important;
+}
+
+.screen-reader-text {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
 }
 
 .fusion-header-wrapper .fusion-main-menu {

@@ -46,6 +46,17 @@ return [
     */
     'queue_notifications' => env('MAIL_QUEUE_NOTIFICATIONS', false),
 
+    /*
+    |--------------------------------------------------------------------------
+    | Send admin alert immediately on form submit
+    |--------------------------------------------------------------------------
+    |
+    | When true, new enquiry emails are sent during the request (reliable on
+    | Windows/local). When false, they are sent right after the HTTP response.
+    |
+    */
+    'send_admin_immediately' => env('MAIL_SEND_ADMIN_IMMEDIATELY', true),
+
     'company' => [
         'legal_name' => env('MAIL_COMPANY_NAME', 'INN Group'),
         'address' => env('MAIL_COMPANY_ADDRESS', 'Australia'),

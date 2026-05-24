@@ -4,7 +4,7 @@
 
 @section('content')
     <header class="mb-6 flex flex-wrap items-center justify-between gap-4">
-        <a href="{{ route('admin.contacts.index', request()->only(['status', 'search', 'sort'])) }}" class="inline-flex items-center gap-1 text-sm font-medium text-tax-teal hover:underline">
+        <a href="{{ admin_route('contacts.index', request()->only(['status', 'search', 'sort'])) }}" class="inline-flex items-center gap-1 text-sm font-medium text-tax-teal hover:underline">
             &larr; Back to leads
         </a>
         <x-admin.status-badge :status="$contact->status" />
@@ -64,7 +64,7 @@
 
             <div class="mt-6 space-y-3">
                 @if ($contact->isPending())
-                    <form action="{{ route('admin.contacts.approve', $contact) }}" method="POST">
+                    <form action="{{ admin_route('contacts.approve', $contact) }}" method="POST">
                         @csrf
                         @method('PATCH')
                         <button type="submit" class="btn-primary w-full bg-tax-teal text-white hover:bg-tax-deep">
@@ -81,7 +81,7 @@
 
                 <form
                     method="POST"
-                    action="{{ route('admin.contacts.destroy', $contact) }}"
+                    action="{{ admin_route('contacts.destroy', $contact) }}"
                     onsubmit="return confirm('Delete this contact lead? This cannot be undone.');"
                 >
                     @csrf

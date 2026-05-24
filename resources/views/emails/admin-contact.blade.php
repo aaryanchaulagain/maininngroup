@@ -34,7 +34,7 @@
     <div style="padding:16px;background-color:#f8fafc;border-radius:8px;border:1px solid #e2e8f0;font-size:14px;line-height:1.7;color:#334155;white-space:pre-wrap;">{{ $contact->message }}</div>
 
     <p style="margin:24px 0 0;text-align:center;">
-        <a href="{{ route('admin.contacts.show', $contact) }}" style="display:inline-block;padding:12px 24px;background-color:#0d9488;color:#ffffff;font-size:14px;font-weight:600;text-decoration:none;border-radius:8px;">
+        <a href="{{ admin_contact_show_url($contact) }}" style="display:inline-block;padding:12px 24px;background-color:#0d9488;color:#ffffff;font-size:14px;font-weight:600;text-decoration:none;border-radius:8px;">
             View in admin dashboard
         </a>
     </p>

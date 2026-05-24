@@ -82,34 +82,126 @@
     color: #ffffff !important;
 }
 
-.tax-zimed-footer .elementor-divider-separator {
-    border-top-color: rgba(255, 255, 255, 0.12) !important;
-}
-
-.tax-zimed-footer .elementor-element-e3d5a1b,
-.tax-zimed-footer .elementor-element-e3d5a1b .elementor-column,
-.tax-zimed-footer .elementor-element-e3d5a1b .elementor-widget-wrap {
+/* Footer bottom bar — copyright left, credits right (original layout) */
+.tax-footer-bar {
+    margin-top: 6px;
     background-color: #1a1c28 !important;
 }
 
-.tax-zimed-footer .elementor-element-e3d5a1b {
-    padding: 18px 0 22px !important;
-    margin-top: 8px;
+.tax-footer-bar__rule {
+    height: 1px;
+    margin: 0 0 20px;
+    background-color: rgba(255, 255, 255, 0.1);
 }
 
-.tax-zimed-footer .elementor-element-1e62f70 .elementor-widget-container,
-.tax-zimed-footer .elementor-element-55703c9 .elementor-widget-container {
-    color: #9aa0b0 !important;
+.tax-footer-bar__wrap {
+    max-width: 1170px;
+    margin: 0 auto;
+    padding: 0 15px 24px;
+}
+
+.tax-footer-bar__inner {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    width: 100%;
+}
+
+.tax-footer-bar__copy,
+.tax-footer-bar__credit {
+    margin: 0;
+    padding: 0;
     font-size: 14px;
+    line-height: 1.6;
+    color: #9aa0b0;
 }
 
-.tax-zimed-footer .elementor-element-55703c9 a {
-    color: #e74c3c !important;
+.tax-footer-bar__copy {
+    flex: 1 1 auto;
+    text-align: left;
+}
+
+.tax-footer-bar__credit {
+    flex: 0 0 auto;
+    text-align: right;
+    white-space: nowrap;
+}
+
+@media (max-width: 575px) {
+    .tax-footer-bar__inner {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .tax-footer-bar__credit {
+        text-align: left;
+        white-space: normal;
+    }
+}
+
+.tax-footer-bar__copy a {
+    color: #b8bcc8;
+    font-weight: 400;
+    text-decoration: none;
+}
+
+.tax-footer-bar__copy a:hover,
+.tax-footer-bar__copy a:focus-visible {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+.tax-footer-bar__credit a {
+    color: #ff8a3d !important;
     font-weight: 600;
+    text-decoration: none;
 }
 
-.tax-zimed-footer .elementor-element-55703c9 a:hover {
-    color: #ff6b6b !important;
+.tax-footer-bar__credit a:hover,
+.tax-footer-bar__credit a:focus-visible {
+    color: #ffb07a !important;
+    text-decoration: underline;
+}
+
+/* Back to top — match original coral circle */
+.scroll-to-target.scroll-to-top {
+    position: fixed;
+    right: 22px;
+    bottom: 22px;
+    z-index: 9991;
+    width: 52px;
+    height: 52px;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    background: #e74c3c !important;
+    color: #ffffff !important;
+    border-radius: 50%;
+    box-shadow: 0 8px 24px rgba(231, 76, 60, 0.42);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(16px) scale(0.92);
+    transition: opacity 0.35s ease, visibility 0.35s ease, transform 0.35s ease, background 0.2s ease;
+}
+
+.scroll-to-target.scroll-to-top:hover,
+.scroll-to-target.scroll-to-top:focus-visible {
+    background: #c0392b !important;
+    color: #ffffff !important;
+}
+
+.scroll-to-target.scroll-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0) scale(1);
+}
+
+.scroll-to-target.scroll-to-top i {
+    font-size: 20px;
+    line-height: 1;
 }
 
 .tax-zimed-footer .elementor-element-6c72338,
@@ -698,25 +790,176 @@ body.page-about .cta-four + .cta-two__style-three {
     color: #000000;
 }
 
-/* Calculator page */
-.tax-calculator {
-    padding: 40px 0 70px;
+/* Calculator page – home loan widget + lender panel */
+.tax-hl-calc {
+    padding: 20px 0 50px;
+    background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);
 }
 
-.tax-calculator-tabs .elementor-widget-tabs .elementor-tab-desktop-title.elementor-active,
-.tax-calculator-tabs .elementor-tab-desktop-title.elementor-active {
-    background-color: #f4f7ff;
+.tax-hl-calc__header,
+.tax-lenders__header {
+    text-align: center;
+    max-width: 720px;
+    margin: 0 auto 28px;
 }
 
-.tax-calculator-tabs__iframe {
+.tax-hl-calc__title,
+.tax-lenders__title {
+    margin: 0 0 10px;
+    font-size: clamp(26px, 3vw, 34px);
+    font-weight: 700;
+    color: #0b1f3f;
+    line-height: 1.2;
+}
+
+.tax-hl-calc__lead,
+.tax-lenders__lead {
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.65;
+    color: #555;
+}
+
+.tax-hl-calc__frame-wrap {
+    max-width: 1100px;
+    margin: 0 auto;
+    background: #fff;
+    border: 1px solid #e8ecf3;
+    border-radius: 8px;
+    box-shadow: 0 12px 40px rgba(11, 31, 63, 0.08);
+    overflow: hidden;
+}
+
+.tax-hl-calc__iframe {
     display: block;
     width: 100%;
+    min-height: 1000px;
+    height: 1000px;
     border: 0;
-    min-height: 615px;
+    background: #fff;
 }
 
-.tax-calculator-tabs__iframe--jotform {
-    min-height: 450px;
+.tax-lenders {
+    padding: 50px 0 60px;
+    background: #fff;
+}
+
+.tax-lenders__category {
+    margin: 0 0 20px;
+    font-size: 18px;
+    font-weight: 700;
+    color: #0b1f3f;
+    text-align: center;
+}
+
+.tax-lenders__major {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+    max-width: 1000px;
+    margin: 0 auto 40px;
+}
+
+@media (min-width: 640px) {
+    .tax-lenders__major {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+@media (min-width: 992px) {
+    .tax-lenders__major {
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+    }
+}
+
+.tax-lenders__logo-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 88px;
+    padding: 16px 20px;
+    background: #f8fafc;
+    border: 1px solid #e8ecf3;
+    border-radius: 8px;
+    position: relative;
+}
+
+.tax-lenders__logo-img {
+    max-width: 120px;
+    max-height: 48px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+}
+
+.tax-lenders__logo-fallback {
+    display: none;
+    font-size: 13px;
+    font-weight: 700;
+    text-align: center;
+    color: #0b1f3f;
+    line-height: 1.3;
+}
+
+.tax-lenders__slider-outer {
+    overflow: hidden;
+    margin: 0 -15px;
+    padding: 8px 0;
+    mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+    -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+}
+
+.tax-lenders__slider-track {
+    display: flex;
+    align-items: stretch;
+    gap: 14px;
+    width: max-content;
+    animation: tax-lenders-scroll 55s linear infinite;
+}
+
+.tax-lenders__slider-outer:hover .tax-lenders__slider-track {
+    animation-play-state: paused;
+}
+
+@keyframes tax-lenders-scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.tax-lenders__slide {
+    flex: 0 0 auto;
+    width: 140px;
+    padding: 14px 12px;
+    text-align: center;
+    background: #f8fafc;
+    border: 1px solid #e8ecf3;
+    border-radius: 8px;
+}
+
+.tax-lenders__slide-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 52px;
+    margin-bottom: 8px;
+}
+
+.tax-lenders__slide-logo img {
+    max-width: 48px;
+    max-height: 48px;
+    object-fit: contain;
+}
+
+.tax-lenders__slide-name {
+    display: block;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1.35;
+    color: #0b1f3f;
 }
 
 /* Tax lodgement page */
@@ -854,4 +1097,361 @@ body.page-about .cta-four + .cta-two__style-three {
 .tax-contact-errors ul {
     margin: 0;
     padding-left: 1.25rem;
+}
+
+/* —— Tax service landing pages (BAS/GST, etc.) —— */
+.tax-svc-landing {
+    --tax-svc-navy: #272839;
+    --tax-svc-accent: #9361ff;
+    --tax-svc-orange: #ff8a3d;
+    --tax-svc-muted: #555555;
+    --tax-svc-border: #e8e8ef;
+    --tax-svc-ice: #f7f7fb;
+}
+
+.tax-svc-kicker {
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--tax-svc-accent);
+    margin: 0 0 10px;
+}
+
+.tax-svc-kicker--light {
+    color: rgba(255, 255, 255, 0.75);
+}
+
+.tax-svc-h2 {
+    margin: 0;
+    font-size: clamp(26px, 3.5vw, 34px);
+    font-weight: 700;
+    line-height: 1.25;
+    color: var(--tax-svc-navy);
+}
+
+.tax-svc-h2--light {
+    color: #fff;
+}
+
+.tax-svc-head {
+    margin-bottom: 2rem;
+}
+
+.tax-svc-head--center {
+    text-align: center;
+}
+
+.tax-svc-sub {
+    margin: 12px auto 0;
+    max-width: 40rem;
+    font-size: 17px;
+    line-height: 1.6;
+    color: var(--tax-svc-muted);
+}
+
+.tax-svc-lead {
+    margin-top: 10px;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--tax-svc-navy);
+}
+
+.tax-svc-prose p {
+    font-size: 17px;
+    line-height: 1.75;
+    color: var(--tax-svc-muted);
+    text-align: justify;
+    margin: 0 0 1rem;
+}
+
+.tax-svc-prose p:last-child {
+    margin-bottom: 0;
+}
+
+.tax-svc-prose--light p {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.tax-svc-prose--center {
+    text-align: center;
+}
+
+.tax-svc-prose--center p {
+    text-align: center;
+}
+
+.tax-svc-hero {
+    padding: 50px 0 55px;
+    background: linear-gradient(135deg, #f7f7fb 0%, #fff 55%, #f3efff 100%);
+}
+
+.tax-svc-hero__grid {
+    display: grid;
+    gap: 2.5rem;
+    align-items: center;
+}
+
+@media (min-width: 992px) {
+    .tax-svc-hero__grid {
+        grid-template-columns: 1.05fr 0.95fr;
+    }
+}
+
+.tax-svc-hero__title {
+    margin: 0 0 1.25rem;
+    font-size: clamp(28px, 4vw, 40px);
+    font-weight: 700;
+    line-height: 1.15;
+    color: var(--tax-svc-navy);
+}
+
+.tax-svc-hero__media img {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    display: block;
+    border-radius: 8px;
+    box-shadow: 0 20px 45px rgba(39, 40, 57, 0.12);
+}
+
+.tax-svc-hero__actions,
+.tax-svc-cta__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 1.75rem;
+}
+
+.tax-svc-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 28px;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 4px;
+}
+
+.tax-svc-btn--outline {
+    background: transparent !important;
+    color: var(--tax-svc-navy) !important;
+    border: 2px solid var(--tax-svc-navy);
+}
+
+.tax-svc-btn--outline:hover {
+    background: var(--tax-svc-navy) !important;
+    color: #fff !important;
+}
+
+.tax-svc-block {
+    padding: 55px 0;
+}
+
+.tax-svc-block--alt {
+    background: var(--tax-svc-ice);
+}
+
+.tax-svc-block--dark {
+    background: linear-gradient(145deg, var(--tax-svc-navy) 0%, #3d3f55 100%);
+    color: #fff;
+}
+
+.tax-svc-cards {
+    display: grid;
+    gap: 1.25rem;
+}
+
+@media (min-width: 768px) {
+    .tax-svc-cards--2 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.tax-svc-card {
+    padding: 1.5rem 1.35rem;
+    background: #fff;
+    border: 1px solid var(--tax-svc-border);
+    border-radius: 8px;
+    border-top: 3px solid var(--tax-svc-accent);
+    box-shadow: 0 8px 24px rgba(39, 40, 57, 0.06);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.tax-svc-block--alt .tax-svc-card {
+    background: #fff;
+}
+
+.tax-svc-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 36px rgba(39, 40, 57, 0.1);
+}
+
+.tax-svc-card__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #f3efff 0%, #ebe4ff 100%);
+    color: var(--tax-svc-accent);
+    font-size: 18px;
+}
+
+.tax-svc-card__title {
+    margin: 1rem 0 0.5rem;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.35;
+    color: var(--tax-svc-navy);
+}
+
+.tax-svc-card__text {
+    margin: 0 0 0.65rem;
+    font-size: 15px;
+    line-height: 1.65;
+    color: var(--tax-svc-muted);
+    text-align: left;
+}
+
+.tax-svc-card__text:last-child {
+    margin-bottom: 0;
+}
+
+.tax-svc-split {
+    display: grid;
+    gap: 2.5rem;
+    align-items: start;
+}
+
+@media (min-width: 992px) {
+    .tax-svc-split {
+        grid-template-columns: 0.95fr 1.05fr;
+    }
+}
+
+.tax-svc-why {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 1rem;
+}
+
+.tax-svc-why li {
+    padding: 1.15rem 1.25rem;
+    background: var(--tax-svc-ice);
+    border-left: 4px solid var(--tax-svc-accent);
+    border-radius: 0 8px 8px 0;
+}
+
+.tax-svc-why strong {
+    display: block;
+    font-size: 16px;
+    color: var(--tax-svc-navy);
+    margin-bottom: 0.35rem;
+}
+
+.tax-svc-why span {
+    display: block;
+    font-size: 15px;
+    line-height: 1.55;
+    color: var(--tax-svc-muted);
+}
+
+.tax-svc-highlight {
+    max-width: 52rem;
+    margin: 0 auto;
+}
+
+.tax-svc-tags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.tax-svc-tags li {
+    padding: 10px 18px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--tax-svc-navy);
+    background: #fff;
+    border: 1px solid var(--tax-svc-border);
+    border-radius: 999px;
+    transition: border-color 0.2s, color 0.2s, background 0.2s;
+}
+
+.tax-svc-tags li:hover {
+    border-color: var(--tax-svc-accent);
+    color: var(--tax-svc-accent);
+    background: #f3efff;
+}
+
+.tax-svc-cta {
+    padding: 55px 0 70px;
+    background: #fff;
+}
+
+.tax-svc-cta__inner {
+    max-width: 44rem;
+    margin: 0 auto;
+    padding: 2.5rem 2rem;
+    text-align: center;
+    border-radius: 12px;
+    background: linear-gradient(145deg, var(--tax-svc-navy) 0%, #3d3f55 100%);
+    box-shadow: 0 22px 50px rgba(39, 40, 57, 0.18);
+}
+
+.tax-svc-cta__title {
+    margin: 0.35rem 0 0;
+    font-size: clamp(24px, 3vw, 32px);
+    font-weight: 700;
+    line-height: 1.2;
+    color: #fff;
+}
+
+.tax-svc-cta__emphasis {
+    margin: 1.25rem 0 0;
+    font-size: 15px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--tax-svc-orange);
+}
+
+.tax-svc-cta__sub {
+    margin: 0.5rem 0 0;
+    font-size: 16px;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.tax-svc-cta .tax-svc-btn--outline {
+    color: #fff !important;
+    border-color: rgba(255, 255, 255, 0.85);
+}
+
+.tax-svc-cta .tax-svc-btn--outline:hover {
+    background: #fff !important;
+    color: var(--tax-svc-navy) !important;
+}
+
+.tax-svc-cta__actions {
+    justify-content: center;
+}
+
+.tax-svc-intro-band {
+    max-width: 52rem;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.tax-svc-intro-band .tax-svc-prose {
+    margin-top: 1.25rem;
+    text-align: left;
 }

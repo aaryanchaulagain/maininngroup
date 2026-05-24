@@ -1,20 +1,14 @@
 @extends('layouts.admin')
 @section('page-title', $team->exists ? 'Edit team member' : 'New team member')
 @section('content')
-<form method="POST" enctype="multipart/form-data" action="{{ $team->exists ? route('admin.teams.update', $team) : route('admin.teams.store') }}" class="max-w-2xl space-y-4 rounded-xl border bg-white p-6">
+<form method="POST" enctype="multipart/form-data" action="{{ $team->exists ? admin_route('teams.update', $team) : admin_route('teams.store') }}" class="max-w-2xl space-y-4 rounded-xl border bg-white p-6">
     @csrf @if($team->exists) @method('PUT') @endif
 
     <p class="rounded-lg border border-sky-200 bg-sky-50 px-4 py-3 text-sm text-sky-900">
         <strong>Step 1 — Card on Meet The Team.</strong> After saving, you will open <strong>Step 2</strong> to add the full profile introduction (shown when visitors click the name).
     </p>
 
-    <p>
-        <label class="text-sm font-medium">Domain</label>
-        <select name="source_domain" class="mt-1 block w-full rounded border px-3 py-2" required>
-            <option value="tax" @selected(old('source_domain', $team->source_domain ?? 'tax') === 'tax')>tax — Innovative Tax (innovativetax)</option>
-            <option value="loan" @selected(old('source_domain', $team->source_domain) === 'loan')>loan — Innovative Loan</option>
-        </select>
-    </p>
+    <x-admin.source-domain-field :value="old('source_domain', $team->source_domain)" :locked="$siteLocked ?? false" />
     <p><label class="text-sm font-medium">Name</label><input name="name" value="{{ old('name', $team->name) }}" required class="mt-1 block w-full rounded border px-3 py-2"></p>
     <p>
         <label class="text-sm font-medium">Position / role (card)</label>
@@ -53,7 +47,7 @@
             <span class="mt-1 block text-xs text-slate-500">Profile URL: {{ route('tax.about.team.show', ['slug' => old('slug', $team->slug) ?: 'example']) }}</span>
         </p>
         <p>
-            <a href="{{ route('admin.teams.intro.edit', $team) }}" class="text-sm font-medium text-tax-teal hover:underline">Edit profile introduction (Step 2) →</a>
+            <a href="{{ admin_route('teams.intro.edit', $team) }}" class="text-sm font-medium text-tax-teal hover:underline">Edit profile introduction (Step 2) →</a>
         </p>
     @endif
 
@@ -71,7 +65,7 @@
     <div class="flex flex-wrap gap-3">
         <button type="submit" class="btn-primary bg-tax-teal text-white">Save member</button>
         @if ($team->exists)
-            <a href="{{ route('admin.teams.intro.edit', $team) }}" class="inline-flex items-center rounded-lg border border-slate-300 px-4 py-2 text-sm font-medium text-slate-700 hover:bg-slate-50">Edit introduction</a>
+            <a href="{{ admin_route('teams.intro.edit', $team) }}" class="inline-flex items-center rounded-lg border border-slate-300 px-4 py-2 text-sm font-medium text-slate-700 hover:bg-slate-50">Edit introduction</a>
         @endif
     </div>
 </form>

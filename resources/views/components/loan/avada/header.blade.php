@@ -4,6 +4,14 @@
     $cdn = 'https://innovativewealth.com.au';
     $loanEmail = config('domains.loan_contact_email');
     $inngroupUrl = domain_url('main');
+    $serviceMenu = [
+        'home-loan' => 'Home Loan',
+        'investment-loan' => 'Investment Loan',
+        'refinancing' => 'Refinancing',
+        'asset-finance' => 'Asset Finance',
+        'commercial-finance' => 'Commercial Finance',
+    ];
+    $servicesActive = $active === 'services-index' || str_starts_with($active, 'services-');
     $socialLinks = [
         ['label' => 'Facebook', 'url' => 'https://www.facebook.com/', 'icon' => 'fa-facebook-f'],
         ['label' => 'Twitter', 'url' => 'https://twitter.com/', 'icon' => 'fa-x-twitter'],
@@ -50,12 +58,13 @@
         <div class="fusion-header-sticky-height"></div>
         <div class="fusion-header">
             <div class="fusion-row">
-                <div class="fusion-logo" data-margin-top="31px" data-margin-bottom="31px">
-                    <a class="fusion-logo-link" href="{{ route('loan.home') }}">
-                        <img src="{{ $cdn }}/wp-content/uploads/2020/08/financial-advisor-logo.png"
-                             srcset="{{ $cdn }}/wp-content/uploads/2020/08/financial-advisor-logo.png 1x, {{ $cdn }}/wp-content/uploads/2020/08/financial-advisor-logo@2x.png 2x"
-                             alt="Innovative Wealth – Mortgage Broker Logo"
-                             class="fusion-standard-logo">
+                <div class="fusion-logo loan-brand-wrap" data-margin-top="31px" data-margin-bottom="31px">
+                    <a class="fusion-logo-link loan-brand" href="{{ route('loan.home') }}" aria-label="Innovative Finance — Home">
+                        <span class="loan-brand__mark" aria-hidden="true"></span>
+                        <span class="loan-brand__text">
+                            <span class="loan-brand__title">Innovative Finance</span>
+                            <span class="loan-brand__sub">INN Group</span>
+                        </span>
                     </a>
                 </div>
                 <nav class="fusion-main-menu" aria-label="Main Menu">
@@ -78,6 +87,16 @@
                                 <li class="menu-item {{ $active === 'team' ? 'current-menu-item' : '' }}">
                                     <a href="{{ route('loan.about.team') }}" class="fusion-bar-highlight"><span>Team</span></a>
                                 </li>
+                            </ul>
+                        </li>
+                        <li class="menu-item menu-item-has-children fusion-dropdown-menu {{ $servicesActive ? 'current-menu-ancestor current-menu-parent' : '' }}">
+                            <a href="{{ route('loan.services.index') }}" class="fusion-bar-highlight"><span class="menu-text">Services</span></a>
+                            <ul class="sub-menu">
+                                @foreach ($serviceMenu as $slug => $label)
+                                    <li class="menu-item {{ $active === 'services-'.$slug ? 'current-menu-item' : '' }}">
+                                        <a href="{{ route('loan.services.show', $slug) }}" class="fusion-bar-highlight"><span>{{ $label }}</span></a>
+                                    </li>
+                                @endforeach
                             </ul>
                         </li>
                         <li class="menu-item {{ $active === 'articles' ? 'current-menu-item' : '' }}">

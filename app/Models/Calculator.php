@@ -27,4 +27,9 @@ class Calculator extends Model
     {
         return $query->where('active', true);
     }
+
+    public function scopeForDomain($query, string $domain)
+    {
+        return $query->where('source_domain', $domain);
+    }
 }

@@ -96,31 +96,19 @@
                             </div>
                         </div>
                     </section>
-                    <div class="elementor-element elementor-element-6f82ab2 elementor-widget-divider--view-line elementor-widget elementor-widget-divider">
-                        <div class="elementor-widget-container">
-                            <div class="elementor-divider">
-                                <span class="elementor-divider-separator"></span>
+                    <div class="tax-footer-bar" aria-label="Footer legal">
+                        <div class="tax-footer-bar__rule" aria-hidden="true"></div>
+                        <div class="tax-footer-bar__wrap">
+                            <div class="tax-footer-bar__inner">
+                                <p class="tax-footer-bar__copy">
+                                    All rights reserved to <a href="{{ route('tax.home') }}">Innovative Associate</a>.
+                                </p>
+                                <p class="tax-footer-bar__credit">
+                                    Site designed by <a href="https://ausnepit.com.au" target="_blank" rel="noopener noreferrer">AusNep IT Solutions</a>
+                                </p>
                             </div>
                         </div>
                     </div>
-                    <section class="elementor-section elementor-inner-section elementor-element-e3d5a1b elementor-section-boxed elementor-section-height-default">
-                        <div class="elementor-container elementor-column-gap-default">
-                            <div class="elementor-column elementor-col-50 elementor-inner-column elementor-element-883186e">
-                                <div class="elementor-widget-wrap elementor-element-populated">
-                                    <div class="elementor-element elementor-element-1e62f70 elementor-widget elementor-widget-text-editor">
-                                        <div class="elementor-widget-container">All rights reserved to Innovative Associate.</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="elementor-column elementor-col-50 elementor-inner-column elementor-element-70e7e23">
-                                <div class="elementor-widget-wrap elementor-element-populated">
-                                    <div class="elementor-element elementor-element-55703c9 elementor-widget elementor-widget-text-editor">
-                                        <div class="elementor-widget-container">Site designed by <a href="https://ausnepit.com.au" target="_blank">AusNep IT Solutions</a></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
                 </div>
             </div>
         </div>
@@ -141,6 +129,22 @@
         }
         if (typeof WOW !== 'undefined') {
             new WOW().init();
+        }
+
+        var $scrollTop = $('.scroll-to-target.scroll-to-top');
+        if ($scrollTop.length) {
+            $(window).on('scroll.taxScrollTop', function () {
+                if ($(this).scrollTop() > 200) {
+                    $scrollTop.addClass('visible');
+                } else {
+                    $scrollTop.removeClass('visible');
+                }
+            }).trigger('scroll.taxScrollTop');
+
+            $scrollTop.on('click', function (e) {
+                e.preventDefault();
+                $('html, body').animate({ scrollTop: 0 }, 500);
+            });
         }
     });
 </script>

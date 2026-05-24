@@ -1,21 +1,66 @@
-<aside class="hidden w-64 flex-shrink-0 border-r border-slate-200 bg-white lg:block">
-    <div class="border-b border-slate-200 px-6 py-5">
-        <p class="font-bold text-inn-navy">INN Admin</p>
-        <p class="text-xs text-slate-500">Centralized dashboard</p>
+@php
+    $sites = [
+        'slate' => ['menu' => 'admin-sidebar__menu--slate', 'dot' => 'admin-sidebar__dot--slate', 'label' => 'admin-sidebar__label--slate', 'active' => 'is-active-slate'],
+        'orange' => ['menu' => 'admin-sidebar__menu--orange', 'dot' => 'admin-sidebar__dot--orange', 'label' => 'admin-sidebar__label--orange', 'active' => 'is-active-orange'],
+        'violet' => ['menu' => 'admin-sidebar__menu--violet', 'dot' => 'admin-sidebar__dot--violet', 'label' => 'admin-sidebar__label--violet', 'active' => 'is-active-violet'],
+        'blue' => ['menu' => 'admin-sidebar__menu--blue', 'dot' => 'admin-sidebar__dot--blue', 'label' => 'admin-sidebar__label--blue', 'active' => 'is-active-blue'],
+    ];
+
+    $icons = [
+        'envelope' => '✉',
+        'newspaper' => '📰',
+        'users' => '👥',
+        'quote' => '💬',
+        'calculator' => '🧮',
+        'file' => '📄',
+    ];
+@endphp
+
+<aside class="admin-sidebar">
+    <div class="admin-sidebar__brand">
+        <p class="admin-sidebar__brand-title">INN Admin</p>
+        <p class="admin-sidebar__brand-sub">Manage each site separately</p>
     </div>
-    <nav class="space-y-1 p-4 text-sm">
-        <a href="{{ route('admin.dashboard') }}" class="{{ request()->routeIs('admin.dashboard') ? 'bg-slate-100 font-semibold' : '' }} block rounded-lg px-3 py-2 hover:bg-slate-50">Dashboard</a>
-        <a href="{{ route('admin.contacts.index') }}" class="{{ request()->routeIs('admin.contacts.*') ? 'bg-slate-100 font-semibold' : '' }} block rounded-lg px-3 py-2 hover:bg-slate-50">Contacts</a>
-        <a href="{{ route('admin.articles.index') }}" class="{{ request()->routeIs('admin.articles.*') ? 'bg-slate-100 font-semibold' : '' }} block rounded-lg px-3 py-2 hover:bg-slate-50">Articles</a>
-        <a href="{{ route('admin.teams.index') }}" class="{{ request()->routeIs('admin.teams.*') ? 'bg-slate-100 font-semibold' : '' }} block rounded-lg px-3 py-2 hover:bg-slate-50">Team</a>
-        <a href="{{ route('admin.faqs.index') }}" class="{{ request()->routeIs('admin.faqs.*') ? 'bg-slate-100 font-semibold' : '' }} block rounded-lg px-3 py-2 hover:bg-slate-50">FAQ</a>
-        <a href="{{ route('admin.testimonials.index') }}" class="{{ request()->routeIs('admin.testimonials.*') ? 'bg-slate-100 font-semibold' : '' }} block rounded-lg px-3 py-2 hover:bg-slate-50">Testimonials</a>
-        <a href="{{ route('admin.calculators.index') }}" class="{{ request()->routeIs('admin.calculators.*') ? 'bg-slate-100 font-semibold' : '' }} block rounded-lg px-3 py-2 hover:bg-slate-50">Calculators</a>
-        <a href="{{ route('admin.contents.index') }}" class="{{ request()->routeIs('admin.contents.*') ? 'bg-slate-100 font-semibold' : '' }} block rounded-lg px-3 py-2 hover:bg-slate-50">Page Content</a>
-        <hr class="my-3 border-slate-200">
-        <p class="px-3 py-1 text-xs font-semibold uppercase tracking-wider text-slate-400">Domains</p>
-        <a href="{{ domain_url('main', '/') }}" target="_blank" class="block rounded-lg px-3 py-2 hover:bg-slate-50">Main site ↗</a>
-        <a href="{{ domain_url('tax', '/') }}" target="_blank" class="block rounded-lg px-3 py-2 hover:bg-slate-50">Tax site ↗</a>
-        <a href="{{ domain_url('loan', '/') }}" target="_blank" class="block rounded-lg px-3 py-2 hover:bg-slate-50">Loan site ↗</a>
+
+    <nav class="admin-sidebar__nav" aria-label="Admin navigation">
+        <a href="{{ route('admin.dashboard') }}"
+           class="admin-sidebar__dashboard {{ request()->routeIs('admin.dashboard') ? 'is-active' : '' }}">
+            <span class="admin-sidebar__menu-icon" aria-hidden="true">⌂</span>
+            <span>Dashboard</span>
+        </a>
+
+        @foreach (admin_sites() as $siteKey => $siteConfig)
+            @php
+                $tone = $sites[$siteConfig['color'] ?? 'slate'] ?? $sites['slate'];
+                $publicUrl = is_callable($siteConfig['public_url'] ?? null) ? $siteConfig['public_url']() : domain_url($siteConfig['domain_key'], '/');
+            @endphp
+
+            <section class="admin-sidebar__section" aria-label="{{ $siteConfig['label'] }}">
+                <div class="admin-sidebar__section-head">
+                    <div class="admin-sidebar__section-title">
+                        <span class="admin-sidebar__dot {{ $tone['dot'] }}" aria-hidden="true"></span>
+                        <span class="admin-sidebar__section-label {{ $tone['label'] }}">{{ $siteConfig['label'] }}</span>
+                    </div>
+                    <a href="{{ $publicUrl }}" target="_blank" rel="noopener"
+                       class="admin-sidebar__section-link" title="Open site">↗</a>
+                </div>
+
+                <ul class="admin-sidebar__menu {{ $tone['menu'] }}">
+                    @foreach ($siteConfig['nav'] as $item)
+                        @php
+                            $routeName = admin_route_name($item['route'], $siteKey);
+                            $isActive = request()->routeIs($routeName) || request()->routeIs($routeName.'.*');
+                        @endphp
+                        <li>
+                            <a href="{{ route($routeName) }}"
+                               class="admin-sidebar__menu-link {{ $isActive ? $tone['active'] : '' }}">
+                                <span class="admin-sidebar__menu-icon" aria-hidden="true">{{ $icons[$item['icon'] ?? 'file'] ?? '•' }}</span>
+                                <span>{{ $item['label'] }}</span>
+                            </a>
+                        </li>
+                    @endforeach
+                </ul>
+            </section>
+        @endforeach
     </nav>
 </aside>

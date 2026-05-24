@@ -42,7 +42,7 @@ if (! function_exists('domain_url')) {
     {
         if (! domain_routing_enabled()) {
             $prefix = match ($domainKey) {
-                'tax', 'loan' => domain_path_prefix($domainKey),
+                'tax', 'loan', 'advisory' => domain_path_prefix($domainKey),
                 default => '',
             };
 
@@ -67,6 +67,7 @@ if (! function_exists('current_domain_key')) {
             return match ($segment) {
                 domain_path_prefix('tax') => 'tax',
                 domain_path_prefix('loan') => 'loan',
+                domain_path_prefix('advisory') => 'advisory',
                 default => 'main',
             };
         }
@@ -76,7 +77,62 @@ if (! function_exists('current_domain_key')) {
         return match ($host) {
             config('domains.tax') => 'tax',
             config('domains.loan') => 'loan',
+            config('domains.advisory') => 'advisory',
             default => 'main',
         };
+    }
+}
+
+if (! function_exists('admin_site_key')) {
+    function admin_site_key(): ?string
+    {
+        return request()->attributes->get('admin_site');
+    }
+}
+
+if (! function_exists('admin_route_name')) {
+    /** Resolve a short nav route suffix to a full Laravel route name. */
+    function admin_route_name(string $suffix, ?string $site = null): string
+    {
+        $site ??= admin_site_key();
+
+        if ($site === null) {
+            return "admin.{$suffix}";
+        }
+
+        if (str_starts_with($suffix, 'advisory.')) {
+            return "admin.{$suffix}";
+        }
+
+        return "admin.{$site}.{$suffix}";
+    }
+}
+
+if (! function_exists('admin_route')) {
+    function admin_route(string $suffix, mixed $parameters = [], bool $absolute = true): string
+    {
+        return route(admin_route_name($suffix), $parameters, $absolute);
+    }
+}
+
+if (! function_exists('admin_contact_show_url')) {
+    /** Admin lead detail URL for a contact (correct site-scoped route). */
+    function admin_contact_show_url(\App\Models\Contact $contact, bool $absolute = true): string
+    {
+        $site = $contact->source_domain;
+
+        if (! filled($site) || ! array_key_exists($site, admin_sites())) {
+            $site = 'main';
+        }
+
+        return route(admin_route_name('contacts.show', $site), $contact, $absolute);
+    }
+}
+
+if (! function_exists('admin_sites')) {
+    /** @return array<string, array<string, mixed>> */
+    function admin_sites(): array
+    {
+        return config('admin_sites', []);
     }
 }

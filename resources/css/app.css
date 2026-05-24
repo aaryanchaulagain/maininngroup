@@ -111,4 +111,57 @@
         @apply mt-8 inline-block rounded bg-[#ea384d] px-7 py-3.5 text-[15px] font-semibold text-white transition hover:bg-[#d42f44];
         font-family: 'Barlow', ui-sans-serif, system-ui, sans-serif;
     }
+
+    /* Admin panel sidebar — full-height column, flush edges, readable type */
+    .admin-sidebar {
+        @apply flex w-[17.5rem] min-w-[17.5rem] max-w-[17.5rem] shrink-0 flex-col border-r border-slate-200 bg-white;
+    }
+
+    .admin-sidebar__brand {
+        @apply border-b border-slate-200 px-4 py-4;
+    }
+
+    .admin-sidebar__brand-title {
+        @apply text-xl font-bold text-inn-navy;
+    }
+
+    .admin-sidebar__brand-sub {
+        @apply mt-0.5 text-sm text-slate-500;
+    }
+
+    .admin-sidebar__nav {
+        @apply flex-1 overflow-y-auto overflow-x-hidden px-3 py-4;
+    }
+
+    .admin-sidebar__dashboard {
+        @apply mb-5 flex w-full items-center gap-2.5 rounded-lg px-3 py-2.5 text-[15px] font-medium text-slate-700 transition hover:bg-slate-50;
+    }
+
+    .admin-sidebar__section {
+        @apply mb-5 w-full;
+    }
+
+    .admin-sidebar__section-head {
+        @apply mb-2 flex w-full items-center justify-between gap-2 px-1;
+    }
+
+    .admin-sidebar__section-label {
+        @apply truncate text-sm font-bold uppercase tracking-wide;
+    }
+
+    .admin-sidebar__section-link {
+        @apply shrink-0 text-xs font-medium text-slate-400 hover:text-slate-600;
+    }
+
+    .admin-sidebar__menu {
+        @apply w-full space-y-0.5 rounded-xl border border-slate-100 p-1.5;
+    }
+
+    .admin-sidebar__menu-link {
+        @apply flex w-full items-center gap-2.5 rounded-lg px-3 py-2.5 text-[15px] leading-snug transition;
+    }
+
+    .admin-sidebar__menu-icon {
+        @apply w-5 shrink-0 text-center text-sm opacity-75;
+    }
 }

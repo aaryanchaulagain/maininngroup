@@ -36,10 +36,13 @@
                         <svg class="h-3 w-3" fill="currentColor" viewBox="0 0 20 20"><path d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.24 4.24a.75.75 0 01-1.06 0L5.21 8.29a.75.75 0 01.02-1.08z"/></svg>
                     </button>
                     <div x-show="services" x-transition class="inn-nav__dropdown absolute left-0 top-full pt-[12px]">
-                        <ul class="min-w-[280px] bg-white py-[10px] shadow-[0_10px_30px_rgba(16,45,94,0.12)]">
+                        <ul class="min-w-[300px] bg-white py-[10px] shadow-[0_10px_30px_rgba(16,45,94,0.12)]">
                             <li><a href="{{ route('tax.services.accounting') }}" class="inn-nav__dropdown-link">Accounting and Taxation Services</a></li>
                             <li><a href="{{ route('tax.services.mortgage') }}" class="inn-nav__dropdown-link">Mortgage and Finance Service</a></li>
                             <li><a href="{{ route('tax.services.advisory') }}" class="inn-nav__dropdown-link">Business advisory Service</a></li>
+                            <li><a href="{{ route('tax.services.bas-gst') }}" class="inn-nav__dropdown-link">BAS / GST</a></li>
+                            <li><a href="{{ route('tax.services.smsf') }}" class="inn-nav__dropdown-link">SMSF</a></li>
+                            <li><a href="{{ route('tax.services.compliance') }}" class="inn-nav__dropdown-link">Compliance</a></li>
                         </ul>
                     </div>
                 </li>
@@ -72,6 +75,9 @@
             <li><a href="{{ route('tax.services.accounting') }}">Accounting and Taxation Services</a></li>
             <li><a href="{{ route('tax.services.mortgage') }}">Mortgage and Finance Service</a></li>
             <li><a href="{{ route('tax.services.advisory') }}">Business advisory Service</a></li>
+            <li><a href="{{ route('tax.services.bas-gst') }}">BAS / GST</a></li>
+            <li><a href="{{ route('tax.services.smsf') }}">SMSF</a></li>
+            <li><a href="{{ route('tax.services.compliance') }}">Compliance</a></li>
             <li><a href="{{ route('tax.mentoring') }}">Mentoring</a></li>
             <li><a href="{{ route('tax.perspective') }}">Perspective</a></li>
             <li><a href="{{ route('tax.calculator') }}">Calculator</a></li>

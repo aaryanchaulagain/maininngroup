@@ -33,6 +33,16 @@ Suite 101, Level 10,<br>
                             <ul class="menu">
                                 <li class="menu-item"><a href="{{ route('loan.home') }}"><span class="link-text">Home</span><span class="arrow"></span></a></li>
                                 <li class="menu-item menu-item-has-children">
+                                    <a href="{{ route('loan.services.index') }}"><span class="link-text">Services</span><span class="arrow"></span></a>
+                                    <ul class="sub-menu">
+                                        <li class="menu-item"><a href="{{ route('loan.services.show', 'home-loan') }}"><span class="link-text">Home Loan</span><span class="arrow"></span></a></li>
+                                        <li class="menu-item"><a href="{{ route('loan.services.show', 'investment-loan') }}"><span class="link-text">Investment Loan</span><span class="arrow"></span></a></li>
+                                        <li class="menu-item"><a href="{{ route('loan.services.show', 'refinancing') }}"><span class="link-text">Refinancing</span><span class="arrow"></span></a></li>
+                                        <li class="menu-item"><a href="{{ route('loan.services.show', 'asset-finance') }}"><span class="link-text">Asset Finance</span><span class="arrow"></span></a></li>
+                                        <li class="menu-item"><a href="{{ route('loan.services.show', 'commercial-finance') }}"><span class="link-text">Commercial Finance</span><span class="arrow"></span></a></li>
+                                    </ul>
+                                </li>
+                                <li class="menu-item menu-item-has-children">
                                     <a href="{{ route('loan.about') }}"><span class="link-text">About</span><span class="arrow"></span></a>
                                     <ul class="sub-menu">
                                         <li class="menu-item"><a href="{{ route('loan.about') }}"><span class="link-text">About Us</span><span class="arrow"></span></a></li>

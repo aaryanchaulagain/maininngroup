@@ -10,6 +10,9 @@
                 <li><a href="{{ route('tax.services.accounting') }}" class="hover:text-tax-teal">Accounting & Taxation</a></li>
                 <li><a href="{{ route('tax.services.mortgage') }}" class="hover:text-tax-teal">Mortgage & Loan</a></li>
                 <li><a href="{{ route('tax.services.advisory') }}" class="hover:text-tax-teal">Business Advisory</a></li>
+                <li><a href="{{ route('tax.services.bas-gst') }}" class="hover:text-tax-teal">BAS / GST</a></li>
+                <li><a href="{{ route('tax.services.smsf') }}" class="hover:text-tax-teal">SMSF</a></li>
+                <li><a href="{{ route('tax.services.compliance') }}" class="hover:text-tax-teal">Compliance</a></li>
             </ul>
         </div>
         <div>

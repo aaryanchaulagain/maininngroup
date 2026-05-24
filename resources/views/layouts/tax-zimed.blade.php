@@ -23,7 +23,7 @@
     <link rel="stylesheet" href="https://innovativeassociates.com.au/wp-content/plugins/elementor/assets/css/widget-divider.min.css?ver=3.35.0">
     <link rel="stylesheet" href="https://innovativeassociates.com.au/wp-content/plugins/elementor/assets/lib/font-awesome/css/solid.min.css?ver=5.15.3">
     <link rel="stylesheet" href="https://innovativeassociates.com.au/wp-content/plugins/elementor/assets/css/frontend.min.css?ver=3.35.0">
-    <link rel="stylesheet" href="{{ asset('assets/css/tax-zimed-clone.css') }}?v=30">
+    <link rel="stylesheet" href="{{ asset('assets/css/tax-zimed-clone.css') }}?v=37">
     @stack('head')
 </head>
 <body class="@yield('body-class', 'home') wp-theme-zimed elementor-default">

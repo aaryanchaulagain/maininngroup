@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Admin\Concerns\HandlesAdminSite;
 use App\Http\Controllers\Controller;
 use App\Models\PageContent;
 use Illuminate\Http\RedirectResponse;
@@ -10,58 +11,74 @@ use Illuminate\View\View;
 
 class PageContentController extends Controller
 {
+    use HandlesAdminSite;
+
     public function index(Request $request): View
     {
-        $query = PageContent::query()->orderBy('source_domain')->orderBy('section');
-
-        if ($request->filled('domain')) {
-            $query->where('source_domain', $request->domain);
-        }
-
         return view('admin.contents.index', [
-            'contents' => $query->paginate(20)->withQueryString(),
+            'contents' => PageContent::query()
+                ->where('source_domain', $this->adminSiteKey())
+                ->orderBy('section')
+                ->paginate(20),
+            'adminSite' => $this->adminSite(),
         ]);
     }
 
     public function create(): View
     {
-        return view('admin.contents.form', ['content' => new PageContent]);
+        return view('admin.contents.form', [
+            'content' => new PageContent(['source_domain' => 'loan']),
+            'adminSite' => $this->adminSite(),
+            'siteLocked' => true,
+        ]);
     }
 
     public function store(Request $request): RedirectResponse
     {
         PageContent::create($this->validated($request));
 
-        return redirect()->route('admin.contents.index')->with('success', 'Content saved.');
+        return $this->redirectToAdmin('contents.index', [], 'success', 'Content saved.');
     }
 
     public function edit(PageContent $content): View
     {
-        return view('admin.contents.form', compact('content'));
+        $this->assertModelForSite($content);
+
+        return view('admin.contents.form', [
+            'content' => $content,
+            'adminSite' => $this->adminSite(),
+            'siteLocked' => true,
+        ]);
     }
 
     public function update(Request $request, PageContent $content): RedirectResponse
     {
+        $this->assertModelForSite($content);
         $content->update($this->validated($request));
 
-        return redirect()->route('admin.contents.index')->with('success', 'Content updated.');
+        return $this->redirectToAdmin('contents.index', [], 'success', 'Content updated.');
     }
 
     public function destroy(PageContent $content): RedirectResponse
     {
+        $this->assertModelForSite($content);
         $content->delete();
 
-        return redirect()->route('admin.contents.index')->with('success', 'Content deleted.');
+        return $this->redirectToAdmin('contents.index', [], 'success', 'Content deleted.');
     }
 
     protected function validated(Request $request): array
     {
-        return $request->validate([
-            'source_domain' => 'required|in:main,tax,loan',
+        $data = $request->validate([
+            'source_domain' => 'required|in:loan',
             'section' => 'required|string|max:100',
             'key' => 'required|string|max:100',
             'value' => 'nullable|string',
             'type' => 'required|in:text,html,json',
         ]);
+
+        $data['source_domain'] = 'loan';
+
+        return $data;
     }
 }

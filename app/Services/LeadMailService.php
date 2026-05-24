@@ -9,22 +9,26 @@ use App\Mail\UserApprovalNotification;
 use App\Models\Contact;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Mail;
-use Illuminate\Support\Facades\Process;
 use Throwable;
 
 class LeadMailService
 {
     public function sendAdminLeadNotification(Contact $contact, bool $immediate = false): void
     {
-        $recipient = config('mail.admin_notification_address');
+        $recipient = $this->adminRecipientFor($contact);
 
         if (empty($recipient)) {
-            Log::warning('Admin notification skipped: ADMIN_NOTIFICATION_EMAIL is not set.');
+            Log::warning('Admin notification skipped: no admin notification address configured.', [
+                'contact_id' => $contact->id,
+                'source_domain' => $contact->source_domain,
+            ]);
 
             return;
         }
 
-        if ($immediate) {
+        $sendNow = $immediate || (bool) config('mail.send_admin_immediately', true);
+
+        if ($sendNow) {
             $this->deliverAdminNotification($contact, $recipient);
 
             return;
@@ -41,29 +45,7 @@ class LeadMailService
             return;
         }
 
-        $this->notifyAdminInBackground($contact);
-    }
-
-    /** Runs SMTP in a separate process so contact forms respond immediately. */
-    public function notifyAdminInBackground(Contact $contact): void
-    {
-        try {
-            Process::path(base_path())->start([
-                PHP_BINARY,
-                base_path('artisan'),
-                'inn:send-lead-notification',
-                (string) $contact->id,
-            ]);
-
-            Log::info('Admin lead notification started in background.', [
-                'contact_id' => $contact->id,
-            ]);
-        } catch (Throwable $e) {
-            Log::error('Could not start background lead notification.', [
-                'contact_id' => $contact->id,
-                'error' => $e->getMessage(),
-            ]);
-        }
+        $this->scheduleAdminNotificationAfterResponse($contact, $recipient);
     }
 
     public function sendUserApprovalNotification(Contact $contact, bool $immediate = false): void
@@ -105,7 +87,15 @@ class LeadMailService
 
     public function deliverAdminNotification(Contact $contact, ?string $recipient = null): void
     {
-        $recipient = $recipient ?? config('mail.admin_notification_address');
+        $recipient = $recipient ?? $this->adminRecipientFor($contact);
+
+        if (empty($recipient)) {
+            Log::warning('Admin notification skipped: empty recipient.', [
+                'contact_id' => $contact->id,
+            ]);
+
+            return;
+        }
 
         try {
             Mail::to($recipient)->send(new AdminContactNotification($contact));
@@ -113,6 +103,7 @@ class LeadMailService
             Log::info('Admin lead notification sent.', [
                 'contact_id' => $contact->id,
                 'to' => $recipient,
+                'source_domain' => $contact->source_domain,
                 'mailer' => config('mail.default'),
             ]);
         } catch (Throwable $e) {
@@ -145,6 +136,25 @@ class LeadMailService
 
             throw $e;
         }
+    }
+
+    protected function adminRecipientFor(Contact $contact): ?string
+    {
+        $address = config('mail.admin_notification_address');
+
+        return filled($address) ? trim((string) $address) : null;
+    }
+
+    protected function scheduleAdminNotificationAfterResponse(Contact $contact, string $recipient): void
+    {
+        dispatch(function () use ($contact, $recipient) {
+            app(LeadMailService::class)->deliverAdminNotification($contact, $recipient);
+        })->afterResponse();
+
+        Log::info('Admin lead notification scheduled after HTTP response.', [
+            'contact_id' => $contact->id,
+            'to' => $recipient,
+        ]);
     }
 
     protected function shouldQueueMail(): bool

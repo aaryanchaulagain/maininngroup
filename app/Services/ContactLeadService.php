@@ -17,15 +17,20 @@ class ContactLeadService
         protected LeadMailService $mailService
     ) {}
 
-    public function getStats(): array
+    public function getStats(?string $domain = null): array
     {
         $today = Carbon::today();
+        $base = Contact::query();
+
+        if ($domain !== null) {
+            $base->where('source_domain', $domain);
+        }
 
         return [
-            'total' => Contact::count(),
-            'pending' => Contact::pending()->count(),
-            'approved' => Contact::approved()->count(),
-            'today' => Contact::whereDate('created_at', $today)->count(),
+            'total' => (clone $base)->count(),
+            'pending' => (clone $base)->pending()->count(),
+            'approved' => (clone $base)->approved()->count(),
+            'today' => (clone $base)->whereDate('created_at', $today)->count(),
         ];
     }
 
@@ -39,6 +44,10 @@ class ContactLeadService
     public function buildFilteredQuery(array $filters): Builder
     {
         $query = Contact::query()->with('approver');
+
+        if (! empty($filters['domain'])) {
+            $query->where('source_domain', $filters['domain']);
+        }
 
         if (! empty($filters['status']) && $filters['status'] !== 'all') {
             $query->where('status', $filters['status']);

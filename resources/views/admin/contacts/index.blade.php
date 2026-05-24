@@ -1,10 +1,11 @@
 @extends('layouts.admin')
 
-@section('page-title', 'Contact leads')
+@section('page-title', ($adminSite->label() ?? 'INN Group').' — Contacts')
 
 @section('content')
     <header class="mb-8">
-        <h2 class="text-2xl font-bold text-inn-navy">Contact leads</h2>
+        <h2 class="text-2xl font-bold text-inn-navy">{{ $adminSite->label() }} contact leads</h2>
+        <p class="mt-1 text-sm text-slate-500">Only submissions from this site are shown.</p>
     </header>
 
     {{-- Stats --}}
@@ -17,7 +18,7 @@
 
     {{-- Filters --}}
     <section class="mb-6 rounded-2xl border border-white/60 bg-white/70 p-4 shadow-sm backdrop-blur-md lg:p-5">
-        <form method="GET" action="{{ route('admin.contacts.index') }}" class="flex flex-col gap-4 lg:flex-row lg:flex-wrap lg:items-end">
+        <form method="GET" action="{{ admin_route('contacts.index') }}" class="flex flex-col gap-4 lg:flex-row lg:flex-wrap lg:items-end">
             <fieldset class="flex flex-wrap gap-2">
                 <legend class="sr-only">Status filter</legend>
                 @foreach (['all' => 'All', 'pending' => 'Pending', 'approved' => 'Approved'] as $value => $label)
@@ -52,7 +53,7 @@
 
             <button type="submit" class="btn-primary bg-inn-navy text-white hover:bg-inn-slate">Apply</button>
             @if (request()->hasAny(['status', 'search', 'sort']))
-                <a href="{{ route('admin.contacts.index') }}" class="btn-primary border border-slate-200 bg-white text-slate-600 hover:bg-slate-50">Reset</a>
+                <a href="{{ admin_route('contacts.index') }}" class="btn-primary border border-slate-200 bg-white text-slate-600 hover:bg-slate-50">Reset</a>
             @endif
         </form>
     </section>
@@ -89,12 +90,12 @@
                             <td class="px-4 py-4 whitespace-nowrap text-slate-500">{{ $contact->created_at->format('d M Y, H:i') }}</td>
                             <td class="px-4 py-4 lg:px-6">
                                 <div class="flex flex-wrap items-center justify-end gap-2">
-                                    <a href="{{ route('admin.contacts.show', $contact) }}" class="rounded-lg border border-slate-200 bg-white px-3 py-1.5 text-xs font-medium text-slate-700 transition hover:border-tax-teal hover:text-tax-teal">
+                                    <a href="{{ admin_route('contacts.show', $contact) }}" class="rounded-lg border border-slate-200 bg-white px-3 py-1.5 text-xs font-medium text-slate-700 transition hover:border-tax-teal hover:text-tax-teal">
                                         View
                                     </a>
 
                                     @if ($contact->isPending())
-                                        <form action="{{ route('admin.contacts.approve', $contact) }}" method="POST" class="inline">
+                                        <form action="{{ admin_route('contacts.approve', $contact) }}" method="POST" class="inline">
                                             @csrf
                                             @method('PATCH')
                                             <button type="submit" class="rounded-lg bg-tax-teal px-3 py-1.5 text-xs font-medium text-white transition hover:bg-tax-deep">
@@ -109,7 +110,7 @@
 
                                     <form
                                         method="POST"
-                                        action="{{ route('admin.contacts.destroy', $contact) }}"
+                                        action="{{ admin_route('contacts.destroy', $contact) }}"
                                         class="inline"
                                         onsubmit="return confirm('Delete this contact lead? This cannot be undone.');"
                                     >
@@ -126,7 +127,7 @@
                         <tr>
                             <td colspan="8" class="px-6 py-16 text-center">
                                 <p class="text-slate-500">No leads match your filters.</p>
-                                <a href="{{ route('admin.contacts.index') }}" class="mt-2 inline-block text-sm text-tax-teal hover:underline">Clear filters</a>
+                                <a href="{{ admin_route('contacts.index') }}" class="mt-2 inline-block text-sm text-tax-teal hover:underline">Clear filters</a>
                             </td>
                         </tr>
                     @endforelse

@@ -68,6 +68,21 @@ class TaxController extends Controller
         return view('tax.services.advisory', $this->sharedContent());
     }
 
+    public function basGst()
+    {
+        return view('tax.services.bas-gst', $this->sharedContent());
+    }
+
+    public function smsf()
+    {
+        return view('tax.services.smsf', $this->sharedContent());
+    }
+
+    public function compliance()
+    {
+        return view('tax.services.compliance', $this->sharedContent());
+    }
+
     public function mentoring()
     {
         return view('tax.mentoring', $this->sharedContent());
@@ -121,6 +136,24 @@ class TaxController extends Controller
                 'title' => 'Business Advisory',
                 'text' => 'Whether you want to invest or refinance, ensure your current home loan is still the right one for you, we can help.',
                 'url' => route('tax.services.advisory'),
+            ],
+            [
+                'icon' => 'zimed-new-icon-secure-payment',
+                'title' => 'BAS / GST',
+                'text' => 'GST registration, BAS preparation, lodgement, and reconciliation support for compliant reporting.',
+                'url' => route('tax.services.bas-gst'),
+            ],
+            [
+                'icon' => 'zimed-new-icon-information',
+                'title' => 'SMSF',
+                'text' => 'Self-managed super fund setup, administration, audit coordination, and trustee compliance.',
+                'url' => route('tax.services.smsf'),
+            ],
+            [
+                'icon' => 'zimed-new-icon-settings',
+                'title' => 'Compliance',
+                'text' => 'Tax, corporate, and regulatory compliance support to protect your business and directors.',
+                'url' => route('tax.services.compliance'),
             ],
             [
                 'icon' => 'zimed-new-icon-brainstorm',

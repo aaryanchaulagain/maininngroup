@@ -28,11 +28,21 @@ export default {
                     gold: '#C9A227',
                     champagne: '#F5E6C8',
                 },
+                advisory: {
+                    navy: '#061428',
+                    blue: '#0c4a8c',
+                    sky: '#1e6bb8',
+                    ice: '#e8f2fc',
+                    accent: '#3b9eff',
+                    slate: '#64748b',
+                },
             },
             backgroundImage: {
                 'main-gradient': 'linear-gradient(135deg, #0B1220 0%, #1E3A5F 50%, #0D9488 100%)',
                 'tax-gradient': 'linear-gradient(180deg, #FFFFFF 0%, #F0FDFA 50%, #ECFDF5 100%)',
                 'loan-gradient': 'linear-gradient(135deg, #0A1628 0%, #132743 40%, #1a365d 100%)',
+                'advisory-gradient': 'linear-gradient(135deg, #061428 0%, #0c4a8c 45%, #1a5f9e 100%)',
+                'advisory-mesh': 'radial-gradient(ellipse 80% 60% at 20% 0%, rgba(59,158,255,0.25) 0%, transparent 55%), radial-gradient(ellipse 60% 50% at 90% 20%, rgba(30,107,184,0.2) 0%, transparent 50%), linear-gradient(180deg, #061428 0%, #0a2540 100%)',
             },
             animation: {
                 'fade-up': 'fadeUp 0.7s ease-out forwards',

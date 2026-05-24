@@ -3,10 +3,10 @@
 @section('content')
 <div class="mb-4 max-w-2xl rounded-lg border border-violet-200 bg-violet-50 px-4 py-3 text-sm text-violet-900">
     <strong>Step 2 — Profile page.</strong> Shown when visitors click <strong>{{ $team->name }}</strong> on Meet The Team: position, photo, biography, then contact icons.
-    <a href="{{ route('admin.teams.edit', $team) }}" class="ml-1 font-medium underline">← Back to card details</a>
+    <a href="{{ admin_route('teams.edit', $team) }}" class="ml-1 font-medium underline">← Back to card details</a>
 </div>
 
-<form method="POST" action="{{ route('admin.teams.intro.update', $team) }}" class="max-w-3xl space-y-4 rounded-xl border bg-white p-6">
+<form method="POST" action="{{ admin_route('teams.intro.update', $team) }}" class="max-w-3xl space-y-4 rounded-xl border bg-white p-6">
     @csrf
     @method('PUT')
 
@@ -37,7 +37,7 @@
 
     <div class="flex flex-wrap gap-3">
         <button type="submit" class="btn-primary bg-tax-teal text-white">Save introduction</button>
-        <a href="{{ route('admin.teams.index') }}" class="inline-flex items-center rounded-lg border border-slate-300 px-4 py-2 text-sm text-slate-700 hover:bg-slate-50">Back to list</a>
+        <a href="{{ admin_route('teams.index') }}" class="inline-flex items-center rounded-lg border border-slate-300 px-4 py-2 text-sm text-slate-700 hover:bg-slate-50">Back to list</a>
     </div>
 </form>
 @endsection

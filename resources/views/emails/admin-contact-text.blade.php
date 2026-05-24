@@ -9,4 +9,4 @@ Submitted: {{ $contact->created_at->timezone(config('app.timezone'))->format('d 
 Message:
 {{ $contact->message }}
 
-View in admin: {{ route('admin.contacts.show', $contact) }}
+View in admin: {{ admin_contact_show_url($contact) }}
