@@ -3,20 +3,31 @@
 @import url('https://fonts.googleapis.com/css2?family=Mulish:wght@400;600;800&display=swap');
 
 :root {
-    --loan-coral: #e95a59;
-    --loan-coral-dark: #c94a49;
-    --loan-coral-deep: #a83d3c;
-    --loan-accent: var(--loan-coral);
-    --loan-accent-dark: var(--loan-coral-dark);
-    /* Areas of Expertise – matches innovativewealth.com.au */
-    --loan-expertise-light: #554ade;
-    --loan-expertise-dark: #3429ad;
-    --loan-expertise-mid: #4035b8;
-    /* Service landing pages (Home / Investment Loan) */
-    --loan-svc-bg-alt: #eef0fc;
-    --loan-svc-bg-soft: #f4f5fd;
-    --loan-svc-border: #d8daf5;
-    --loan-svc-icon-bg: linear-gradient(135deg, #eef0fc 0%, #dce0f8 100%);
+    /* INN Group Finance — tokens extended in loan-inn-theme.css */
+    --loan-royal: #1e63d8;
+    --loan-royal-dark: #1854b8;
+    --loan-royal-darker: #081b33;
+    --loan-royal-light: #4a85e3;
+    --loan-royal-mid: #1e63d8;
+    --loan-royal-soft: #e8f1fc;
+    --loan-royal-soft-2: #f8fafc;
+    --loan-royal-border: #e4e7ec;
+    --loan-royal-glow: rgba(30, 99, 216, 0.28);
+    --loan-text-on-blue: #ffffff;
+    --loan-text-on-white: #101828;
+    --loan-text-muted: #667085;
+    --loan-coral: var(--loan-royal);
+    --loan-coral-dark: var(--loan-royal-dark);
+    --loan-coral-deep: var(--loan-royal-darker);
+    --loan-accent: var(--loan-royal);
+    --loan-accent-dark: var(--loan-royal-dark);
+    --loan-expertise-light: var(--loan-royal);
+    --loan-expertise-dark: #081b33;
+    --loan-expertise-mid: #12345a;
+    --loan-svc-bg-alt: #081b33;
+    --loan-svc-bg-soft: #f8fafc;
+    --loan-svc-border: var(--loan-royal-border);
+    --loan-svc-icon-bg: rgba(30, 99, 216, 0.08);
 }
 
 body {
@@ -78,7 +89,7 @@ body {
 .loan-scroll-top-wrap .loan-scroll-top:focus-visible,
 .loan-scroll-top-wrap #toTop.fusion-top-top-link:hover,
 .loan-scroll-top-wrap #toTop.fusion-top-top-link:focus-visible {
-    background: #554ade !important;
+    background: var(--loan-royal) !important;
     color: #ffffff !important;
     outline: none;
 }
@@ -90,6 +101,10 @@ body {
 
 /* ── Loan header: top bar, social tooltips, nav spacing ── */
 
+.fusion-header-wrapper {
+    background: #ffffff !important;
+}
+
 .fusion-header-wrapper .fusion-header-sticky-height {
     display: none !important;
     height: 0 !important;
@@ -99,6 +114,22 @@ body {
 
 .fusion-header-wrapper .fusion-secondary-header {
     padding: 12px 15px;
+    background: #ffffff !important;
+    border-bottom: 1px solid var(--loan-royal-border);
+}
+
+.fusion-header-wrapper .fusion-secondary-header .fusion-contact-info,
+.fusion-header-wrapper .fusion-secondary-header .fusion-contact-info-phone-number,
+.fusion-header-wrapper .fusion-secondary-header .fusion-header-separator {
+    color: var(--loan-text-muted) !important;
+}
+
+.fusion-header-wrapper .fusion-secondary-header .fusion-contact-info a {
+    color: var(--loan-royal) !important;
+}
+
+.fusion-header-wrapper .fusion-secondary-header .fusion-contact-info a:hover {
+    color: var(--loan-royal-dark) !important;
 }
 
 .fusion-header-wrapper .fusion-secondary-header .fusion-row {
@@ -106,10 +137,23 @@ body {
     margin-right: 15px;
 }
 
-/* White band between purple top bar and nav (matches live site) */
+/* Main nav band — white */
 .fusion-header-wrapper .fusion-header-v3 > .fusion-header {
     padding: 31px 15px;
     margin: 0;
+    background: #ffffff !important;
+    border-bottom: 1px solid var(--loan-royal-border);
+    box-shadow: 0 2px 12px rgba(15, 61, 134, 0.06);
+}
+
+.fusion-header-wrapper .fusion-header .fusion-main-menu > ul.fusion-menu > li > a,
+.fusion-header-wrapper .fusion-header .fusion-main-menu > ul.fusion-menu > li > a .menu-text {
+    color: #333333 !important;
+}
+
+.fusion-header-wrapper .fusion-header .fusion-main-menu > ul.fusion-menu > li > a:hover,
+.fusion-header-wrapper .fusion-header .fusion-main-menu > ul.fusion-menu > li > a:focus-visible {
+    color: var(--loan-royal) !important;
 }
 
 .fusion-header-wrapper .fusion-header > .fusion-row {
@@ -138,7 +182,7 @@ a.loan-brand {
 
 a.loan-brand:hover .loan-brand__title,
 a.loan-brand:focus-visible .loan-brand__title {
-    color: var(--loan-gold, #d4a853);
+    color: var(--loan-royal);
 }
 
 .loan-brand__mark {
@@ -146,7 +190,8 @@ a.loan-brand:focus-visible .loan-brand__title {
     width: 4px;
     height: 44px;
     border-radius: 2px;
-    background: linear-gradient(180deg, #6b2d8a 0%, #d4a853 100%);
+    background: linear-gradient(180deg, var(--loan-royal-light) 0%, var(--loan-royal) 100%);
+    box-shadow: 0 0 12px var(--loan-royal-glow);
 }
 
 .loan-brand__text {
@@ -160,7 +205,7 @@ a.loan-brand:focus-visible .loan-brand__title {
     font-size: 22px;
     font-weight: 700;
     letter-spacing: -0.02em;
-    color: #1a1a2e;
+    color: var(--loan-text-on-white);
     transition: color 0.2s ease;
 }
 
@@ -170,7 +215,7 @@ a.loan-brand:focus-visible .loan-brand__title {
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.14em;
-    color: #6b2d8a;
+    color: var(--loan-royal);
 }
 
 @media (max-width: 640px) {
@@ -245,16 +290,17 @@ a.loan-brand:focus-visible .loan-brand__title {
     gap: 12px;
     padding: 16px 18px;
     text-decoration: none !important;
-    background: linear-gradient(135deg, #6b2d8a 0%, #4a1f5c 100%);
-    color: #fff !important;
-    border-radius: 4px;
+    background: linear-gradient(135deg, var(--loan-royal-dark) 0%, var(--loan-royal) 100%);
+    color: var(--loan-text-on-blue) !important;
+    border-radius: 10px;
+    box-shadow: 0 8px 22px var(--loan-royal-glow);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .loan-services-nav-cards__card:hover {
     transform: translateY(-2px);
-    box-shadow: 0 10px 24px rgba(107, 45, 138, 0.35);
-    color: #fff !important;
+    box-shadow: 0 14px 30px var(--loan-royal-glow);
+    color: var(--loan-text-on-blue) !important;
 }
 
 .loan-services-nav-cards__title {
@@ -283,8 +329,8 @@ a.loan-brand:focus-visible .loan-brand__title {
 /* Individual finance service pages */
 .loan-finance-svc__hero {
     padding: 2.5rem 15px;
-    background: linear-gradient(135deg, #1a1a2e 0%, #4a1f5c 55%, #6b2d8a 100%);
-    color: #fff;
+    background: linear-gradient(135deg, var(--loan-royal-darker) 0%, var(--loan-royal-dark) 50%, var(--loan-royal) 100%);
+    color: var(--loan-text-on-blue);
 }
 
 .loan-finance-svc__hero-inner {
@@ -302,7 +348,7 @@ a.loan-brand:focus-visible .loan-brand__title {
     border-radius: 50%;
     background: rgba(255, 255, 255, 0.12);
     font-size: 22px;
-    color: #d4a853;
+    color: var(--loan-text-on-blue);
 }
 
 .loan-finance-svc__title {
@@ -316,7 +362,7 @@ a.loan-brand:focus-visible .loan-brand__title {
     margin: 0.5rem 0 0;
     font-size: 18px;
     font-weight: 600;
-    color: #d4a853;
+    color: rgba(255, 255, 255, 0.92);
 }
 
 .loan-finance-svc__lead {
@@ -334,16 +380,18 @@ a.loan-brand:focus-visible .loan-brand__title {
     text-transform: uppercase;
     letter-spacing: 0.06em;
     font-size: 13px;
-    color: #1a1a2e !important;
-    background: #d4a853;
-    border-radius: 4px;
+    color: var(--loan-royal-dark) !important;
+    background: var(--loan-text-on-blue);
+    border-radius: 8px;
     text-decoration: none !important;
-    transition: background 0.2s ease;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+    transition: background 0.2s ease, transform 0.2s ease;
 }
 
 .loan-finance-svc__cta:hover {
-    background: #e8c47a;
-    color: #1a1a2e !important;
+    background: var(--loan-royal-soft);
+    color: var(--loan-royal-dark) !important;
+    transform: translateY(-1px);
 }
 
 .loan-finance-svc__body {
@@ -386,7 +434,7 @@ a.loan-brand:focus-visible .loan-brand__title {
     width: 8px;
     height: 8px;
     border-radius: 50%;
-    background: #6b2d8a;
+    background: var(--loan-royal);
 }
 
 .loan-finance-svc__contact {
@@ -395,7 +443,7 @@ a.loan-brand:focus-visible .loan-brand__title {
 }
 
 .loan-finance-svc__contact a {
-    color: #6b2d8a;
+    color: var(--loan-royal);
     font-weight: 700;
 }
 
@@ -787,7 +835,7 @@ a.loan-brand:focus-visible .loan-brand__title {
     justify-content: center;
     width: 34px;
     height: 34px;
-    color: #fff !important;
+    color: var(--loan-royal) !important;
     text-decoration: none !important;
     cursor: pointer;
     opacity: 1;
@@ -894,10 +942,10 @@ a.loan-brand:focus-visible .loan-brand__title {
     text-decoration: none !important;
     white-space: nowrap;
     color: #fff !important;
-    background: linear-gradient(135deg, #554ade 0%, #4035b8 100%) !important;
+    background: linear-gradient(135deg, var(--loan-royal) 0%, var(--loan-royal-dark) 100%) !important;
     border: none !important;
     border-radius: 999px !important;
-    box-shadow: 0 1px 4px rgba(64, 53, 184, 0.35);
+    box-shadow: 0 4px 14px var(--loan-royal-glow);
     transition: background 0.2s ease, box-shadow 0.2s ease;
     padding: 6px 12px !important;
 }
@@ -909,8 +957,8 @@ a.loan-brand:focus-visible .loan-brand__title {
 .fusion-main-menu .fusion-menu > li.menu-item-inngroup > a.loan-inngroup-nav-btn:hover,
 .fusion-main-menu .fusion-menu > li.menu-item-inngroup > a.loan-inngroup-nav-btn:focus {
     color: #fff !important;
-    background: linear-gradient(135deg, #6358e8 0%, #4a3fc9 100%) !important;
-    box-shadow: 0 2px 8px rgba(64, 53, 184, 0.4);
+    background: linear-gradient(135deg, var(--loan-royal-light) 0%, var(--loan-royal-mid) 100%) !important;
+    box-shadow: 0 6px 18px var(--loan-royal-glow);
 }
 
 /* Desktop: one horizontal nav row, vertically centered links */
@@ -1123,12 +1171,12 @@ a.loan-brand:focus-visible .loan-brand__title {
 
 .loan-home-intro__testimonial-link {
     font-size: 14px;
-    color: #5146da;
+    color: var(--loan-royal);
     margin-top: 8px;
 }
 
 .loan-home-intro__testimonial-link a {
-    color: #5146da;
+    color: var(--loan-royal);
     text-decoration: none;
 }
 
@@ -1365,7 +1413,7 @@ a.loan-brand:focus-visible .loan-brand__title {
 /* ── Breadcrumbs (About and inner pages) ── */
 
 .loan-page-breadcrumbs {
-    background: #f8f7fc;
+    background: var(--loan-royal-soft-2);
     border-bottom: 1px solid rgba(85, 74, 222, 0.12);
     padding: 18px 15px;
 }
@@ -1379,7 +1427,7 @@ a.loan-brand:focus-visible .loan-brand__title {
 }
 
 .loan-page-breadcrumbs .fusion-breadcrumb-link {
-    color: #554ade;
+    color: var(--loan-royal);
     text-decoration: none;
 }
 
@@ -1438,7 +1486,7 @@ a.loan-brand:focus-visible .loan-brand__title {
 }
 
 .loan-bank-vs__table thead th:nth-child(2) {
-    color: #554ade;
+    color: var(--loan-royal);
 }
 
 .loan-bank-vs__table tbody td {
@@ -1458,7 +1506,7 @@ a.loan-brand:focus-visible .loan-brand__title {
 }
 
 .loan-bank-vs__table tbody td:nth-child(2) b {
-    color: #554ade;
+    color: var(--loan-royal);
 }
 
 .loan-bank-vs__table tbody td:nth-child(3) b {
@@ -1537,7 +1585,7 @@ a.loan-brand:focus-visible .loan-brand__title {
 
 .loan-refer-sidebar .side-nav .current_page_item a,
 .loan-refer-sidebar .side-nav a:hover {
-    color: #554ade;
+    color: var(--loan-royal);
     background: #f9f9fb;
 }
 
@@ -1549,7 +1597,7 @@ a.loan-brand:focus-visible .loan-brand__title {
 .loan-refer__reading-box {
     background-color: #f9f9fb;
     border: 1px solid rgba(226, 226, 226, 0);
-    border-left: 3px solid #554ade;
+    border-left: 3px solid var(--loan-royal);
     padding: 20px 24px;
     margin-bottom: 20px;
 }
@@ -1594,7 +1642,7 @@ a.loan-brand:focus-visible .loan-brand__title {
 .loan-refer__alert--error {
     background: rgba(255, 255, 255, 0.16);
     color: #c0392b;
-    border: 1px solid #e95a59;
+    border: 1px solid var(--loan-royal);
 }
 
 .loan-refer__alert-icon {
@@ -1628,7 +1676,7 @@ a.loan-brand:focus-visible .loan-brand__title {
 }
 
 .loan-refer__field label abbr {
-    color: #e95a59;
+    color: var(--loan-royal);
     text-decoration: none;
     border: none;
 }
@@ -1648,7 +1696,7 @@ a.loan-brand:focus-visible .loan-brand__title {
 
 .loan-refer__field .fusion-form-input:focus {
     outline: none;
-    border-color: #554ade;
+    border-color: var(--loan-royal);
 }
 
 .loan-refer__field textarea.fusion-form-input {
@@ -1676,12 +1724,12 @@ a.loan-brand:focus-visible .loan-brand__title {
     font-size: 14px;
     font-weight: 700;
     color: #fff;
-    background: #554ade;
+    background: var(--loan-royal);
     transition: background 0.2s ease;
 }
 
 .loan-refer__submit .fusion-button:hover {
-    background: #6358e8;
+    background: var(--loan-royal-light);
 }
 
 @media (max-width: 1024px) {
@@ -1949,7 +1997,7 @@ a.loan-brand:focus-visible .loan-brand__title {
 }
 
 .loan-articles-grid__title a:hover {
-    color: #554ade;
+    color: var(--loan-royal);
 }
 
 .loan-articles-grid__meta {
@@ -2031,7 +2079,7 @@ a.loan-brand:focus-visible .loan-brand__title {
 }
 
 .loan-article-single__back a {
-    color: #554ade;
+    color: var(--loan-royal);
     font-weight: 600;
     text-decoration: none;
 }
@@ -2137,7 +2185,7 @@ a.loan-brand:focus-visible .loan-brand__title {
 
 .loan-faq__heading:hover,
 .loan-faq__panel[open] .loan-faq__heading {
-    color: #584de2;
+    color: var(--loan-royal);
 }
 
 .loan-faq__icon {
@@ -2155,7 +2203,7 @@ a.loan-brand:focus-visible .loan-brand__title {
     font-size: 18px;
     font-weight: 700;
     line-height: 1;
-    color: #584de2;
+    color: var(--loan-royal);
     font-style: normal;
 }
 
@@ -2189,7 +2237,7 @@ a.loan-brand:focus-visible .loan-brand__title {
 }
 
 .loan-faq__body a {
-    color: #584de2;
+    color: var(--loan-royal);
     text-decoration: none;
 }
 
@@ -2491,7 +2539,7 @@ a.loan-brand:focus-visible .loan-brand__title {
 }
 
 .loan-contact__alert--error {
-    background: rgba(233, 90, 89, 0.12);
+    background: rgba(30, 99, 216, 0.1);
     color: #a83d3c;
     border: 1px solid var(--loan-coral);
 }
@@ -2545,7 +2593,7 @@ a.loan-brand:focus-visible .loan-brand__title {
 .loan-contact__field .fusion-form-input:focus {
     outline: none;
     border-color: var(--loan-coral);
-    box-shadow: 0 0 0 2px rgba(233, 90, 89, 0.15);
+    box-shadow: 0 0 0 3px var(--loan-royal-glow);
 }
 
 .loan-contact__field textarea.fusion-form-input {
@@ -2578,18 +2626,21 @@ a.loan-brand:focus-visible .loan-brand__title {
 }
 
 .loan-contact__submit .fusion-button {
-    border-radius: 6px;
-    background: #32373c;
-    color: #fff;
+    border-radius: 8px;
+    background: var(--loan-royal);
+    color: var(--loan-text-on-blue);
     border: none;
     padding: 14px 32px;
     font-size: 14px;
     font-weight: 700;
     cursor: pointer;
+    box-shadow: 0 6px 18px var(--loan-royal-glow);
+    transition: background 0.2s ease, transform 0.2s ease;
 }
 
 .loan-contact__submit .fusion-button:hover {
-    opacity: 0.9;
+    background: var(--loan-royal-dark);
+    transform: translateY(-1px);
 }
 
 .loan-contact__info-col .loan-contact__title {
@@ -2613,7 +2664,7 @@ a.loan-brand:focus-visible .loan-brand__title {
     border: 4px solid var(--loan-coral);
     border-radius: 40px;
     text-decoration: none;
-    color: #535ee5;
+    color: var(--loan-royal);
     font-size: 16px;
     line-height: 1.5;
     letter-spacing: 0.05em;
@@ -2627,12 +2678,12 @@ a.loan-brand:focus-visible .loan-brand__title {
 }
 
 .loan-contact__pill strong {
-    color: #535ee5;
+    color: var(--loan-royal-dark);
     font-weight: 700;
 }
 
 .loan-contact__pill:hover {
-    background: rgba(233, 90, 89, 0.08);
+    background: rgba(30, 99, 216, 0.08);
     color: var(--loan-coral-deep);
 }
 
@@ -2681,4 +2732,147 @@ a.loan-brand:focus-visible .loan-brand__title {
     .loan-contact__photo {
         max-width: 100%;
     }
+}
+
+/* Mortgage and Loan — content only (matches innovativeassociates service page) */
+.loan-mortgage-and-loan-page .post-content {
+    padding: 0;
+}
+
+.loan-mortgage-content {
+    padding: 40px 15px 60px;
+    background: #ffffff;
+}
+
+.loan-mortgage-content__inner {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 15px;
+    box-sizing: border-box;
+}
+
+.loan-mortgage-content__figure {
+    margin: 0 0 10px;
+    padding: 20px 0 10px;
+    text-align: center;
+}
+
+.loan-mortgage-content__image {
+    display: block;
+    max-width: 100%;
+    width: auto;
+    height: auto;
+    margin: 0 auto;
+}
+
+.loan-mortgage-content__heading {
+    margin: 30px 0 20px;
+    font-family: Lato, Roboto, sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 1.3;
+    color: var(--loan-text-on-white);
+}
+
+.loan-mortgage-content__body p {
+    margin: 0 0 1em;
+    font-family: Lato, Roboto, sans-serif;
+    font-size: 18px;
+    line-height: 36px;
+    color: #000000;
+    text-align: justify;
+}
+
+.loan-mortgage-content__body p:last-child {
+    margin-bottom: 0;
+}
+
+@media (min-width: 768px) {
+    .loan-mortgage-content__image {
+        max-width: 768px;
+    }
+}
+
+/* Calculator page – home loan widget + lender panel (shared tax-zimed sections) */
+.loan-calculator-page .loan-calculator-sections .container {
+    width: 100%;
+    max-width: 1140px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+    box-sizing: border-box;
+}
+
+.loan-calculator-page .post-content {
+    padding: 0;
+}
+
+.loan-calculator-page .tax-hl-calc,
+.loan-calculator-page .tax-lenders {
+    font-family: Lato, Roboto, sans-serif;
+}
+
+/* ── Royal Blue theme: nav, CTAs, blue surfaces ── */
+
+.fusion-header .fusion-main-menu > ul.fusion-menu > li.current-menu-item > a,
+.fusion-header .fusion-main-menu > ul.fusion-menu > li.current-menu-ancestor > a,
+.fusion-header .fusion-main-menu > ul.fusion-menu > li.current_page_item > a {
+    color: var(--loan-royal) !important;
+}
+
+.fusion-header .fusion-main-menu > ul.fusion-menu > li > a:hover,
+.fusion-header .fusion-main-menu > ul.fusion-menu > li > a:focus-visible {
+    color: var(--loan-royal) !important;
+}
+
+.loan-svc-lp-h2,
+.loan-svc-lp-card__title,
+.loan-services-intro__title,
+.loan-finance-svc__heading {
+    color: var(--loan-text-on-white);
+}
+
+.loan-svc-lp-lead {
+    color: var(--loan-royal-dark);
+}
+
+.loan-svc-lp-btn {
+    border-radius: 8px;
+    box-shadow: 0 6px 20px var(--loan-royal-glow);
+}
+
+.loan-svc-lp-btn--outline:hover {
+    color: var(--loan-royal-dark) !important;
+}
+
+.loan-home-expertise__cta {
+    border-radius: 8px;
+    box-shadow: 0 8px 22px var(--loan-royal-glow);
+}
+
+.loan-calculator-page .tax-hl-calc__title,
+.loan-calculator-page .tax-lenders__title {
+    color: var(--loan-text-on-white);
+}
+
+.loan-calculator-page .tax-hl-calc__lead,
+.loan-calculator-page .tax-lenders__lead,
+.loan-calculator-page .tax-lenders__category {
+    color: var(--loan-text-muted);
+}
+
+.loan-calculator-page .tax-hl-calc__frame-wrap {
+    border-color: var(--loan-royal-border);
+    box-shadow: 0 16px 48px var(--loan-royal-glow);
+}
+
+.loan-calculator-page .tax-lenders__logo-card,
+.loan-calculator-page .tax-lenders__slide {
+    border-color: var(--loan-royal-border);
+}
+
+.loan-calculator-page .tax-lenders__logo-fallback,
+.loan-calculator-page .tax-lenders__slide-name {
+    color: var(--loan-royal-dark);
 }

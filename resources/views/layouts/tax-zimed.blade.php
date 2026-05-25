@@ -6,14 +6,14 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>@yield('title', 'Innovative associates – Business For Your Business')</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Barlow:200,300,400,500,600,700,800,900&subset=latin,latin-ext">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://innovativeassociates.com.au/wp-content/themes/zimed/assets/css/bootstrap.min.css?ver=4.2.1">
     <link rel="stylesheet" href="https://innovativeassociates.com.au/wp-content/themes/zimed/assets/css/animate.min.css?ver=4.2.1">
     <link rel="stylesheet" href="https://innovativeassociates.com.au/wp-content/plugins/elementor/assets/lib/font-awesome/css/font-awesome.min.css?ver=4.7.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous">
     <link rel="stylesheet" href="https://innovativeassociates.com.au/wp-content/themes/zimed/assets/css/jquery.mCustomScrollbar.min.css?ver=3.1.13">
-    <link rel="stylesheet" href="https://innovativeassociates.com.au/wp-content/themes/zimed/assets/css/zimed-icon.css?ver=1.0">
-    <link rel="stylesheet" href="https://innovativeassociates.com.au/wp-content/themes/zimed/assets/css/zimed-new-icon.css?ver=1.0">
+    <link rel="stylesheet" href="{{ asset('assets/css/tax-zimed-icon.css') }}?v=1">
+    <link rel="stylesheet" href="{{ asset('assets/css/tax-zimed-new-icon.css') }}?v=1">
     <link rel="stylesheet" href="https://innovativeassociates.com.au/wp-content/themes/zimed/assets/css/main.css?ver=1779273123">
     <link rel="stylesheet" href="https://innovativeassociates.com.au/wp-content/themes/zimed/style.css?ver=1779273123">
     <link rel="stylesheet" href="https://innovativeassociates.com.au/wp-content/themes/zimed/assets/css/responsive.css?ver=1779273123">
@@ -24,9 +24,10 @@
     <link rel="stylesheet" href="https://innovativeassociates.com.au/wp-content/plugins/elementor/assets/lib/font-awesome/css/solid.min.css?ver=5.15.3">
     <link rel="stylesheet" href="https://innovativeassociates.com.au/wp-content/plugins/elementor/assets/css/frontend.min.css?ver=3.35.0">
     <link rel="stylesheet" href="{{ asset('assets/css/tax-zimed-clone.css') }}?v=37">
+    <link rel="stylesheet" href="{{ asset('assets/css/tax-inn-theme.css') }}?v=7">
     @stack('head')
 </head>
-<body class="@yield('body-class', 'home') wp-theme-zimed elementor-default">
+<body class="tax-inn-platform @yield('body-class', 'home') wp-theme-zimed elementor-default">
 <div class="page-wrapper">
     <div class="preloader">
         <div class="lds-ripple"><div></div><div></div></div>

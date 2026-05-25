@@ -1,30 +1,29 @@
-<footer class="border-t border-tax-mint bg-white section-pad">
+<footer class="border-t border-tax-border bg-tax-bg section-pad">
     <div class="container-wide grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
         <div>
-            <p class="font-bold text-tax-deep">INN Group Tax</p>
+            <p class="font-bold text-tax-navy">INN Group Tax</p>
             <p class="mt-3 text-sm text-gray-600">Accounting, taxation, and advisory for growth-focused clients.</p>
         </div>
         <div>
-            <p class="text-sm font-semibold text-tax-deep">Services</p>
+            <p class="text-sm font-semibold text-tax-navy">Services</p>
             <ul class="mt-3 space-y-2 text-sm text-gray-600">
-                <li><a href="{{ route('tax.services.accounting') }}" class="hover:text-tax-teal">Accounting & Taxation</a></li>
-                <li><a href="{{ route('tax.services.mortgage') }}" class="hover:text-tax-teal">Mortgage & Loan</a></li>
-                <li><a href="{{ route('tax.services.advisory') }}" class="hover:text-tax-teal">Business Advisory</a></li>
-                <li><a href="{{ route('tax.services.bas-gst') }}" class="hover:text-tax-teal">BAS / GST</a></li>
-                <li><a href="{{ route('tax.services.smsf') }}" class="hover:text-tax-teal">SMSF</a></li>
-                <li><a href="{{ route('tax.services.compliance') }}" class="hover:text-tax-teal">Compliance</a></li>
+                <li><a href="{{ route('tax.services.accounting') }}" class="hover:text-tax-blue">Accounting & Taxation</a></li>
+                <li><a href="{{ route('tax.services.advisory') }}" class="hover:text-tax-blue">Business Advisory</a></li>
+                <li><a href="{{ route('tax.services.bas-gst') }}" class="hover:text-tax-blue">BAS / GST</a></li>
+                <li><a href="{{ route('tax.services.smsf') }}" class="hover:text-tax-blue">SMSF</a></li>
+                <li><a href="{{ route('tax.services.compliance') }}" class="hover:text-tax-blue">Compliance</a></li>
             </ul>
         </div>
         <div>
-            <p class="text-sm font-semibold text-tax-deep">Company</p>
+            <p class="text-sm font-semibold text-tax-navy">Company</p>
             <ul class="mt-3 space-y-2 text-sm text-gray-600">
-                <li><a href="{{ route('tax.aboutus') }}" class="hover:text-tax-teal">About Us</a></li>
-                <li><a href="{{ route('tax.about.team') }}" class="hover:text-tax-teal">Meet Team</a></li>
-                <li><a href="{{ route('tax.about.disclaimer') }}" class="hover:text-tax-teal">Disclaimer</a></li>
+                <li><a href="{{ route('tax.aboutus') }}" class="hover:text-tax-blue">About Us</a></li>
+                <li><a href="{{ route('tax.about.team') }}" class="hover:text-tax-blue">Meet Team</a></li>
+                <li><a href="{{ route('tax.about.disclaimer') }}" class="hover:text-tax-blue">Disclaimer</a></li>
             </ul>
         </div>
         <div>
-            <p class="text-sm font-semibold text-tax-deep">Contact</p>
+            <p class="text-sm font-semibold text-tax-navy">Contact</p>
             <p class="mt-3 text-sm text-gray-600">tax@inngroup.com.au</p>
         </div>
     </div>

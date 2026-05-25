@@ -38,7 +38,6 @@
                             $serviceNavActive = in_array($active, [
                                 'services',
                                 'services-accounting',
-                                'services-mortgage',
                                 'services-advisory',
                                 'services-bas-gst',
                                 'services-smsf',
@@ -50,9 +49,6 @@
                             <ul class="sub-menu">
                                 <li class="menu-item {{ $active === 'services-accounting' ? 'current-menu-item' : '' }}">
                                     <a href="{{ route('tax.services.accounting') }}" @if($active === 'services-accounting') aria-current="page" @endif>Accounting and Taxation Services</a>
-                                </li>
-                                <li class="menu-item {{ $active === 'services-mortgage' ? 'current-menu-item' : '' }}">
-                                    <a href="{{ route('tax.services.mortgage') }}" @if($active === 'services-mortgage') aria-current="page" @endif>Mortgage and Finance Service</a>
                                 </li>
                                 <li class="menu-item {{ $active === 'services-advisory' ? 'current-menu-item' : '' }}">
                                     <a href="{{ route('tax.services.advisory') }}" @if($active === 'services-advisory') aria-current="page" @endif>Business advisory Service</a>

@@ -39,7 +39,6 @@
 <div class="full-width-page">
     {{-- Hero: banner-one --}}
     <section class="banner-one" style="background-image: url({{ $cdn }}/2021/05/slider-1-2.jpg);">
-        <img decoding="async" src="{{ $cdn }}/2020/10/pricing-icon-1-1-1.png" class="banner-one__shape-1" alt="">
         <div class="container">
             <img decoding="async" src="" alt="" class="banner-one__shape-moc-1">
             <div class="row">

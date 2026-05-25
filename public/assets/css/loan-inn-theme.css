@@ -1,0 +1,563 @@
+/**
+ * Innovative Finance — INN Group design system
+ * Modern strategic capital partner (between Tax clarity and Wealth luxury)
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+    --inn-loan-navy: #081b33;
+    --inn-loan-navy-mid: #12345a;
+    --inn-loan-footer: #061423;
+    --inn-loan-blue: #1e63d8;
+    --inn-loan-blue-hover: #1854b8;
+    --inn-loan-gold: #c9a96e;
+    --inn-loan-surface: #f8fafc;
+    --inn-loan-text: #101828;
+    --inn-loan-text-secondary: #667085;
+    --inn-loan-border: #e4e7ec;
+    --inn-loan-white: #ffffff;
+    --inn-loan-text-on-dark: #ffffff;
+    --inn-loan-text-on-dark-muted: rgba(255, 255, 255, 0.75);
+    --inn-loan-hero-gradient: linear-gradient(135deg, #081b33 0%, #12345a 100%);
+    --inn-loan-shadow: 0 1px 3px rgba(16, 24, 40, 0.08), 0 1px 2px rgba(16, 24, 40, 0.04);
+    --inn-loan-shadow-md: 0 8px 24px rgba(8, 27, 51, 0.1);
+    --inn-loan-shadow-hover: 0 14px 36px rgba(8, 27, 51, 0.14);
+    --inn-loan-radius: 10px;
+    --inn-loan-max: 1280px;
+    --inn-loan-section-y: 80px;
+    --inn-loan-section-y-mobile: 40px;
+    --inn-loan-font: 'Inter', system-ui, -apple-system, sans-serif;
+    --inn-loan-ease: cubic-bezier(0.22, 1, 0.36, 1);
+
+    /* Map legacy loan tokens */
+    --loan-royal: var(--inn-loan-blue);
+    --loan-royal-dark: var(--inn-loan-blue-hover);
+    --loan-royal-darker: var(--inn-loan-navy);
+    --loan-royal-light: #4a85e3;
+    --loan-royal-mid: var(--inn-loan-blue);
+    --loan-royal-soft: #e8f1fc;
+    --loan-royal-soft-2: var(--inn-loan-surface);
+    --loan-royal-border: var(--inn-loan-border);
+    --loan-royal-glow: rgba(30, 99, 216, 0.28);
+    --loan-text-on-blue: var(--inn-loan-white);
+    --loan-text-on-white: var(--inn-loan-text);
+    --loan-text-muted: var(--inn-loan-text-secondary);
+    --loan-coral: var(--inn-loan-blue);
+    --loan-coral-dark: var(--inn-loan-blue-hover);
+    --loan-coral-deep: var(--inn-loan-navy);
+    --loan-accent: var(--inn-loan-blue);
+    --loan-expertise-dark: var(--inn-loan-navy);
+    --loan-expertise-mid: var(--inn-loan-navy-mid);
+    --loan-expertise-light: var(--inn-loan-blue);
+}
+
+/* ── Ambient finance lines (subtle, site-wide under content) ── */
+
+.loan-inn-ambient {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.loan-inn-ambient::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    opacity: 0.025;
+    background-image:
+        linear-gradient(var(--inn-loan-border) 1px, transparent 1px),
+        linear-gradient(90deg, var(--inn-loan-border) 1px, transparent 1px);
+    background-size: 48px 48px;
+}
+
+/* ── Base ── */
+
+body.loan-inn-platform {
+    font-family: var(--inn-loan-font) !important;
+    font-weight: 400;
+    color: var(--inn-loan-text);
+    background: var(--inn-loan-surface);
+    -webkit-font-smoothing: antialiased;
+}
+
+body.loan-inn-platform #boxed-wrapper,
+body.loan-inn-platform #wrapper,
+body.loan-inn-platform #main,
+body.loan-inn-platform .fusion-wrapper {
+    position: relative;
+    z-index: 1;
+    background: transparent;
+}
+
+body.loan-inn-platform h1,
+body.loan-inn-platform h2,
+body.loan-inn-platform h3,
+body.loan-inn-platform h4,
+body.loan-inn-platform .loan-brand__title,
+body.loan-inn-platform .loan-svc-lp-hero__title,
+body.loan-inn-platform .loan-finance-svc__title,
+body.loan-inn-platform .fusion-title h2,
+body.loan-inn-platform .fusion-title h3 {
+    font-family: var(--inn-loan-font) !important;
+    font-weight: 600 !important;
+    letter-spacing: -0.02em;
+    color: var(--inn-loan-text);
+}
+
+body.loan-inn-platform p,
+body.loan-inn-platform li,
+body.loan-inn-platform .loan-svc-lp-prose p {
+    color: var(--inn-loan-text-secondary);
+}
+
+body.loan-inn-platform .fusion-row {
+    max-width: var(--inn-loan-max);
+}
+
+/* ── Header (white glass, INN aligned) ── */
+
+body.loan-inn-platform .fusion-header-wrapper {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: transparent !important;
+}
+
+body.loan-inn-platform .fusion-header-wrapper .fusion-secondary-header,
+body.loan-inn-platform .fusion-header-wrapper .fusion-header-v3 > .fusion-header {
+    background: rgba(255, 255, 255, 0.94) !important;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--inn-loan-border) !important;
+    box-shadow: var(--inn-loan-shadow);
+}
+
+body.loan-inn-platform .fusion-header-wrapper .fusion-secondary-header .fusion-contact-info,
+body.loan-inn-platform .fusion-header-wrapper .fusion-secondary-header .fusion-header-separator {
+    color: var(--inn-loan-text-secondary) !important;
+}
+
+body.loan-inn-platform .fusion-header-wrapper .fusion-secondary-header a {
+    color: var(--inn-loan-blue) !important;
+}
+
+body.loan-inn-platform .fusion-header .fusion-main-menu > ul.fusion-menu > li > a,
+body.loan-inn-platform .fusion-header .fusion-main-menu > ul.fusion-menu > li > a .menu-text {
+    font-family: var(--inn-loan-font) !important;
+    font-weight: 500 !important;
+    font-size: 14px !important;
+    color: var(--inn-loan-text-secondary) !important;
+    transition: color 0.25s var(--inn-loan-ease);
+}
+
+body.loan-inn-platform .fusion-header .fusion-main-menu > ul.fusion-menu > li > a:hover,
+body.loan-inn-platform .fusion-header .fusion-main-menu > ul.fusion-menu > li.current-menu-item > a,
+body.loan-inn-platform .fusion-header .fusion-main-menu > ul.fusion-menu > li.current-menu-ancestor > a {
+    color: var(--inn-loan-blue) !important;
+    box-shadow: inset 0 -2px 0 var(--inn-loan-blue);
+}
+
+body.loan-inn-platform .fusion-main-menu .sub-menu {
+    background: var(--inn-loan-white) !important;
+    border: 1px solid var(--inn-loan-border) !important;
+    border-radius: var(--inn-loan-radius) !important;
+    box-shadow: var(--inn-loan-shadow-md) !important;
+}
+
+body.loan-inn-platform .loan-brand__title {
+    color: var(--inn-loan-text) !important;
+    font-family: var(--inn-loan-font) !important;
+}
+
+body.loan-inn-platform .loan-brand__sub {
+    color: var(--inn-loan-blue) !important;
+    letter-spacing: 0.14em;
+}
+
+body.loan-inn-platform .loan-brand__mark {
+    background: linear-gradient(180deg, var(--inn-loan-blue) 0%, var(--inn-loan-navy) 100%) !important;
+}
+
+body.loan-inn-platform .loan-social-networks a.loan-social-icon {
+    color: var(--inn-loan-blue) !important;
+    border: 1px solid var(--inn-loan-border);
+    border-radius: 8px;
+}
+
+body.loan-inn-platform .loan-social-networks a.loan-social-icon:hover {
+    border-color: var(--inn-loan-blue);
+    box-shadow: var(--inn-loan-shadow);
+}
+
+body.loan-inn-platform .fusion-main-menu .main-nav__inngroup-btn,
+body.loan-inn-platform .loan-inngroup-nav-btn {
+    background: var(--inn-loan-blue) !important;
+    color: #ffffff !important;
+    border-radius: var(--inn-loan-radius) !important;
+    font-weight: 600 !important;
+}
+
+body.loan-inn-platform .fusion-header .fusion-main-menu > ul.fusion-menu > li.menu-item-inngroup > a.loan-inngroup-nav-btn,
+body.loan-inn-platform .fusion-header .fusion-main-menu > ul.fusion-menu > li.menu-item-inngroup > a.loan-inngroup-nav-btn .menu-text,
+body.loan-inn-platform .loan-inngroup-nav-btn .menu-text {
+    color: #ffffff !important;
+}
+
+body.loan-inn-platform .fusion-header .fusion-main-menu > ul.fusion-menu > li.menu-item-inngroup > a.loan-inngroup-nav-btn:hover,
+body.loan-inn-platform .fusion-header .fusion-main-menu > ul.fusion-menu > li.menu-item-inngroup > a.loan-inngroup-nav-btn:focus-visible,
+body.loan-inn-platform .fusion-header .fusion-main-menu > ul.fusion-menu > li.menu-item-inngroup > a.loan-inngroup-nav-btn:hover .menu-text,
+body.loan-inn-platform .fusion-header .fusion-main-menu > ul.fusion-menu > li.menu-item-inngroup > a.loan-inngroup-nav-btn:focus-visible .menu-text {
+    color: #ffffff !important;
+    box-shadow: none !important;
+}
+
+/* ── Premium hero bands (internal pages + breadcrumbs) ── */
+
+body.loan-inn-platform .loan-page-breadcrumbs {
+    background: var(--inn-loan-hero-gradient) !important;
+    border-bottom: none !important;
+    padding: 56px 16px 52px !important;
+    position: relative;
+    overflow: hidden;
+}
+
+body.loan-inn-platform .loan-page-breadcrumbs::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(ellipse 65% 50% at 100% 0%, rgba(30, 99, 216, 0.18) 0%, transparent 55%),
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 80' preserveAspectRatio='none'%3E%3Cpath fill='none' stroke='%231E63D8' stroke-opacity='0.12' d='M0 60 Q100 20 200 50 T400 35'/%3E%3Cpath fill='none' stroke='%23C9A96E' stroke-opacity='0.08' d='M0 70 Q150 40 400 55'/%3E%3C/svg%3E") center bottom / 100% auto no-repeat;
+    pointer-events: none;
+}
+
+body.loan-inn-platform .loan-page-breadcrumbs .fusion-breadcrumbs {
+    position: relative;
+    z-index: 1;
+    max-width: var(--inn-loan-max);
+    margin: 0 auto;
+    font-size: 14px;
+}
+
+body.loan-inn-platform .loan-page-breadcrumbs .fusion-breadcrumb-link {
+    color: var(--inn-loan-text-on-dark-muted) !important;
+    font-weight: 500;
+}
+
+body.loan-inn-platform .loan-page-breadcrumbs .fusion-breadcrumb-link:hover {
+    color: var(--inn-loan-white) !important;
+}
+
+body.loan-inn-platform .loan-page-breadcrumbs .breadcrumb-leaf {
+    color: var(--inn-loan-white) !important;
+    font-weight: 600;
+}
+
+body.loan-inn-platform .loan-page-breadcrumbs .fusion-breadcrumb-sep {
+    color: rgba(255, 255, 255, 0.45) !important;
+}
+
+/* Service / page heroes */
+
+body.loan-inn-platform .loan-svc-lp-hero,
+body.loan-inn-platform .loan-finance-svc__hero,
+body.loan-inn-platform .loan-testimonials-band__banner {
+    background: var(--inn-loan-hero-gradient) !important;
+    color: var(--inn-loan-text-on-dark) !important;
+    padding: 72px 16px 80px !important;
+    position: relative;
+    overflow: hidden;
+}
+
+body.loan-inn-platform .loan-svc-lp-hero::before,
+body.loan-inn-platform .loan-finance-svc__hero::before,
+body.loan-inn-platform .loan-testimonials-band__banner::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(ellipse 70% 55% at 90% 10%, rgba(30, 99, 216, 0.2) 0%, transparent 58%),
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 120' preserveAspectRatio='none'%3E%3Cpath fill='none' stroke='%231E63D8' stroke-width='1' opacity='0.15' d='M0 80 L80 40 L160 70 L240 30 L320 65 L400 25 L480 60 L560 35 L640 75'/%3E%3C/svg%3E") center 85% / 100% 40% no-repeat;
+    pointer-events: none;
+}
+
+body.loan-inn-platform .loan-svc-lp-hero__inner,
+body.loan-inn-platform .loan-finance-svc__hero-inner {
+    position: relative;
+    z-index: 1;
+    max-width: var(--inn-loan-max);
+    margin: 0 auto;
+}
+
+body.loan-inn-platform .loan-svc-lp-hero__title,
+body.loan-inn-platform .loan-finance-svc__title {
+    color: var(--inn-loan-white) !important;
+    font-size: clamp(32px, 4.5vw, 46px) !important;
+    font-weight: 700 !important;
+    line-height: 1.12 !important;
+}
+
+body.loan-inn-platform .loan-svc-lp-kicker {
+    color: rgba(255, 255, 255, 0.72) !important;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    font-size: 12px;
+}
+
+body.loan-inn-platform .loan-svc-lp-hero .loan-svc-lp-prose p,
+body.loan-inn-platform .loan-finance-svc__lead,
+body.loan-inn-platform .loan-finance-svc__tagline {
+    color: var(--inn-loan-text-on-dark-muted) !important;
+}
+
+/* Home LayerSlider — premium overlay (photo unchanged underneath) */
+
+body.loan-inn-platform .loan-hero-slider {
+    position: relative;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+body.loan-inn-platform .loan-hero-slider::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(105deg, rgba(8, 27, 51, 0.82) 0%, rgba(8, 27, 51, 0.55) 45%, rgba(18, 52, 90, 0.45) 100%);
+    pointer-events: none;
+    z-index: 2;
+}
+
+body.loan-inn-platform .loan-hero-slider .ls-l {
+    font-family: var(--inn-loan-font) !important;
+    z-index: 3 !important;
+}
+
+body.loan-inn-platform .loan-hero-slider a.ls-l[style*='background-color'] {
+    background-color: var(--inn-loan-blue) !important;
+    color: var(--inn-loan-white) !important;
+    border-radius: var(--inn-loan-radius) !important;
+    font-weight: 600 !important;
+    box-shadow: 0 8px 28px rgba(30, 99, 216, 0.4) !important;
+}
+
+body.loan-inn-platform .loan-hero-slider a.ls-l[style*='border:solid'] {
+    background: transparent !important;
+    border: 2px solid var(--inn-loan-white) !important;
+    color: var(--inn-loan-white) !important;
+}
+
+/* ── Buttons ── */
+
+body.loan-inn-platform .thm-btn,
+body.loan-inn-platform .loan-svc-lp-btn:not(.loan-svc-lp-btn--outline),
+body.loan-inn-platform .loan-home-expertise__cta,
+body.loan-inn-platform .loan-finance-svc__cta:not(.loan-svc-lp-btn--outline),
+body.loan-inn-platform .loan-contact__submit .fusion-button,
+body.loan-inn-platform .fusion-button.button-default {
+    font-family: var(--inn-loan-font) !important;
+    font-weight: 600 !important;
+    text-transform: none !important;
+    letter-spacing: 0 !important;
+    background: var(--inn-loan-blue) !important;
+    color: var(--inn-loan-white) !important;
+    border: none !important;
+    border-radius: var(--inn-loan-radius) !important;
+    box-shadow: 0 6px 20px rgba(30, 99, 216, 0.3) !important;
+    transition: transform 0.3s var(--inn-loan-ease), box-shadow 0.3s var(--inn-loan-ease), background 0.3s var(--inn-loan-ease) !important;
+}
+
+body.loan-inn-platform .thm-btn:hover,
+body.loan-inn-platform .loan-svc-lp-btn:not(.loan-svc-lp-btn--outline):hover,
+body.loan-inn-platform .loan-home-expertise__cta:hover,
+body.loan-inn-platform .loan-finance-svc__cta:hover {
+    background: var(--inn-loan-blue-hover) !important;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 28px rgba(30, 99, 216, 0.4) !important;
+}
+
+body.loan-inn-platform .loan-svc-lp-hero .loan-svc-lp-btn--outline,
+body.loan-inn-platform .loan-finance-svc__hero .loan-svc-lp-btn--outline {
+    background: transparent !important;
+    color: var(--inn-loan-white) !important;
+    border: 2px solid rgba(255, 255, 255, 0.65) !important;
+    box-shadow: none !important;
+}
+
+body.loan-inn-platform .loan-svc-lp-hero .loan-svc-lp-btn--outline:hover {
+    background: var(--inn-loan-white) !important;
+    color: var(--inn-loan-navy) !important;
+}
+
+body.loan-inn-platform .loan-svc-lp-btn--outline:not(.loan-svc-lp-hero .loan-svc-lp-btn--outline) {
+    background: transparent !important;
+    color: var(--inn-loan-blue) !important;
+    border: 2px solid var(--inn-loan-blue) !important;
+    box-shadow: none !important;
+}
+
+body.loan-inn-platform .loan-svc-lp-btn--outline:not(.loan-svc-lp-hero .loan-svc-lp-btn--outline):hover {
+    background: var(--inn-loan-blue) !important;
+    color: var(--inn-loan-white) !important;
+}
+
+/* ── Sections ── */
+
+body.loan-inn-platform .post-content,
+body.loan-inn-platform .loan-home-intro,
+body.loan-inn-platform .loan-home-expertise,
+body.loan-inn-platform .loan-services-intro,
+body.loan-inn-platform .loan-finance-svc__body,
+body.loan-inn-platform .loan-svc-lp-block,
+body.loan-inn-platform .loan-bank-vs,
+body.loan-inn-platform .loan-contact-page .post-content,
+body.loan-inn-platform .loan-calculator-page .tax-hl-calc,
+body.loan-inn-platform .loan-calculator-page .tax-lenders {
+    background: var(--inn-loan-surface) !important;
+}
+
+body.loan-inn-platform .loan-svc-lp-block--alt,
+body.loan-inn-platform .loan-svc-lp-block:not(.loan-svc-lp-block--dark) {
+    background: var(--inn-loan-white) !important;
+}
+
+body.loan-inn-platform .loan-svc-lp-block--dark,
+body.loan-inn-platform .loan-svc-lp-cta {
+    background: var(--inn-loan-hero-gradient) !important;
+}
+
+body.loan-inn-platform .loan-svc-lp-h2,
+body.loan-inn-platform .loan-services-intro__title,
+body.loan-inn-platform .loan-contact__title {
+    color: var(--inn-loan-text) !important;
+}
+
+/* ── Cards ── */
+
+body.loan-inn-platform .loan-svc-lp-card,
+body.loan-inn-platform .loan-home-expertise__card,
+body.loan-inn-platform .loan-services-nav-cards__card,
+body.loan-inn-platform .loan-home-intro__testimonial,
+body.loan-inn-platform .loan-articles-grid__post-inner,
+body.loan-inn-platform .loan-team__member,
+body.loan-inn-platform .loan-faq__panel,
+body.loan-inn-platform .loan-contact__form-col,
+body.loan-inn-platform .loan-contact__info-col,
+body.loan-inn-platform .loan-calculator-page .tax-hl-calc__frame-wrap,
+body.loan-inn-platform .loan-calculator-page .tax-lenders__logo-card {
+    background: var(--inn-loan-white) !important;
+    border: 1px solid var(--inn-loan-border) !important;
+    border-radius: var(--inn-loan-radius) !important;
+    box-shadow: var(--inn-loan-shadow) !important;
+    transition: transform 0.35s var(--inn-loan-ease), box-shadow 0.35s var(--inn-loan-ease) !important;
+}
+
+body.loan-inn-platform .loan-svc-lp-card:hover,
+body.loan-inn-platform .loan-home-expertise__card:hover,
+body.loan-inn-platform .loan-services-nav-cards__card:hover,
+body.loan-inn-platform .loan-articles-grid__post-inner:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--inn-loan-shadow-hover) !important;
+}
+
+body.loan-inn-platform .loan-svc-lp-card__icon {
+    background: rgba(30, 99, 216, 0.08) !important;
+    color: var(--inn-loan-blue) !important;
+    border: 1px solid var(--inn-loan-border);
+    border-radius: 8px;
+}
+
+body.loan-inn-platform .loan-home-expertise__icon {
+    color: var(--inn-loan-blue) !important;
+}
+
+body.loan-inn-platform .loan-svc-lp-card__title,
+body.loan-inn-platform .loan-home-expertise__card h3 {
+    color: var(--inn-loan-text) !important;
+}
+
+/* Areas of Expertise — dark text on white cards (homepage) */
+body.loan-inn-platform .loan-home-expertise__card-title,
+body.loan-inn-platform .loan-home-expertise__card-title a,
+body.loan-inn-platform .loan-home-expertise__card--dark .loan-home-expertise__card-title a,
+body.loan-inn-platform .loan-home-expertise__card h3,
+body.loan-inn-platform .loan-home-expertise__card-text,
+body.loan-inn-platform .loan-home-expertise__card p {
+    color: #000000 !important;
+}
+
+body.loan-inn-platform .loan-home-expertise__card-title a:hover,
+body.loan-inn-platform .loan-home-expertise__card-title a:focus-visible {
+    color: var(--inn-loan-blue) !important;
+}
+
+/* ── Forms ── */
+
+body.loan-inn-platform input,
+body.loan-inn-platform textarea,
+body.loan-inn-platform select,
+body.loan-inn-platform .fusion-form-input {
+    font-family: var(--inn-loan-font) !important;
+    background: var(--inn-loan-white) !important;
+    border: 1px solid var(--inn-loan-border) !important;
+    border-radius: var(--inn-loan-radius) !important;
+    color: var(--inn-loan-text) !important;
+}
+
+body.loan-inn-platform input:focus,
+body.loan-inn-platform textarea:focus {
+    outline: none !important;
+    border-color: var(--inn-loan-blue) !important;
+    box-shadow: 0 0 0 3px rgba(30, 99, 216, 0.15) !important;
+}
+
+body.loan-inn-platform .loan-contact__field label {
+    color: var(--inn-loan-text-secondary) !important;
+}
+
+/* Footer styles: loan-inn-footer.css (footer-only; INN Group Associates parity) */
+
+body.loan-inn-platform .fusion-sides-frame {
+    display: none;
+}
+
+/* Scroll top */
+
+body.loan-inn-platform .loan-scroll-top-wrap .loan-scroll-top,
+body.loan-inn-platform .loan-scroll-top-wrap #toTop {
+    background: var(--inn-loan-navy) !important;
+    color: var(--inn-loan-white) !important;
+    border-radius: var(--inn-loan-radius) var(--inn-loan-radius) 0 0 !important;
+}
+
+body.loan-inn-platform .loan-scroll-top-wrap .loan-scroll-top:hover,
+body.loan-inn-platform .loan-scroll-top-wrap #toTop:hover {
+    background: var(--inn-loan-blue) !important;
+}
+
+/* Calculator page tokens */
+
+body.loan-inn-platform .loan-calculator-page .tax-hl-calc__title,
+body.loan-inn-platform .loan-calculator-page .tax-lenders__title {
+    color: var(--inn-loan-text) !important;
+}
+
+/* Kill orange / purple legacy */
+
+body.loan-inn-platform .loan-page-breadcrumbs {
+    border-bottom-color: transparent !important;
+}
+
+body.loan-inn-platform a:not(.thm-btn):not(.fusion-button):hover {
+    color: var(--inn-loan-blue);
+}
+
+@media (max-width: 767px) {
+    body.loan-inn-platform .loan-svc-lp-hero,
+    body.loan-inn-platform .loan-page-breadcrumbs {
+        padding-top: 48px !important;
+        padding-bottom: 40px !important;
+    }
+}

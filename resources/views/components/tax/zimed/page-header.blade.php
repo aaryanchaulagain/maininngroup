@@ -5,8 +5,6 @@
 ])
 
 @php
-    $bg = 'https://innovativeassociates.com.au/wp-content/uploads/2021/03/page-header-bg-4.jpg';
-
     if (empty($crumbs) && $breadcrumb) {
         $crumbs = [
             ['label' => 'Home', 'url' => route('tax.home')],
@@ -15,7 +13,7 @@
     }
 @endphp
 
-<section class="page-header" style="background-image: url({{ $bg }});">
+<section class="page-header inn-tax-page-hero">
     <div class="container">
         <ul class="thm-breadcrumb list-unstyled">
             @foreach ($crumbs as $crumb)

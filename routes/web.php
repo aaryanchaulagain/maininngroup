@@ -54,7 +54,7 @@ $registerTaxRoutes = function () {
     });
 
     Route::redirect('/services-2/speed-optimizations', '/services/accounting', 301);
-    Route::redirect('/services-2/digital-services-2', '/services/mortgage', 301);
+    Route::get('/services-2/digital-services-2', fn () => redirect(domain_url('loan', 'services/mortgage-and-loan'), 301));
     Route::redirect('/services-2/marketing-analysis-2', '/services/advisory', 301);
 
     Route::redirect('/seo-and-backlinking', '/mentoring', 301);
@@ -95,7 +95,7 @@ $registerLoanRoutes = function () {
     Route::prefix('services')->name('services.')->group(function () {
         Route::get('/', [LoanController::class, 'services'])->name('index');
         Route::get('/{slug}', [LoanController::class, 'service'])->name('show')
-            ->where('slug', 'home-loan|investment-loan|refinancing|asset-finance|commercial-finance');
+            ->where('slug', 'home-loan|investment-loan|refinancing|asset-finance|commercial-finance|mortgage-and-loan');
     });
 
     Route::prefix('about')->name('about.')->group(function () {
@@ -108,6 +108,7 @@ $registerLoanRoutes = function () {
     Route::get('/articles', [LoanController::class, 'articles'])->name('articles');
     Route::get('/articles/{article:slug}', [LoanController::class, 'showArticle'])->name('articles.show');
     Route::get('/faq', [LoanController::class, 'faq'])->name('faq');
+    Route::get('/calculator', [LoanController::class, 'calculator'])->name('calculator');
     Route::get('/contact', [LoanController::class, 'contact'])->name('contact');
     Route::post('/contact', [ContactController::class, 'store'])->name('contact.store');
 };
@@ -149,9 +150,9 @@ if ($useDomains) {
     Route::redirect('/home-one/services-3', "/{$taxPath}/services", 301);
     Route::redirect('/services-3', "/{$taxPath}/services", 301);
     Route::redirect('/services-2/speed-optimizations', "/{$taxPath}/services/accounting", 301);
-    Route::redirect('/services-2/digital-services-2', "/{$taxPath}/services/mortgage", 301);
+    Route::get('/services-2/digital-services-2', fn () => redirect(domain_url('loan', 'services/mortgage-and-loan'), 301));
     Route::redirect('/services/accounting-and-taxation', "/{$taxPath}/services/accounting", 301);
-    Route::redirect('/services/mortgage-and-finance', "/{$taxPath}/services/mortgage", 301);
+    Route::get('/services/mortgage-and-finance', fn () => redirect(domain_url('loan', 'services/mortgage-and-loan'), 301));
     Route::redirect('/services-2/marketing-analysis-2', "/{$taxPath}/services/advisory", 301);
     Route::redirect('/services/business-advisory', "/{$taxPath}/services/advisory", 301);
     Route::redirect('/services/business-advisory-services', "/{$taxPath}/services/advisory", 301);

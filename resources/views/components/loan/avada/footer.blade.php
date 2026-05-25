@@ -1,107 +1,132 @@
 @php
-    $cdn = 'https://innovativewealth.com.au';
-    $footerSocial = [
-        ['label' => 'Facebook', 'url' => 'https://www.facebook.com/', 'icon' => 'fa-facebook-f'],
-        ['label' => 'Instagram', 'url' => 'https://www.instagram.com/', 'icon' => 'fa-instagram'],
-        ['label' => 'Twitter', 'url' => 'https://twitter.com/', 'icon' => 'fa-x-twitter'],
+    $cdn = 'https://innovativeassociates.com.au/wp-content/uploads';
+    $loanEmail = config('domains.loan_contact_email');
+    $loanPhone = '0403054593';
+    $loanPhoneDisplay = '0403 054 593';
+    $exploreLinks = [
+        ['label' => 'Home', 'url' => route('loan.home'), 'external' => false],
+        ['label' => 'Services', 'url' => route('loan.services.index'), 'external' => false],
+        ['label' => 'Home Loan', 'url' => route('loan.services.show', 'home-loan'), 'external' => false],
+        ['label' => 'Investment Loan', 'url' => route('loan.services.show', 'investment-loan'), 'external' => false],
+        ['label' => 'Refinancing', 'url' => route('loan.services.show', 'refinancing'), 'external' => false],
+        ['label' => 'Mortgage and Loan', 'url' => route('loan.services.show', 'mortgage-and-loan'), 'external' => false],
+        ['label' => 'About Us', 'url' => route('loan.about'), 'external' => false],
+        ['label' => 'Articles', 'url' => route('loan.articles'), 'external' => false],
+        ['label' => 'FAQ', 'url' => route('loan.faq'), 'external' => false],
+        ['label' => 'Contact Us', 'url' => route('loan.contact'), 'external' => false],
     ];
 @endphp
 
-<div class="fusion-footer">
-    <footer class="fusion-footer-widget-area fusion-widget-area">
-        <div class="fusion-row">
-            <div class="fusion-columns fusion-columns-5 fusion-widget-area">
-                <div class="fusion-column col-lg-2 col-md-2 col-sm-2">
-                    <section class="fusion-footer-widget-column widget widget_custom_html">
-                        <h4 class="widget-title">Get in touch</h4>
-                        <div class="textwidget custom-html-widget">Innovative Loan<br>
-Suite 101, Level 10,<br>
-420 Pitt St, Sydney 2000</div>
-                    </section>
-                </div>
-                <div class="fusion-column col-lg-2 col-md-2 col-sm-2">
-                    <section class="fusion-footer-widget-column widget widget_text">
-                        <h4 class="widget-title">About</h4>
-                        <div class="textwidget">
-                            <p>We'll look after all your financials, accounting, taxation and property matters at one place.</p>
-                        </div>
-                    </section>
-                </div>
-                <div class="fusion-column col-lg-2 col-md-2 col-sm-2">
-                    <section class="fusion-footer-widget-column widget avada_vertical_menu">
-                        <nav class="fusion-vertical-menu-widget fusion-menu hover left no-border" aria-label="Footer Navigation">
-                            <ul class="menu">
-                                <li class="menu-item"><a href="{{ route('loan.home') }}"><span class="link-text">Home</span><span class="arrow"></span></a></li>
-                                <li class="menu-item menu-item-has-children">
-                                    <a href="{{ route('loan.services.index') }}"><span class="link-text">Services</span><span class="arrow"></span></a>
-                                    <ul class="sub-menu">
-                                        <li class="menu-item"><a href="{{ route('loan.services.show', 'home-loan') }}"><span class="link-text">Home Loan</span><span class="arrow"></span></a></li>
-                                        <li class="menu-item"><a href="{{ route('loan.services.show', 'investment-loan') }}"><span class="link-text">Investment Loan</span><span class="arrow"></span></a></li>
-                                        <li class="menu-item"><a href="{{ route('loan.services.show', 'refinancing') }}"><span class="link-text">Refinancing</span><span class="arrow"></span></a></li>
-                                        <li class="menu-item"><a href="{{ route('loan.services.show', 'asset-finance') }}"><span class="link-text">Asset Finance</span><span class="arrow"></span></a></li>
-                                        <li class="menu-item"><a href="{{ route('loan.services.show', 'commercial-finance') }}"><span class="link-text">Commercial Finance</span><span class="arrow"></span></a></li>
-                                    </ul>
-                                </li>
-                                <li class="menu-item menu-item-has-children">
-                                    <a href="{{ route('loan.about') }}"><span class="link-text">About</span><span class="arrow"></span></a>
-                                    <ul class="sub-menu">
-                                        <li class="menu-item"><a href="{{ route('loan.about') }}"><span class="link-text">About Us</span><span class="arrow"></span></a></li>
-                                        <li class="menu-item"><a href="{{ route('loan.about.bank-vs') }}"><span class="link-text">Bank VS Innovative</span><span class="arrow"></span></a></li>
-                                        <li class="menu-item"><a href="{{ route('loan.about.refer') }}"><span class="link-text">Refer and EARN</span><span class="arrow"></span></a></li>
-                                        <li class="menu-item"><a href="{{ route('loan.about.team') }}"><span class="link-text">Team</span><span class="arrow"></span></a></li>
-                                    </ul>
-                                </li>
-                                <li class="menu-item"><a href="{{ route('loan.articles') }}"><span class="link-text">Articles</span><span class="arrow"></span></a></li>
-                                <li class="menu-item"><a href="{{ route('loan.faq') }}"><span class="link-text">FAQ</span><span class="arrow"></span></a></li>
-                                <li class="menu-item"><a href="{{ route('loan.contact') }}"><span class="link-text">Contact Us</span><span class="arrow"></span></a></li>
-                            </ul>
-                        </nav>
-                    </section>
-                </div>
-                <div class="fusion-column col-lg-2 col-md-2 col-sm-2">
-                    <section class="fusion-footer-widget-column widget widget_recent_entries">
-                        <h4 class="widget-title">Recent Posts</h4>
-                        <ul>
-                            @forelse ($recentArticles ?? [] as $article)
-                                <li><a href="{{ route('loan.articles') }}">{{ $article->title }}</a></li>
-                            @empty
-                                <li><a href="{{ route('loan.articles') }}">How To Buy A First Home With Big Price Growth Potential</a></li>
-                                <li><a href="{{ route('loan.articles') }}">Six Steps To Finding Undervalued Properties</a></li>
-                            @endforelse
-                        </ul>
-                    </section>
-                </div>
-                <div class="fusion-column fusion-column-last col-lg-2 col-md-2 col-sm-2">
-                    <section class="fusion-footer-widget-column widget social_links">
-                        <h4 class="widget-title">Get Social</h4>
-                        <div class="fusion-social-networks loan-footer-social">
-                            <div class="fusion-social-networks-wrapper loan-footer-social__icons">
-                                @foreach ($footerSocial as $social)
-                                    <a class="loan-footer-social-icon"
-                                       href="{{ $social['url'] }}"
-                                       target="_blank"
-                                       rel="noopener noreferrer"
-                                       title="{{ $social['label'] }}"
-                                       aria-label="{{ $social['label'] }}">
-                                        <i class="fa-brands {{ $social['icon'] }}" aria-hidden="true"></i>
-                                        <span class="screen-reader-text">{{ $social['label'] }}</span>
-                                    </a>
-                                @endforeach
+<div data-elementor-type="wp-post" class="loan-inn-footer elementor elementor-831">
+    <section class="elementor-section elementor-top-section elementor-section-boxed elementor-section-height-default">
+        <div class="elementor-container elementor-column-gap-default">
+            <div class="elementor-column elementor-col-100 elementor-top-column">
+                <div class="elementor-widget-wrap elementor-element-populated">
+                    <section class="elementor-section elementor-inner-section elementor-section-boxed elementor-section-height-default">
+                        <div class="elementor-container elementor-column-gap-default loan-inn-footer__columns">
+                            <div class="elementor-column elementor-col-33 elementor-inner-column">
+                                <div class="elementor-widget-wrap elementor-element-populated">
+                                    <div class="elementor-element elementor-widget elementor-widget-image">
+                                        <div class="elementor-widget-container">
+                                            <img loading="lazy" decoding="async" width="1137" height="347" src="{{ $cdn }}/2021/03/cropped-Untitled-1-1.png" class="attachment-full size-full loan-inn-footer__logo" alt="Innovative Finance">
+                                        </div>
+                                    </div>
+                                    <div class="elementor-element elementor-widget elementor-widget-text-editor">
+                                        <div class="elementor-widget-container">Innovative Finance is a proactive mortgage and finance firm offering home loans, investment lending, refinancing, asset finance, and commercial finance — with accounting and taxation support through the INN Group.</div>
+                                    </div>
+                                    <div class="elementor-element elementor-widget elementor-widget-button">
+                                        <div class="elementor-widget-container">
+                                            <div class="elementor-button-wrapper">
+                                                <a class="elementor-button elementor-button-link elementor-size-md" href="tel:{{ $loanPhone }}">
+                                                    <span class="elementor-button-content-wrapper">
+                                                        <span class="elementor-button-text">Call Us Today</span>
+                                                    </span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="elementor-column elementor-col-33 elementor-inner-column">
+                                <div class="elementor-widget-wrap elementor-element-populated">
+                                    <div class="elementor-element elementor-widget elementor-widget-heading">
+                                        <div class="elementor-widget-container">
+                                            <h2 class="elementor-heading-title elementor-size-default">Explore</h2>
+                                        </div>
+                                    </div>
+                                    <div class="elementor-element elementor-icon-list--layout-traditional elementor-widget elementor-widget-icon-list">
+                                        <div class="elementor-widget-container">
+                                            <ul class="elementor-icon-list-items">
+                                                @foreach ($exploreLinks as $link)
+                                                    <li class="elementor-icon-list-item">
+                                                        <a href="{{ $link['url'] }}" @if ($link['external']) target="_blank" rel="noopener noreferrer" @endif>
+                                                            <span class="elementor-icon-list-text">{{ $link['label'] }}</span>
+                                                        </a>
+                                                    </li>
+                                                @endforeach
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="elementor-column elementor-col-33 elementor-inner-column">
+                                <div class="elementor-widget-wrap elementor-element-populated">
+                                    <div class="elementor-element elementor-widget elementor-widget-heading">
+                                        <div class="elementor-widget-container">
+                                            <h2 class="elementor-heading-title elementor-size-default">Contact</h2>
+                                        </div>
+                                    </div>
+                                    <div class="elementor-element elementor-icon-list--layout-traditional elementor-widget elementor-widget-icon-list">
+                                        <div class="elementor-widget-container">
+                                            <ul class="elementor-icon-list-items">
+                                                <li class="elementor-icon-list-item">
+                                                    <a href="mailto:{{ $loanEmail }}">
+                                                        <span class="elementor-icon-list-icon"><i aria-hidden="true" class="fas fa-envelope"></i></span>
+                                                        <span class="elementor-icon-list-text">{{ $loanEmail }}</span>
+                                                    </a>
+                                                </li>
+                                                <li class="elementor-icon-list-item">
+                                                    <a href="tel:{{ $loanPhone }}">
+                                                        <span class="elementor-icon-list-icon"><i aria-hidden="true" class="fas fa-phone-square-alt"></i></span>
+                                                        <span class="elementor-icon-list-text">{{ $loanPhoneDisplay }}</span>
+                                                    </a>
+                                                </li>
+                                                <li class="elementor-icon-list-item">
+                                                    <span class="elementor-icon-list-icon"><i aria-hidden="true" class="fas fa-location-arrow"></i></span>
+                                                    <span class="elementor-icon-list-text">Suite 101, Level 10 – 420-426 Pitt Street, Sydney, NSW – 2000</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="elementor-element loan-inn-footer__badge elementor-widget elementor-widget-image">
+                                        <div class="elementor-widget-container">
+                                            <img decoding="async" src="{{ $cdn }}/elementor/thumbs/1-qfo96upovlwg83j9jvacd69ke3zeg786imc0c3rvcw.png" title="MFAA" alt="MFAA" loading="lazy">
+                                        </div>
+                                    </div>
+                                    <div class="elementor-element loan-inn-footer__badge elementor-widget elementor-widget-image">
+                                        <div class="elementor-widget-container">
+                                            <img decoding="async" src="{{ $cdn }}/elementor/thumbs/2-qfo96upovlwg83j9jvacd69ke3zeg786imc0c3rvi6.png" title="Institute of Public Accountants" alt="Institute of Public Accountants" loading="lazy">
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </section>
+                    <div class="loan-footer-bar" aria-label="Footer legal">
+                        <div class="loan-footer-bar__rule" aria-hidden="true"></div>
+                        <div class="loan-footer-bar__wrap">
+                            <div class="loan-footer-bar__inner">
+                                <p class="loan-footer-bar__copy">
+                                    All rights reserved to <a href="{{ route('loan.home') }}">Innovative Finance</a>.
+                                </p>
+                                <p class="loan-footer-bar__credit">
+                                    Site designed by <a href="https://ausnepit.com.au" target="_blank" rel="noopener noreferrer">AusNep IT Solutions</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="fusion-clearfix"></div>
             </div>
         </div>
-    </footer>
-    <footer id="footer" class="fusion-footer-copyright-area fusion-footer-copyright-center">
-        <div class="fusion-row">
-            <div class="fusion-copyright-content">
-                <div class="fusion-copyright-notice">
-                    <div>Copyright 2010 - {{ date('Y') }} | Innovative Loan | All Rights Reserved</div>
-                </div>
-            </div>
-        </div>
-    </footer>
+    </section>
 </div>

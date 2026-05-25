@@ -7,19 +7,21 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>@yield('title', 'Home - Innovative Finance')</title>
     <link rel="shortcut icon" href="https://innovativewealth.com.au/wp-content/uploads/2020/10/favicon-32x32-1.png" type="image/x-icon">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab:100,300,regular,700%7CRoboto:regular%7CLato:100,300,regular,700,900,400&subset=latin,latin-ext">
     <link rel="stylesheet" href="https://innovativewealth.com.au/wp-content/plugins/LayerSlider/assets/static/layerslider/css/layerslider.css?ver=6.11.2">
     <link rel="stylesheet" href="https://innovativewealth.com.au/wp-content/uploads/fusion-icons/financial-advisor-v1.0/style.css?ver=3.1.1">
     <link rel="stylesheet" href="https://innovativewealth.com.au/wp-content/themes/Avada/assets/css/style.min.css?ver=7.1.1">
     <link rel="stylesheet" href="https://innovativewealth.com.au/wp-content/uploads/fusion-styles/af4e890554f784fa87021d55bede545a.min.css?ver=3.1.1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous">
-    <link rel="stylesheet" href="{{ asset('assets/css/loan-avada-clone.css') }}?v=28">
+    <link rel="stylesheet" href="{{ asset('assets/css/loan-avada-clone.css') }}?v=37">
+    <link rel="stylesheet" href="{{ asset('assets/css/loan-inn-theme.css') }}?v=3">
+    <link rel="stylesheet" href="{{ asset('assets/css/loan-inn-footer.css') }}?v=1">
     @stack('head')
     <style type="text/css" id="fusion-builder-page-css">
         .testimonial-home-block { z-index: 100000; }
     </style>
 </head>
-<body class="@yield('body-class', 'home wp-singular page-template page-template-100-width page-template-100-width-php page page-id-8 wp-theme-Avada fusion-body ltr fusion-sticky-header layout-wide-mode avada-responsive')">
+<body class="loan-inn-platform @yield('body-class', 'home wp-singular page-template page-template-100-width page-template-100-width-php page page-id-8 wp-theme-Avada fusion-body ltr fusion-sticky-header layout-wide-mode avada-responsive')">
+    <div class="loan-inn-ambient" aria-hidden="true"></div>
     <a class="skip-link screen-reader-text" href="#content">Skip to content</a>
     <div id="boxed-wrapper">
         <div class="fusion-sides-frame"></div>
@@ -54,7 +56,7 @@
 
             $btn.on('click', function (e) {
                 e.preventDefault();
-                $('html, body').animate({ scrollTop: 0 }, 450);
+                $('html, body').animate({ scrollTop: 0 }, 600);
             });
         });
     </script>

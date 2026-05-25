@@ -267,7 +267,8 @@ img {
     }
 }
 
-.page-header {
+/* Inner page header bg — navy gradient applied in tax-inn-theme.css */
+.page-header:not(.inn-tax-page-hero) {
     background-image: url(https://innovativeassociates.com.au/wp-content/uploads/2021/03/page-header-bg-4.jpg) !important;
 }
 

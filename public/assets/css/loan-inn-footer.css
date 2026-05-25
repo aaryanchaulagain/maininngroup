@@ -1,0 +1,275 @@
+/**
+ * Innovative Finance — footer only (INN Group / Associates parity)
+ * Scoped to .loan-inn-footer and .loan-footer-bar — do not use elsewhere.
+ */
+
+body.loan-inn-platform {
+    --inn-loan-footer-bg: #0b1f33;
+    --inn-loan-footer-text: #ffffff;
+    --inn-loan-footer-text-muted: rgba(255, 255, 255, 0.75);
+    --inn-loan-footer-blue: #1e63d8;
+    --inn-loan-footer-blue-hover: #1854b8;
+    --inn-loan-footer-gold: #c9a96e;
+    --inn-loan-footer-max: 1170px;
+    --inn-loan-footer-radius: 8px;
+}
+
+/* ── Shell & backgrounds ── */
+
+body.loan-inn-platform .loan-inn-footer,
+body.loan-inn-platform .loan-inn-footer .elementor-section,
+body.loan-inn-platform .loan-inn-footer .elementor-column,
+body.loan-inn-platform .loan-inn-footer .elementor-widget-wrap,
+body.loan-inn-platform .loan-inn-footer .elementor-widget-container,
+body.loan-inn-platform .loan-footer-bar {
+    background-color: var(--inn-loan-footer-bg) !important;
+    background-image: none !important;
+}
+
+body.loan-inn-platform .loan-inn-footer {
+    color: var(--inn-loan-footer-text-muted);
+    padding-top: 56px;
+    padding-bottom: 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    width: 100%;
+}
+
+body.loan-inn-platform .loan-inn-footer .elementor-section.elementor-top-section > .elementor-container {
+    max-width: var(--inn-loan-footer-max);
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* ── Three-column grid (Associates rhythm) ── */
+
+body.loan-inn-platform .loan-inn-footer__columns {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 0;
+    width: 100%;
+}
+
+body.loan-inn-platform .loan-inn-footer__columns > .elementor-column {
+    flex: 0 0 33.333%;
+    max-width: 33.333%;
+    padding: 0 15px 40px;
+    box-sizing: border-box;
+}
+
+@media (max-width: 991px) {
+    body.loan-inn-platform .loan-inn-footer__columns > .elementor-column {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+}
+
+@media (max-width: 767px) {
+    body.loan-inn-platform .loan-inn-footer__columns {
+        flex-direction: column;
+    }
+
+    body.loan-inn-platform .loan-inn-footer__columns > .elementor-column {
+        flex: 0 0 100%;
+        max-width: 100%;
+        padding-bottom: 28px;
+    }
+}
+
+/* ── Logo & intro column ── */
+
+body.loan-inn-platform .loan-inn-footer__logo {
+    max-width: 220px;
+    width: auto;
+    height: auto;
+    display: block;
+    margin-bottom: 20px;
+}
+
+body.loan-inn-platform .loan-inn-footer .elementor-widget-text-editor,
+body.loan-inn-platform .loan-inn-footer .elementor-widget-text-editor .elementor-widget-container {
+    color: var(--inn-loan-footer-text-muted) !important;
+    font-size: 15px;
+    line-height: 1.65;
+    margin-bottom: 22px;
+}
+
+/* ── Column headings ── */
+
+body.loan-inn-platform .loan-inn-footer .elementor-heading-title {
+    color: var(--inn-loan-footer-text) !important;
+    font-weight: 600 !important;
+    font-size: 17px !important;
+    border-bottom: 1px solid rgba(201, 169, 110, 0.28);
+    padding-bottom: 10px;
+    margin: 0 0 18px !important;
+    line-height: 1.3;
+}
+
+/* ── Explore / contact lists ── */
+
+body.loan-inn-platform .loan-inn-footer .elementor-icon-list-items {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+body.loan-inn-platform .loan-inn-footer .elementor-icon-list-item {
+    display: flex;
+    align-items: flex-start;
+    margin: 0 0 12px;
+    padding: 0;
+    line-height: 1.5;
+}
+
+body.loan-inn-platform .loan-inn-footer .elementor-icon-list-item:last-child {
+    margin-bottom: 0;
+}
+
+body.loan-inn-platform .loan-inn-footer .elementor-icon-list-text {
+    color: var(--inn-loan-footer-text-muted) !important;
+    font-size: 15px;
+    transition: color 0.2s ease;
+}
+
+body.loan-inn-platform .loan-inn-footer .elementor-icon-list-item a {
+    display: inline-flex;
+    align-items: flex-start;
+    gap: 10px;
+    color: var(--inn-loan-footer-text-muted) !important;
+    text-decoration: none;
+}
+
+body.loan-inn-platform .loan-inn-footer .elementor-icon-list-item a:hover .elementor-icon-list-text,
+body.loan-inn-platform .loan-inn-footer .elementor-icon-list-item a:focus-visible .elementor-icon-list-text,
+body.loan-inn-platform .loan-inn-footer .elementor-icon-list-item a:hover,
+body.loan-inn-platform .loan-inn-footer .elementor-icon-list-item a:focus-visible {
+    color: var(--inn-loan-footer-blue) !important;
+}
+
+body.loan-inn-platform .loan-inn-footer .elementor-icon-list-icon,
+body.loan-inn-platform .loan-inn-footer .elementor-icon-list-icon i {
+    color: var(--inn-loan-footer-gold) !important;
+    font-size: 16px;
+    line-height: 1.5;
+    min-width: 18px;
+    margin-top: 2px;
+}
+
+/* ── CTA button ── */
+
+body.loan-inn-platform .loan-inn-footer .elementor-button {
+    display: inline-block;
+    background: var(--inn-loan-footer-blue) !important;
+    color: var(--inn-loan-footer-text) !important;
+    border: none !important;
+    border-radius: var(--inn-loan-footer-radius) !important;
+    text-transform: none !important;
+    font-weight: 600 !important;
+    font-size: 15px !important;
+    padding: 14px 28px !important;
+    text-decoration: none !important;
+    transition: background 0.2s ease;
+}
+
+body.loan-inn-platform .loan-inn-footer .elementor-button:hover,
+body.loan-inn-platform .loan-inn-footer .elementor-button:focus-visible {
+    background: var(--inn-loan-footer-blue-hover) !important;
+    color: var(--inn-loan-footer-text) !important;
+}
+
+/* ── Member badges ── */
+
+body.loan-inn-platform .loan-inn-footer__badge {
+    display: inline-block;
+    margin: 16px 12px 0 0;
+    vertical-align: middle;
+}
+
+body.loan-inn-platform .loan-inn-footer__badge img {
+    max-height: 72px;
+    width: auto;
+}
+
+/* ── Bottom legal bar (Associates layout) ── */
+
+body.loan-inn-platform .loan-footer-bar {
+    margin-top: 0 !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+body.loan-inn-platform .loan-footer-bar__rule {
+    background-color: rgba(201, 169, 110, 0.2) !important;
+    height: 1px;
+    margin: 0 0 20px;
+}
+
+body.loan-inn-platform .loan-footer-bar__wrap {
+    max-width: var(--inn-loan-footer-max);
+    margin: 0 auto;
+    padding: 0 15px 24px;
+}
+
+body.loan-inn-platform .loan-footer-bar__inner {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    width: 100%;
+}
+
+body.loan-inn-platform .loan-footer-bar__copy,
+body.loan-inn-platform .loan-footer-bar__credit {
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--inn-loan-footer-text-muted) !important;
+}
+
+body.loan-inn-platform .loan-footer-bar__copy {
+    flex: 1 1 auto;
+    text-align: left;
+}
+
+body.loan-inn-platform .loan-footer-bar__credit {
+    flex: 0 0 auto;
+    text-align: right;
+    white-space: nowrap;
+}
+
+body.loan-inn-platform .loan-footer-bar__copy a,
+body.loan-inn-platform .loan-footer-bar__credit a {
+    color: var(--inn-loan-footer-text) !important;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+body.loan-inn-platform .loan-footer-bar__copy a:hover,
+body.loan-inn-platform .loan-footer-bar__credit a:hover,
+body.loan-inn-platform .loan-footer-bar__copy a:focus-visible,
+body.loan-inn-platform .loan-footer-bar__credit a:focus-visible {
+    color: var(--inn-loan-footer-blue) !important;
+}
+
+@media (max-width: 575px) {
+    body.loan-inn-platform .loan-footer-bar__inner {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    body.loan-inn-platform .loan-footer-bar__credit {
+        text-align: left;
+        white-space: normal;
+    }
+}
+
+/* Hide legacy Avada footer if present */
+
+body.loan-inn-platform .fusion-footer {
+    display: none !important;
+}

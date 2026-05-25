@@ -1,0 +1,940 @@
+/**
+ * Innovative Tax — INN Group design system
+ * Applies globally EXCEPT home hero (.banner-one) background structure.
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+    --inn-tax-navy: #0b1f33;
+    --inn-tax-navy-deep: #122b45;
+    --inn-tax-footer-bg: #081726;
+    --inn-tax-blue: #1e63d8;
+    --inn-tax-blue-hover: #1854b8;
+    --inn-tax-gold: #c9a96e;
+    --inn-tax-bg: #f7f9fc;
+    --inn-tax-text: #101828;
+    --inn-tax-text-secondary: #667085;
+    --inn-tax-border: #e4e7ec;
+    --inn-tax-white: #ffffff;
+    --inn-tax-text-on-dark: #ffffff;
+    --inn-tax-text-on-dark-muted: rgba(255, 255, 255, 0.75);
+    --inn-tax-hero-gradient: linear-gradient(135deg, #0b1f33 0%, #122b45 100%);
+    --inn-tax-shadow: 0 1px 3px rgba(16, 24, 40, 0.08), 0 1px 2px rgba(16, 24, 40, 0.04);
+    --inn-tax-shadow-md: 0 4px 12px rgba(16, 24, 40, 0.06);
+    --inn-tax-radius: 8px;
+    --inn-tax-max: 1280px;
+    --inn-tax-section-y: 80px;
+    --inn-tax-section-y-mobile: 40px;
+    --inn-tax-font: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+/* ── Base ── */
+
+body.tax-inn-platform {
+    font-family: var(--inn-tax-font) !important;
+    font-weight: 400;
+    color: var(--inn-tax-text);
+    background: var(--inn-tax-bg);
+    -webkit-font-smoothing: antialiased;
+}
+
+body.tax-inn-platform .page-wrapper {
+    background: var(--inn-tax-bg);
+}
+
+body.tax-inn-platform h1,
+body.tax-inn-platform h2,
+body.tax-inn-platform h3,
+body.tax-inn-platform h4,
+body.tax-inn-platform h5,
+body.tax-inn-platform h6,
+body.tax-inn-platform .elementor-heading-title {
+    font-family: var(--inn-tax-font) !important;
+    font-weight: 600;
+    color: var(--inn-tax-text);
+    letter-spacing: -0.02em;
+}
+
+body.tax-inn-platform p,
+body.tax-inn-platform li,
+body.tax-inn-platform .elementor-text-editor {
+    color: var(--inn-tax-text-secondary);
+}
+
+body.tax-inn-platform .container {
+    max-width: var(--inn-tax-max);
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+@media (max-width: 767px) {
+    body.tax-inn-platform .container {
+        max-width: 100%;
+    }
+}
+
+/* ── Sticky navigation (white / blur) ── */
+
+body.tax-inn-platform .main-nav__header-one {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+/* Logo flush left in header */
+body.tax-inn-platform .main-nav__header-one .header-navigation > .container {
+    max-width: 100%;
+    padding-left: 0 !important;
+    padding-right: 15px;
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+}
+
+body.tax-inn-platform .main-nav__logo-box {
+    margin-left: 0 !important;
+    padding-left: 16px !important;
+    flex-shrink: 0;
+}
+
+body.tax-inn-platform .main-nav__logo {
+    display: inline-flex;
+    align-items: center;
+}
+
+body.tax-inn-platform .main-nav__logo img {
+    display: block;
+    margin: 0;
+}
+
+body.tax-inn-platform .header-navigation,
+body.tax-inn-platform .main-nav__header-one .header-navigation.stricky.stricked-menu {
+    background: rgba(255, 255, 255, 0.92) !important;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--inn-tax-border);
+    box-shadow: var(--inn-tax-shadow);
+}
+
+body.tax-inn-platform .main-nav__navigation-box > li > a {
+    font-family: var(--inn-tax-font) !important;
+    font-weight: 500 !important;
+    font-size: 15px !important;
+    color: var(--inn-tax-text-secondary) !important;
+    transition: color 0.2s ease;
+}
+
+body.tax-inn-platform .main-nav__navigation-box > li > a:hover,
+body.tax-inn-platform .main-nav__navigation-box > li > a:focus-visible {
+    color: var(--inn-tax-blue) !important;
+}
+
+body.tax-inn-platform .main-nav__navigation-box > li.current-menu-item > a,
+body.tax-inn-platform .main-nav__navigation-box > li.current-menu-ancestor > a,
+body.tax-inn-platform .main-nav__navigation-box > li.current_page_item > a {
+    color: var(--inn-tax-blue) !important;
+}
+
+body.tax-inn-platform .main-nav__navigation-box .sub-menu {
+    background: var(--inn-tax-white) !important;
+    border: 1px solid var(--inn-tax-border) !important;
+    border-radius: var(--inn-tax-radius) !important;
+    box-shadow: var(--inn-tax-shadow-md) !important;
+}
+
+body.tax-inn-platform .main-nav__navigation-box .sub-menu a {
+    color: var(--inn-tax-text-secondary) !important;
+    font-weight: 500 !important;
+}
+
+body.tax-inn-platform .main-nav__navigation-box .sub-menu a:hover {
+    color: var(--inn-tax-blue) !important;
+    background: var(--inn-tax-bg) !important;
+}
+
+body.tax-inn-platform .side-menu__toggler {
+    color: var(--inn-tax-navy) !important;
+}
+
+/* ── Internal page heroes (navy — replaces orange/warm photo headers) ── */
+
+body.tax-inn-platform .page-header.inn-tax-page-hero,
+body.tax-inn-platform .page-header:not(.banner-one) {
+    background-image: none !important;
+    background: var(--inn-tax-hero-gradient) !important;
+    padding: 72px 0 64px !important;
+    margin: 0;
+    position: relative;
+    overflow: hidden;
+}
+
+body.tax-inn-platform .page-header.inn-tax-page-hero::before,
+body.tax-inn-platform .page-header:not(.banner-one)::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(ellipse 70% 55% at 100% 0%, rgba(30, 99, 216, 0.14) 0%, transparent 58%),
+        radial-gradient(ellipse 50% 40% at 0% 100%, rgba(255, 255, 255, 0.04) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+body.tax-inn-platform .page-header.inn-tax-page-hero .container,
+body.tax-inn-platform .page-header:not(.banner-one) .container {
+    position: relative;
+    z-index: 1;
+    max-width: var(--inn-tax-max);
+}
+
+body.tax-inn-platform .page-header .thm-breadcrumb {
+    margin-bottom: 16px;
+}
+
+body.tax-inn-platform .page-header .thm-breadcrumb__item,
+body.tax-inn-platform .page-header .thm-breadcrumb__item a {
+    font-family: var(--inn-tax-font) !important;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--inn-tax-text-on-dark-muted) !important;
+    text-decoration: none;
+}
+
+body.tax-inn-platform .page-header .thm-breadcrumb__item a:hover,
+body.tax-inn-platform .page-header .thm-breadcrumb__item a:focus-visible {
+    color: var(--inn-tax-white) !important;
+}
+
+body.tax-inn-platform .page-header .thm-breadcrumb__item.current span {
+    color: var(--inn-tax-white) !important;
+}
+
+body.tax-inn-platform .page-header h2 {
+    font-family: var(--inn-tax-font) !important;
+    font-weight: 700 !important;
+    font-size: clamp(32px, 4.5vw, 48px) !important;
+    line-height: 1.15 !important;
+    letter-spacing: -0.03em !important;
+    color: var(--inn-tax-text-on-dark) !important;
+    margin: 0 !important;
+}
+
+@media (max-width: 767px) {
+    body.tax-inn-platform .page-header.inn-tax-page-hero,
+    body.tax-inn-platform .page-header:not(.banner-one) {
+        padding: 48px 0 40px !important;
+    }
+}
+
+/* ── Buttons (exclude home hero CTA) ── */
+
+body.tax-inn-platform .thm-btn:not(.banner-one__btn),
+body.tax-inn-platform .tax-svc-btn:not(.tax-svc-btn--outline),
+body.tax-inn-platform .elementor-button:not(.banner-one .elementor-button) {
+    font-family: var(--inn-tax-font) !important;
+    font-weight: 600 !important;
+    background: var(--inn-tax-blue) !important;
+    color: var(--inn-tax-white) !important;
+    border: none !important;
+    border-radius: var(--inn-tax-radius) !important;
+    box-shadow: none !important;
+    text-transform: none !important;
+    letter-spacing: 0 !important;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+body.tax-inn-platform .thm-btn:not(.banner-one__btn):hover,
+body.tax-inn-platform .tax-svc-btn:not(.tax-svc-btn--outline):hover,
+body.tax-inn-platform .elementor-button:hover {
+    background: var(--inn-tax-blue-hover) !important;
+    color: var(--inn-tax-white) !important;
+}
+
+body.tax-inn-platform .tax-svc-btn--outline {
+    background: transparent !important;
+    color: var(--inn-tax-blue) !important;
+    border: 2px solid var(--inn-tax-blue) !important;
+}
+
+body.tax-inn-platform .tax-svc-btn--outline:hover {
+    background: var(--inn-tax-blue) !important;
+    color: var(--inn-tax-white) !important;
+}
+
+/* ── Sections & spacing ── */
+
+body.tax-inn-platform .service-two,
+body.tax-inn-platform .cta-three,
+body.tax-inn-platform .cta-two,
+body.tax-inn-platform .contact-one,
+body.tax-inn-platform .tax-service-detail,
+body.tax-inn-platform .tax-partners-row,
+body.tax-inn-platform .tax-hl-calc,
+body.tax-inn-platform .tax-lenders,
+body.tax-inn-platform .tax-lodgement,
+body.tax-inn-platform .tax-team-page,
+body.tax-inn-platform .tax-perspective,
+body.tax-inn-platform .tax-mentoring {
+    padding-top: var(--inn-tax-section-y);
+    padding-bottom: var(--inn-tax-section-y);
+}
+
+@media (max-width: 767px) {
+    body.tax-inn-platform .service-two,
+    body.tax-inn-platform .cta-three,
+    body.tax-inn-platform .cta-two,
+    body.tax-inn-platform .contact-one,
+    body.tax-inn-platform .tax-service-detail,
+    body.tax-inn-platform .tax-partners-row,
+    body.tax-inn-platform .tax-hl-calc,
+    body.tax-inn-platform .tax-lenders,
+    body.tax-inn-platform .tax-lodgement,
+    body.tax-inn-platform .tax-team-page,
+    body.tax-inn-platform .tax-perspective,
+    body.tax-inn-platform .tax-mentoring {
+        padding-top: var(--inn-tax-section-y-mobile);
+        padding-bottom: var(--inn-tax-section-y-mobile);
+    }
+}
+
+/* ── Service grid cards ── */
+
+body.tax-inn-platform .service-two {
+    background: var(--inn-tax-bg) !important;
+}
+
+body.tax-inn-platform .service-two__single {
+    background: var(--inn-tax-white) !important;
+    border: 1px solid var(--inn-tax-border) !important;
+    border-radius: var(--inn-tax-radius) !important;
+    box-shadow: var(--inn-tax-shadow) !important;
+}
+
+body.tax-inn-platform .service-two__title {
+    color: var(--inn-tax-text) !important;
+    font-weight: 600 !important;
+}
+
+body.tax-inn-platform .service-two__text {
+    color: var(--inn-tax-text-secondary) !important;
+}
+
+/* Preserve Zimed icon font + white glyphs inside colored circles */
+body.tax-inn-platform .service-two__icon i[class*="zimed-new-icon-"] {
+    font-family: "zimed-new-icon" !important;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    color: #ffffff !important;
+    font-size: 63px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body.tax-inn-platform .service-two__icon i[class*="zimed-icon-"] {
+    font-family: "zimed-icon" !important;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    color: #ffffff !important;
+    font-size: 63px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Original Associates circle colours (9-card grid) */
+body.tax-inn-platform .service-two .row > [class*="col-"]:nth-child(1) .service-two__icon {
+    background-color: #1393cf !important;
+}
+
+body.tax-inn-platform .service-two .row > [class*="col-"]:nth-child(2) .service-two__icon {
+    background-color: #ee464b !important;
+}
+
+body.tax-inn-platform .service-two .row > [class*="col-"]:nth-child(3) .service-two__icon {
+    background-color: #53b024 !important;
+}
+
+body.tax-inn-platform .service-two .row > [class*="col-"]:nth-child(4) .service-two__icon {
+    background-color: #a92da5 !important;
+}
+
+body.tax-inn-platform .service-two .row > [class*="col-"]:nth-child(5) .service-two__icon {
+    background-color: #fe9c39 !important;
+}
+
+body.tax-inn-platform .service-two .row > [class*="col-"]:nth-child(6) .service-two__icon {
+    background-color: #272839 !important;
+}
+
+body.tax-inn-platform .service-two .row > [class*="col-"]:nth-child(7) .service-two__icon,
+body.tax-inn-platform .service-two .row > [class*="col-"]:nth-child(8) .service-two__icon,
+body.tax-inn-platform .service-two .row > [class*="col-"]:nth-child(9) .service-two__icon {
+    background-color: #1393cf !important;
+}
+
+/* ── Core values / cta blocks ── */
+
+body.tax-inn-platform .cta-three {
+    background: var(--inn-tax-white) !important;
+}
+
+body.tax-inn-platform .cta-three__box {
+    background: var(--inn-tax-white) !important;
+    border: 1px solid var(--inn-tax-border) !important;
+    border-radius: var(--inn-tax-radius) !important;
+    box-shadow: var(--inn-tax-shadow) !important;
+}
+
+body.tax-inn-platform .block-title h3,
+body.tax-inn-platform .cta-three__box-title {
+    color: var(--inn-tax-text) !important;
+}
+
+body.tax-inn-platform .cta-three__box-content p {
+    color: var(--inn-tax-text-secondary) !important;
+}
+
+body.tax-inn-platform .cta-three__box-icon {
+    color: var(--inn-tax-blue) !important;
+}
+
+/* ── Service detail pages ── */
+
+body.tax-inn-platform .tax-service-detail {
+    background: var(--inn-tax-bg);
+}
+
+body.tax-inn-platform .tax-service-detail__heading {
+    color: var(--inn-tax-text) !important;
+    font-weight: 700 !important;
+}
+
+body.tax-inn-platform .tax-service-detail__intro p,
+body.tax-inn-platform .tax-service-detail__body p {
+    color: var(--inn-tax-text-secondary) !important;
+    font-size: 17px;
+    line-height: 1.75;
+}
+
+body.tax-inn-platform .tax-service-detail__hero-image img {
+    border-radius: var(--inn-tax-radius);
+    box-shadow: var(--inn-tax-shadow-md);
+}
+
+/* ── Service landing pages (BAS, SMSF, etc.) ── */
+
+body.tax-inn-platform .tax-svc-landing {
+    --tax-svc-navy: var(--inn-tax-navy);
+    --tax-svc-accent: var(--inn-tax-blue);
+    --tax-svc-orange: var(--inn-tax-blue);
+    --tax-svc-muted: var(--inn-tax-text-secondary);
+    --tax-svc-border: var(--inn-tax-border);
+    --tax-svc-ice: var(--inn-tax-bg);
+}
+
+body.tax-inn-platform .tax-svc-kicker {
+    color: var(--inn-tax-blue) !important;
+}
+
+body.tax-inn-platform .tax-svc-hero {
+    background: var(--inn-tax-hero-gradient) !important;
+    padding: 64px 0 72px !important;
+    position: relative;
+    overflow: hidden;
+}
+
+body.tax-inn-platform .tax-svc-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 60% 50% at 90% 20%, rgba(30, 99, 216, 0.12) 0%, transparent 55%);
+    pointer-events: none;
+}
+
+body.tax-inn-platform .tax-svc-hero .container {
+    position: relative;
+    z-index: 1;
+}
+
+body.tax-inn-platform .tax-svc-hero .tax-svc-kicker {
+    color: rgba(255, 255, 255, 0.72) !important;
+    letter-spacing: 0.14em;
+}
+
+body.tax-inn-platform .tax-svc-hero__title {
+    color: var(--inn-tax-text-on-dark) !important;
+    font-size: clamp(28px, 3.5vw, 40px) !important;
+    font-weight: 700 !important;
+    line-height: 1.2 !important;
+    margin-bottom: 1.25rem !important;
+}
+
+body.tax-inn-platform .tax-svc-hero .tax-svc-prose p {
+    color: var(--inn-tax-text-on-dark-muted) !important;
+    font-size: 17px;
+    line-height: 1.7;
+}
+
+body.tax-inn-platform .tax-svc-hero .tax-svc-btn--outline {
+    color: var(--inn-tax-white) !important;
+    border: 2px solid rgba(255, 255, 255, 0.55) !important;
+    background: transparent !important;
+}
+
+body.tax-inn-platform .tax-svc-hero .tax-svc-btn--outline:hover {
+    background: var(--inn-tax-white) !important;
+    color: var(--inn-tax-navy) !important;
+    border-color: var(--inn-tax-white) !important;
+}
+
+body.tax-inn-platform .tax-svc-hero__media img {
+    border-radius: var(--inn-tax-radius);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.25);
+}
+
+body.tax-inn-platform .tax-svc-h2 {
+    color: var(--inn-tax-text) !important;
+}
+
+body.tax-inn-platform .tax-svc-card {
+    background: var(--inn-tax-white) !important;
+    border: 1px solid var(--inn-tax-border) !important;
+    border-top: 3px solid var(--inn-tax-blue) !important;
+    border-radius: var(--inn-tax-radius) !important;
+    box-shadow: var(--inn-tax-shadow) !important;
+}
+
+body.tax-inn-platform .tax-svc-card__title {
+    color: var(--inn-tax-text) !important;
+}
+
+body.tax-inn-platform .tax-svc-block--dark {
+    background: var(--inn-tax-navy) !important;
+}
+
+body.tax-inn-platform .tax-svc-block--dark .tax-svc-kicker--light {
+    color: rgba(255, 255, 255, 0.75) !important;
+}
+
+body.tax-inn-platform .tax-svc-block--dark .tax-svc-h2--light {
+    color: #ffffff !important;
+}
+
+body.tax-inn-platform .tax-svc-block--dark .tax-svc-prose--light p {
+    color: rgba(255, 255, 255, 0.9) !important;
+}
+
+body.tax-inn-platform .tax-svc-block--alt {
+    background: var(--inn-tax-bg) !important;
+}
+
+body.tax-inn-platform .tax-svc-cta {
+    background: var(--inn-tax-navy) !important;
+}
+
+body.tax-inn-platform .tax-svc-cta__title {
+    color: var(--inn-tax-white) !important;
+}
+
+/* ── Forms ── */
+
+body.tax-inn-platform .contact-one__form input,
+body.tax-inn-platform .contact-one__form textarea,
+body.tax-inn-platform .contact-one__form select,
+body.tax-inn-platform .wpcf7-form input,
+body.tax-inn-platform .wpcf7-form textarea,
+body.tax-inn-platform .wpcf7-form select {
+    font-family: var(--inn-tax-font) !important;
+    background: var(--inn-tax-white) !important;
+    border: 1px solid var(--inn-tax-border) !important;
+    border-radius: var(--inn-tax-radius) !important;
+    color: var(--inn-tax-text) !important;
+}
+
+body.tax-inn-platform .contact-one__form input:focus,
+body.tax-inn-platform .contact-one__form textarea:focus,
+body.tax-inn-platform .wpcf7-form input:focus,
+body.tax-inn-platform .wpcf7-form textarea:focus {
+    outline: none !important;
+    border-color: var(--inn-tax-blue) !important;
+    box-shadow: 0 0 0 3px rgba(30, 99, 216, 0.15) !important;
+}
+
+body.tax-inn-platform .contact-one {
+    background: var(--inn-tax-bg) !important;
+}
+
+body.tax-inn-platform .contact-one__title {
+    color: var(--inn-tax-text) !important;
+}
+
+/* ── Calculator & partners ── */
+
+body.tax-inn-platform .tax-hl-calc,
+body.tax-inn-platform .tax-lenders {
+    background: var(--inn-tax-bg) !important;
+}
+
+body.tax-inn-platform .tax-hl-calc__title,
+body.tax-inn-platform .tax-lenders__title {
+    color: var(--inn-tax-text) !important;
+}
+
+body.tax-inn-platform .tax-hl-calc__frame-wrap {
+    background: var(--inn-tax-white) !important;
+    border: 1px solid var(--inn-tax-border) !important;
+    border-radius: var(--inn-tax-radius) !important;
+    box-shadow: var(--inn-tax-shadow-md) !important;
+}
+
+body.tax-inn-platform .tax-lenders__logo-card,
+body.tax-inn-platform .tax-lenders__slide {
+    background: var(--inn-tax-white) !important;
+    border: 1px solid var(--inn-tax-border) !important;
+    border-radius: var(--inn-tax-radius) !important;
+}
+
+body.tax-inn-platform .tax-partners-row {
+    background: var(--inn-tax-bg) !important;
+}
+
+/* ── Team cards ── */
+
+body.tax-inn-platform .tax-team-card {
+    background: var(--inn-tax-white) !important;
+    border: 1px solid var(--inn-tax-border) !important;
+    border-radius: var(--inn-tax-radius) !important;
+    box-shadow: var(--inn-tax-shadow) !important;
+}
+
+body.tax-inn-platform .tax-team-card__name {
+    color: var(--inn-tax-text) !important;
+}
+
+body.tax-inn-platform .tax-team-card__role {
+    color: var(--inn-tax-blue) !important;
+}
+
+/* ── Footer (premium dark navy — no orange) ── */
+
+body.tax-inn-platform .tax-zimed-footer,
+body.tax-inn-platform .tax-zimed-footer .elementor-section,
+body.tax-inn-platform .tax-zimed-footer .elementor-column,
+body.tax-inn-platform .tax-zimed-footer .elementor-widget-wrap,
+body.tax-inn-platform .tax-zimed-footer .elementor-widget-container,
+body.tax-inn-platform .tax-footer-bar {
+    background-color: var(--inn-tax-footer-bg) !important;
+    background-image: none !important;
+}
+
+body.tax-inn-platform .tax-zimed-footer {
+    color: var(--inn-tax-text-on-dark-muted);
+    padding-top: 56px;
+    padding-bottom: 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+body.tax-inn-platform .tax-zimed-footer .elementor-heading-title {
+    color: var(--inn-tax-text-on-dark) !important;
+    font-weight: 600 !important;
+    font-size: 17px !important;
+    border-bottom: 1px solid rgba(201, 169, 110, 0.28);
+    padding-bottom: 10px;
+    margin-bottom: 18px !important;
+}
+
+body.tax-inn-platform .tax-zimed-footer .elementor-widget-text-editor,
+body.tax-inn-platform .tax-zimed-footer .elementor-widget-text-editor .elementor-widget-container {
+    color: var(--inn-tax-text-on-dark-muted) !important;
+    font-size: 15px;
+    line-height: 1.65;
+}
+
+body.tax-inn-platform .tax-zimed-footer .elementor-icon-list-text {
+    color: var(--inn-tax-text-on-dark-muted) !important;
+    transition: color 0.2s ease;
+}
+
+body.tax-inn-platform .tax-zimed-footer .elementor-icon-list-item a {
+    color: var(--inn-tax-text-on-dark-muted) !important;
+}
+
+body.tax-inn-platform .tax-zimed-footer .elementor-icon-list-item a:hover .elementor-icon-list-text,
+body.tax-inn-platform .tax-zimed-footer .elementor-icon-list-item a:focus-visible .elementor-icon-list-text {
+    color: var(--inn-tax-blue) !important;
+}
+
+body.tax-inn-platform .tax-zimed-footer .elementor-icon-list-icon,
+body.tax-inn-platform .tax-zimed-footer .elementor-icon-list-icon i {
+    color: var(--inn-tax-gold) !important;
+}
+
+body.tax-inn-platform .tax-zimed-footer .elementor-button {
+    background: var(--inn-tax-blue) !important;
+    color: var(--inn-tax-white) !important;
+    border-radius: var(--inn-tax-radius) !important;
+    text-transform: none !important;
+    font-weight: 600 !important;
+    padding: 14px 28px !important;
+}
+
+body.tax-inn-platform .tax-zimed-footer .elementor-button:hover,
+body.tax-inn-platform .tax-zimed-footer .elementor-button:focus-visible {
+    background: var(--inn-tax-blue-hover) !important;
+}
+
+body.tax-inn-platform .tax-zimed-footer .elementor-divider-separator {
+    border-color: rgba(201, 169, 110, 0.22) !important;
+}
+
+body.tax-inn-platform .tax-footer-bar {
+    margin-top: 0 !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+body.tax-inn-platform .tax-footer-bar__rule {
+    background-color: rgba(201, 169, 110, 0.2) !important;
+    height: 1px;
+}
+
+body.tax-inn-platform .tax-footer-bar__wrap {
+    max-width: var(--inn-tax-max);
+}
+
+body.tax-inn-platform .tax-footer-bar__copy,
+body.tax-inn-platform .tax-footer-bar__credit {
+    color: var(--inn-tax-text-on-dark-muted) !important;
+}
+
+body.tax-inn-platform .tax-footer-bar__copy a,
+body.tax-inn-platform .tax-footer-bar__credit a {
+    color: var(--inn-tax-text-on-dark) !important;
+    text-decoration: none;
+}
+
+body.tax-inn-platform .tax-footer-bar__copy a:hover,
+body.tax-inn-platform .tax-footer-bar__credit a:hover,
+body.tax-inn-platform .tax-footer-bar__copy a:focus-visible,
+body.tax-inn-platform .tax-footer-bar__credit a:focus-visible {
+    color: var(--inn-tax-blue) !important;
+}
+
+/* Gold — rare highlight only */
+
+body.tax-inn-platform .inn-highlight-gold {
+    color: var(--inn-tax-gold);
+}
+
+/* Testimonials / misc blocks */
+
+body.tax-inn-platform .testimonials-one {
+    background: var(--inn-tax-white) !important;
+}
+
+body.tax-inn-platform .testimonials-one .block-title h3 {
+    color: var(--inn-tax-text) !important;
+}
+
+body.tax-inn-platform .cta-two__style-three-summery p {
+    color: var(--inn-tax-text-secondary) !important;
+}
+
+/* Elementor tabs (calculator) */
+
+body.tax-inn-platform .elementor-widget-tabs .elementor-tab-desktop-title.elementor-active {
+    background-color: var(--inn-tax-bg) !important;
+    color: var(--inn-tax-blue) !important;
+}
+
+/* Block titles & accents */
+
+body.tax-inn-platform .block-title h3,
+body.tax-inn-platform .block-title p {
+    color: var(--inn-tax-text) !important;
+}
+
+body.tax-inn-platform .block-title span {
+    color: var(--inn-tax-blue) !important;
+}
+
+body.tax-inn-platform .tax-service-detail__body a,
+body.tax-inn-platform .tax-service-detail a {
+    color: var(--inn-tax-blue) !important;
+    font-weight: 600;
+}
+
+body.tax-inn-platform .tax-service-detail__body a:hover {
+    color: var(--inn-tax-blue-hover) !important;
+}
+
+/* Testimonials */
+
+body.tax-inn-platform .testimonials-one__single {
+    background: var(--inn-tax-white) !important;
+    border: 1px solid var(--inn-tax-border) !important;
+    border-radius: var(--inn-tax-radius) !important;
+    box-shadow: var(--inn-tax-shadow) !important;
+}
+
+body.tax-inn-platform .testimonials-one__text {
+    color: var(--inn-tax-text-secondary) !important;
+}
+
+body.tax-inn-platform .testimonials-one__author {
+    color: var(--inn-tax-text) !important;
+    font-weight: 600;
+}
+
+/* Mentoring / perspective content areas */
+
+body.tax-inn-platform .cta-two {
+    background: var(--inn-tax-bg) !important;
+}
+
+body.tax-inn-platform .cta-two__title {
+    color: var(--inn-tax-text) !important;
+}
+
+/* Alternative Tailwind hero (if used) — protect backgrounds */
+
+body.tax-inn-platform .inn-hero__bg {
+    /* background-image set inline — do not override */
+}
+
+body.tax-inn-platform .inn-hero__overlay {
+    /* do not override overlay color/opacity */
+}
+
+body.tax-inn-platform .inn-hero__eyebrow,
+body.tax-inn-platform .inn-hero__title,
+body.tax-inn-platform .inn-hero__subtitle {
+    font-family: var(--inn-tax-font);
+}
+
+/* ── Remove orange / warm accents (override tax-zimed-clone) ── */
+
+body.tax-inn-platform .tax-zimed-footer .elementor-heading-title {
+    color: var(--inn-tax-text-on-dark) !important;
+}
+
+body.tax-inn-platform .block-title span {
+    color: var(--inn-tax-blue) !important;
+}
+
+body.tax-inn-platform .tax-footer-bar__credit a {
+    color: var(--inn-tax-text-on-dark-muted) !important;
+}
+
+body.tax-inn-platform .tax-footer-bar__credit a:hover,
+body.tax-inn-platform .tax-footer-bar__credit a:focus-visible {
+    color: var(--inn-tax-blue) !important;
+}
+
+body.tax-inn-platform .tax-svc-landing .inn-tax-page-hero {
+    padding: 52px 0 44px !important;
+}
+
+body.tax-inn-platform .service-two__single:hover .service-two__icon i[class*="zimed-new-icon-"],
+body.tax-inn-platform .service-two__single:hover .service-two__icon i[class*="zimed-icon-"] {
+    color: #ffffff !important;
+}
+
+body.tax-inn-platform .tax-svc-lead--accent,
+body.tax-inn-platform .thm-base,
+body.tax-inn-platform a.thm-base {
+    color: var(--inn-tax-blue) !important;
+}
+
+body.tax-inn-platform .scroll-to-target.scroll-to-top {
+    background: var(--inn-tax-navy) !important;
+    box-shadow: var(--inn-tax-shadow-md) !important;
+}
+
+body.tax-inn-platform .scroll-to-target.scroll-to-top:hover {
+    background: var(--inn-tax-blue) !important;
+}
+
+/* ══════════════════════════════════════════════════════════════
+   HOMEPAGE HERO PROTECTED — .banner-one image/layout untouched
+   Typography spacing only
+   ══════════════════════════════════════════════════════════════ */
+
+body.tax-inn-platform .banner-one {
+    /* do not set background, background-image, overlay, filter, or positioning */
+}
+
+/* Remove decorative purple crystal shape from hero */
+body.tax-inn-platform .banner-one__shape-1 {
+    display: none !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+}
+
+body.tax-inn-platform .banner-one__content {
+    padding-top: 4px;
+    background: none !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    box-shadow: none !important;
+}
+
+body.tax-inn-platform .banner-one__content::before,
+body.tax-inn-platform .banner-one__content::after,
+body.tax-inn-platform .banner-one h3::before,
+body.tax-inn-platform .banner-one h3::after {
+    display: none !important;
+    content: none !important;
+}
+
+body.tax-inn-platform .banner-one__tag-line {
+    font-family: var(--inn-tax-font);
+    margin-bottom: 10px;
+    letter-spacing: 0.02em;
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+    background: none !important;
+    -webkit-background-clip: border-box !important;
+    background-clip: border-box !important;
+    text-shadow: none !important;
+    filter: none !important;
+    opacity: 1 !important;
+}
+
+body.tax-inn-platform .banner-one h3 {
+    font-family: var(--inn-tax-font) !important;
+    margin-bottom: 14px;
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+    background: none !important;
+    -webkit-background-clip: border-box !important;
+    background-clip: border-box !important;
+    text-shadow: none !important;
+    filter: none !important;
+    opacity: 1 !important;
+    font-weight: 700 !important;
+}
+
+body.tax-inn-platform .banner-one__content p {
+    font-family: var(--inn-tax-font);
+    margin-bottom: 22px;
+    line-height: 1.65;
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+    background: none !important;
+    -webkit-background-clip: border-box !important;
+    background-clip: border-box !important;
+    text-shadow: none !important;
+    filter: none !important;
+    opacity: 1 !important;
+}
+
+body.tax-inn-platform .banner-one__btn-wrap {
+    margin-top: 4px;
+}

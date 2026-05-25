@@ -10,6 +10,7 @@
         'refinancing' => 'Refinancing',
         'asset-finance' => 'Asset Finance',
         'commercial-finance' => 'Commercial Finance',
+        'mortgage-and-loan' => 'Mortgage and Loan',
     ];
     $servicesActive = $active === 'services-index' || str_starts_with($active, 'services-');
     $socialLinks = [
@@ -104,6 +105,9 @@
                         </li>
                         <li class="menu-item {{ $active === 'faq' ? 'current-menu-item' : '' }}">
                             <a href="{{ route('loan.faq') }}" class="fusion-bar-highlight"><span class="menu-text">FAQ</span></a>
+                        </li>
+                        <li class="menu-item {{ $active === 'calculator' ? 'current-menu-item' : '' }}">
+                            <a href="{{ route('loan.calculator') }}" class="fusion-bar-highlight"><span class="menu-text">Calculator</span></a>
                         </li>
                         <li class="menu-item {{ $active === 'contact' ? 'current-menu-item' : '' }}">
                             <a href="{{ route('loan.contact') }}" class="fusion-bar-highlight"><span class="menu-text">Contact Us</span></a>

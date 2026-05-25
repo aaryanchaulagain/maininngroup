@@ -60,6 +60,10 @@ class LoanController extends Controller
             return view('loan.services.commercial-finance', $this->sharedContent());
         }
 
+        if ($slug === 'mortgage-and-loan') {
+            return view('loan.services.mortgage-and-loan', $this->sharedContent());
+        }
+
         return view('loan.services.show', [
             'service' => $services[$slug],
             'slug' => $slug,
@@ -134,6 +138,11 @@ class LoanController extends Controller
             'faqs' => Faq::active()->forDomain('loan')->orderBy('sort_order')->get(),
             ...$this->sharedContent(),
         ]);
+    }
+
+    public function calculator()
+    {
+        return view('loan.calculator', $this->sharedContent());
     }
 
     public function contact()
@@ -257,6 +266,23 @@ class LoanController extends Controller
                     'Self-employed and complex income assessment',
                     'Development and short-term facility introductions',
                     'Ongoing relationship as your business grows',
+                ],
+            ],
+            'mortgage-and-loan' => [
+                'slug' => 'mortgage-and-loan',
+                'title' => 'Mortgage and Loan',
+                'icon' => 'fa-file-invoice-dollar',
+                'tagline' => 'Clear guidance on mortgages and lending',
+                'intro' => [
+                    'A mortgage is a contract in which property is used as security for a loan, allowing you to purchase residential or commercial real estate without paying the full value upfront.',
+                    'At Innovative Finance, we help you understand how mortgages work, compare lender options, and secure lending structures suited to your goals.',
+                ],
+                'highlights' => [
+                    'Residential and commercial mortgage solutions',
+                    'Guidance on repayments, interest, and loan terms',
+                    'Access to major banks and specialist lenders',
+                    'Support for first home buyers and investors',
+                    'Personalised advice from application to settlement',
                 ],
             ],
         ];

@@ -1,6 +1,11 @@
+@props([
+    'accent' => 'ff8a3d',
+    'navy' => '0b1f3f',
+])
+
 @php
-    $accent = 'ff8a3d';
-    $navy = '0b1f3f';
+    $accent = ltrim((string) $accent, '#');
+    $navy = ltrim((string) $navy, '#');
     $muted = '6a26ed';
     $iframeQuery = http_build_query([
         'HighchartColumnInterest' => $navy,

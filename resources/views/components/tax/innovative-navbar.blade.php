@@ -38,7 +38,6 @@
                     <div x-show="services" x-transition class="inn-nav__dropdown absolute left-0 top-full pt-[12px]">
                         <ul class="min-w-[300px] bg-white py-[10px] shadow-[0_10px_30px_rgba(16,45,94,0.12)]">
                             <li><a href="{{ route('tax.services.accounting') }}" class="inn-nav__dropdown-link">Accounting and Taxation Services</a></li>
-                            <li><a href="{{ route('tax.services.mortgage') }}" class="inn-nav__dropdown-link">Mortgage and Finance Service</a></li>
                             <li><a href="{{ route('tax.services.advisory') }}" class="inn-nav__dropdown-link">Business advisory Service</a></li>
                             <li><a href="{{ route('tax.services.bas-gst') }}" class="inn-nav__dropdown-link">BAS / GST</a></li>
                             <li><a href="{{ route('tax.services.smsf') }}" class="inn-nav__dropdown-link">SMSF</a></li>
@@ -73,7 +72,6 @@
             <li><a href="{{ route('tax.about.team') }}">Meet The Team</a></li>
             <li><a href="{{ route('tax.about.disclaimer') }}">Disclaimer</a></li>
             <li><a href="{{ route('tax.services.accounting') }}">Accounting and Taxation Services</a></li>
-            <li><a href="{{ route('tax.services.mortgage') }}">Mortgage and Finance Service</a></li>
             <li><a href="{{ route('tax.services.advisory') }}">Business advisory Service</a></li>
             <li><a href="{{ route('tax.services.bas-gst') }}">BAS / GST</a></li>
             <li><a href="{{ route('tax.services.smsf') }}">SMSF</a></li>

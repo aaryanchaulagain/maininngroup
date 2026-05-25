@@ -60,7 +60,7 @@ class TaxController extends Controller
 
     public function mortgage()
     {
-        return view('tax.services.mortgage', $this->sharedContent());
+        return redirect(domain_url('loan', 'services/mortgage-and-loan'), 301);
     }
 
     public function advisory()
@@ -126,31 +126,25 @@ class TaxController extends Controller
                 'url' => route('tax.services.accounting'),
             ],
             [
-                'icon' => 'zimed-new-icon-information',
-                'title' => 'Mortgage Broking',
-                'text' => 'With our help purchase residential or commercial real estate without the need to pay the full value immediately',
-                'url' => route('tax.services.mortgage'),
-            ],
-            [
                 'icon' => 'zimed-new-icon-link',
                 'title' => 'Business Advisory',
                 'text' => 'Whether you want to invest or refinance, ensure your current home loan is still the right one for you, we can help.',
                 'url' => route('tax.services.advisory'),
             ],
             [
-                'icon' => 'zimed-new-icon-secure-payment',
+                'icon' => 'zimed-new-icon-goal',
                 'title' => 'BAS / GST',
                 'text' => 'GST registration, BAS preparation, lodgement, and reconciliation support for compliant reporting.',
                 'url' => route('tax.services.bas-gst'),
             ],
             [
-                'icon' => 'zimed-new-icon-information',
+                'icon' => 'zimed-new-icon-family1',
                 'title' => 'SMSF',
                 'text' => 'Self-managed super fund setup, administration, audit coordination, and trustee compliance.',
                 'url' => route('tax.services.smsf'),
             ],
             [
-                'icon' => 'zimed-new-icon-settings',
+                'icon' => 'zimed-new-icon-lock',
                 'title' => 'Compliance',
                 'text' => 'Tax, corporate, and regulatory compliance support to protect your business and directors.',
                 'url' => route('tax.services.compliance'),
