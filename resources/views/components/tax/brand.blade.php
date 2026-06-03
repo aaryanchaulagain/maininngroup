@@ -15,7 +15,7 @@
     [$imgWidth, $imgHeight] = match ($as) {
         'footer' => [320, 98],
         'nav' => [220, 68],
-        default => [200, 62],
+        default => [480, 100],
     };
 @endphp
 

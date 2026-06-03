@@ -28,7 +28,7 @@
                                 <div class="elementor-widget-wrap elementor-element-populated">
                                     <div class="elementor-element elementor-widget elementor-widget-image">
                                         <div class="elementor-widget-container">
-                                            <img loading="lazy" decoding="async" width="1137" height="347" src="{{ $cdn }}/2021/03/cropped-Untitled-1-1.png" class="attachment-full size-full loan-inn-footer__logo" alt="Innovative Finance">
+                                            <x-loan.brand as="footer" />
                                         </div>
                                     </div>
                                     <div class="elementor-element elementor-widget elementor-widget-text-editor">

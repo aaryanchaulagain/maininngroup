@@ -59,14 +59,8 @@
         <div class="fusion-header-sticky-height"></div>
         <div class="fusion-header">
             <div class="fusion-row">
-                <div class="fusion-logo loan-brand-wrap" data-margin-top="31px" data-margin-bottom="31px">
-                    <a class="fusion-logo-link loan-brand" href="{{ route('loan.home') }}" aria-label="Innovative Finance — Home">
-                        <span class="loan-brand__mark" aria-hidden="true"></span>
-                        <span class="loan-brand__text">
-                            <span class="loan-brand__title">Innovative Finance</span>
-                            <span class="loan-brand__sub">INN Group</span>
-                        </span>
-                    </a>
+                <div class="fusion-logo loan-brand-wrap" data-margin-top="0" data-margin-bottom="0">
+                    <x-loan.brand />
                 </div>
                 <nav class="fusion-main-menu" aria-label="Main Menu">
                     <ul id="menu-financial-advisor-main-menu" class="fusion-menu">

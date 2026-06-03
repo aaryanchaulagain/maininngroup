@@ -12,8 +12,8 @@
     <link rel="stylesheet" href="https://innovativewealth.com.au/wp-content/themes/Avada/assets/css/style.min.css?ver=7.1.1">
     <link rel="stylesheet" href="https://innovativewealth.com.au/wp-content/uploads/fusion-styles/af4e890554f784fa87021d55bede545a.min.css?ver=3.1.1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous">
-    <link rel="stylesheet" href="{{ asset('assets/css/loan-avada-clone.css') }}?v=37">
-    <link rel="stylesheet" href="{{ asset('assets/css/loan-inn-theme.css') }}?v=3">
+    <link rel="stylesheet" href="{{ asset('assets/css/loan-avada-clone.css') }}?v=41">
+    <link rel="stylesheet" href="{{ asset('assets/css/loan-inn-theme.css') }}?v=7">
     <link rel="stylesheet" href="{{ asset('assets/css/loan-inn-footer.css') }}?v=1">
     @stack('head')
     <style type="text/css" id="fusion-builder-page-css">

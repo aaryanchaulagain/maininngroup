@@ -86,6 +86,20 @@ if (! function_exists('advisory_logo_url')) {
     }
 }
 
+if (! function_exists('loan_logo_url')) {
+    /** Public URL for the Innovative Finance logo (cache-busted when the file exists). */
+    function loan_logo_url(): string
+    {
+        $path = public_path('assets/images/innovativefinance-logo.png');
+
+        if (! is_file($path)) {
+            return asset('assets/images/innovativefinance-logo.png');
+        }
+
+        return asset('assets/images/innovativefinance-logo.png').'?v='.filemtime($path);
+    }
+}
+
 if (! function_exists('current_domain_key')) {
     function current_domain_key(): string
     {

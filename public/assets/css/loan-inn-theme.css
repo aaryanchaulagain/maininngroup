@@ -167,18 +167,99 @@ body.loan-inn-platform .fusion-main-menu .sub-menu {
     box-shadow: var(--inn-loan-shadow-md) !important;
 }
 
-body.loan-inn-platform .loan-brand__title {
-    color: var(--inn-loan-text) !important;
-    font-family: var(--inn-loan-font) !important;
+body.loan-inn-platform .loan-brand-wrap a.loan-brand {
+    background: none !important;
+    background-image: none !important;
 }
 
-body.loan-inn-platform .loan-brand__sub {
-    color: var(--inn-loan-blue) !important;
-    letter-spacing: 0.14em;
+body.loan-inn-platform .loan-brand__img {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
 }
 
-body.loan-inn-platform .loan-brand__mark {
-    background: linear-gradient(180deg, var(--inn-loan-blue) 0%, var(--inn-loan-navy) 100%) !important;
+body.loan-inn-platform .fusion-header .fusion-row {
+    max-width: 100%;
+    padding-left: 0 !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+}
+
+body.loan-inn-platform .fusion-header-wrapper .fusion-secondary-header {
+    padding-top: 6px !important;
+    padding-bottom: 6px !important;
+}
+
+body.loan-inn-platform .fusion-header-wrapper .fusion-header-v3 > .fusion-header {
+    --loan-nav-bar-height: 100px;
+    padding: 0 !important;
+    min-height: var(--loan-nav-bar-height) !important;
+}
+
+body.loan-inn-platform .fusion-header > .fusion-row {
+    min-height: var(--loan-nav-bar-height) !important;
+    height: var(--loan-nav-bar-height) !important;
+    align-items: stretch !important;
+}
+
+body.loan-inn-platform .loan-brand-wrap,
+body.loan-inn-platform .fusion-header .fusion-logo {
+    height: 100% !important;
+    margin: 0 !important;
+    padding: 0 0 0 12px !important;
+    display: flex !important;
+    align-items: stretch !important;
+}
+
+body.loan-inn-platform .loan-brand-wrap a.loan-brand {
+    height: 100% !important;
+    display: flex !important;
+    align-items: stretch !important;
+}
+
+body.loan-inn-platform .loan-brand__img {
+    height: 100% !important;
+    max-height: 100% !important;
+    width: auto !important;
+    max-width: min(480px, 72vw) !important;
+}
+
+body.loan-inn-platform .fusion-header .fusion-main-menu {
+    display: flex !important;
+    align-items: center !important;
+}
+
+body.loan-inn-platform .fusion-header .fusion-main-menu > ul.fusion-menu > li:not(.menu-item-inngroup) > a {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    line-height: var(--loan-nav-bar-height, 100px) !important;
+}
+
+body.loan-inn-platform .fusion-header .fusion-main-menu > ul.fusion-menu > li.menu-item-inngroup > a.loan-inngroup-nav-btn {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    align-self: center !important;
+    height: auto !important;
+    min-height: 0 !important;
+    line-height: 1.25 !important;
+    padding: 10px 20px !important;
+    margin: 0 0 0 8px !important;
+    border-radius: var(--inn-loan-radius, 8px) !important;
+    white-space: nowrap;
+    box-shadow: var(--inn-loan-shadow) !important;
+}
+
+@media (max-width: 991px) {
+    body.loan-inn-platform .fusion-header-wrapper .fusion-header-v3 > .fusion-header {
+        --loan-nav-bar-height: 80px;
+    }
+}
+
+@media (max-width: 640px) {
+    body.loan-inn-platform .fusion-header-wrapper .fusion-header-v3 > .fusion-header {
+        --loan-nav-bar-height: 68px;
+    }
 }
 
 body.loan-inn-platform .loan-social-networks a.loan-social-icon {

@@ -113,7 +113,7 @@ body {
 }
 
 .fusion-header-wrapper .fusion-secondary-header {
-    padding: 12px 15px;
+    padding: 6px 15px;
     background: #ffffff !important;
     border-bottom: 1px solid var(--loan-royal-border);
 }
@@ -137,10 +137,12 @@ body {
     margin-right: 15px;
 }
 
-/* Main nav band — white */
+/* Main nav band — logo fills full bar height (INN Group style) */
 .fusion-header-wrapper .fusion-header-v3 > .fusion-header {
-    padding: 31px 15px;
+    --loan-nav-bar-height: 100px;
+    padding: 0;
     margin: 0;
+    min-height: var(--loan-nav-bar-height);
     background: #ffffff !important;
     border-bottom: 1px solid var(--loan-royal-border);
     box-shadow: 0 2px 12px rgba(15, 61, 134, 0.06);
@@ -157,74 +159,74 @@ body {
 }
 
 .fusion-header-wrapper .fusion-header > .fusion-row {
-    margin: 15px;
-    padding: 0;
+    margin: 0;
+    padding: 0 15px 0 0;
     max-width: none;
+    align-items: stretch;
+    min-height: var(--loan-nav-bar-height, 100px);
+    height: var(--loan-nav-bar-height, 100px);
 }
 
-.fusion-header-wrapper .fusion-logo {
-    margin-top: 0 !important;
-    margin-bottom: 0 !important;
-}
-
-/* Text site title (no logo image) */
-.loan-brand-wrap {
+.fusion-header-wrapper .fusion-logo,
+.fusion-header-wrapper .loan-brand-wrap {
+    display: flex !important;
+    align-items: stretch !important;
+    align-self: stretch !important;
+    height: 100% !important;
+    margin: 0 !important;
+    padding: 0 0 0 12px !important;
     flex-shrink: 0;
 }
 
 a.loan-brand {
     display: flex !important;
-    align-items: center;
-    gap: 12px;
+    align-items: stretch !important;
+    height: 100% !important;
     text-decoration: none !important;
-    line-height: 1.2;
+    line-height: 0;
 }
 
-a.loan-brand:hover .loan-brand__title,
-a.loan-brand:focus-visible .loan-brand__title {
-    color: var(--loan-royal);
+a.loan-brand:focus-visible {
+    outline: 2px solid var(--loan-royal);
+    outline-offset: 2px;
+    border-radius: 4px;
 }
 
-.loan-brand__mark {
-    flex-shrink: 0;
-    width: 4px;
-    height: 44px;
-    border-radius: 2px;
-    background: linear-gradient(180deg, var(--loan-royal-light) 0%, var(--loan-royal) 100%);
-    box-shadow: 0 0 12px var(--loan-royal-glow);
+.loan-brand__img {
+    display: block !important;
+    height: 100% !important;
+    width: auto !important;
+    max-height: 100% !important;
+    max-width: min(480px, 72vw) !important;
+    min-height: 0;
+    object-fit: contain;
+    object-position: left center;
 }
 
-.loan-brand__text {
+.fusion-header-wrapper .fusion-header .fusion-main-menu {
     display: flex;
-    flex-direction: column;
-    gap: 2px;
+    align-items: center;
+    align-self: stretch;
 }
 
-.loan-brand__title {
-    font-family: "Roboto Slab", Georgia, serif;
-    font-size: 22px;
-    font-weight: 700;
-    letter-spacing: -0.02em;
-    color: var(--loan-text-on-white);
-    transition: color 0.2s ease;
+.loan-brand__img--footer {
+    max-height: 96px;
+    max-width: min(340px, 90vw);
 }
 
-.loan-brand__sub {
-    font-family: Lato, Roboto, sans-serif;
-    font-size: 11px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.14em;
-    color: var(--loan-royal);
+@media (max-width: 991px) {
+    .fusion-header-wrapper .fusion-header-v3 > .fusion-header {
+        --loan-nav-bar-height: 80px;
+    }
 }
 
 @media (max-width: 640px) {
-    .loan-brand__title {
-        font-size: 17px;
+    .fusion-header-wrapper .fusion-header-v3 > .fusion-header {
+        --loan-nav-bar-height: 68px;
     }
 
-    .loan-brand__mark {
-        height: 36px;
+    .loan-brand__img {
+        max-width: min(280px, 65vw) !important;
     }
 }
 
@@ -944,10 +946,11 @@ a.loan-brand:focus-visible .loan-brand__title {
     color: #fff !important;
     background: linear-gradient(135deg, var(--loan-royal) 0%, var(--loan-royal-dark) 100%) !important;
     border: none !important;
-    border-radius: 999px !important;
+    border-radius: 8px !important;
     box-shadow: 0 4px 14px var(--loan-royal-glow);
     transition: background 0.2s ease, box-shadow 0.2s ease;
-    padding: 6px 12px !important;
+    padding: 10px 20px !important;
+    align-self: center !important;
 }
 
 .fusion-main-menu .fusion-menu > li.menu-item-inngroup > a.loan-inngroup-nav-btn .menu-text {
