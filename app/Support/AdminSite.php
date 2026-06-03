@@ -44,9 +44,7 @@ class AdminSite
 
     public function publicUrl(): string
     {
-        $url = $this->config['public_url'] ?? null;
-
-        return is_callable($url) ? (string) $url() : domain_url($this->domainKey(), '/');
+        return domain_url($this->domainKey(), '/');
     }
 
     public function route(string $name, mixed $parameters = [], bool $absolute = true): string

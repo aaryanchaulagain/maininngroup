@@ -32,7 +32,7 @@
         @foreach (admin_sites() as $siteKey => $siteConfig)
             @php
                 $tone = $sites[$siteConfig['color'] ?? 'slate'] ?? $sites['slate'];
-                $publicUrl = is_callable($siteConfig['public_url'] ?? null) ? $siteConfig['public_url']() : domain_url($siteConfig['domain_key'], '/');
+                $publicUrl = domain_url($siteConfig['domain_key'], '/');
             @endphp
 
             <section class="admin-sidebar__section" aria-label="{{ $siteConfig['label'] }}">

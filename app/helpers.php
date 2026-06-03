@@ -58,6 +58,34 @@ if (! function_exists('domain_url')) {
     }
 }
 
+if (! function_exists('tax_logo_url')) {
+    /** Public URL for the Innovative Tax logo (cache-busted when the file exists). */
+    function tax_logo_url(): string
+    {
+        $path = public_path('assets/images/innovativetax-logo.png');
+
+        if (! is_file($path)) {
+            return asset('assets/images/innovativetax-logo.png');
+        }
+
+        return asset('assets/images/innovativetax-logo.png').'?v='.filemtime($path);
+    }
+}
+
+if (! function_exists('advisory_logo_url')) {
+    /** Public URL for the Innovative Advisory logo (cache-busted when the file exists). */
+    function advisory_logo_url(): string
+    {
+        $path = public_path('assets/images/innovativeadvisory-logo.png');
+
+        if (! is_file($path)) {
+            return asset('assets/images/innovativeadvisory-logo.png');
+        }
+
+        return asset('assets/images/innovativeadvisory-logo.png').'?v='.filemtime($path);
+    }
+}
+
 if (! function_exists('current_domain_key')) {
     function current_domain_key(): string
     {

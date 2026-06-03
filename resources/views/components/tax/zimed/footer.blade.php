@@ -11,7 +11,7 @@
                                 <div class="elementor-widget-wrap elementor-element-populated">
                                     <div class="elementor-element elementor-element-043af26 elementor-widget elementor-widget-image">
                                         <div class="elementor-widget-container">
-                                            <img loading="lazy" decoding="async" width="1137" height="347" src="{{ $cdn }}/2021/03/cropped-Untitled-1-1.png" class="attachment-full size-full" alt="">
+                                            <x-tax.brand as="footer" />
                                         </div>
                                     </div>
                                     <div class="elementor-element elementor-element-6c251af elementor-widget elementor-widget-text-editor">

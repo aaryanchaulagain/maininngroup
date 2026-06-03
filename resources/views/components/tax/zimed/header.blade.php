@@ -1,7 +1,6 @@
 @props(['active' => 'home'])
 
 @php
-    $cdn = 'https://innovativeassociates.com.au/wp-content/uploads';
     $inngroupUrl = domain_url('main');
 @endphp
 
@@ -9,9 +8,7 @@
     <nav class="header-navigation stricky">
         <div class="container">
             <div class="main-nav__logo-box">
-                <a href="{{ route('tax.home') }}" class="main-nav__logo">
-                    <img src="{{ $cdn }}/2021/03/cropped-Untitled-1-2.png" width="105" alt="Innovative associates">
-                </a>
+                <x-tax.brand />
                 <a href="#" class="side-menu__toggler">
                     <i class="fa fa-bars"></i>
                 </a>
@@ -100,9 +97,7 @@
     </div>
     <div class="side-menu__block-inner">
         <div class="side-menu__top justify-content-between align-items-center">
-            <a href="{{ route('tax.home') }}" class="main-nav__logo">
-                <img src="{{ $cdn }}/2021/03/cropped-Untitled-1-2.png" width="105" alt="Innovative associates">
-            </a>
+            <x-tax.brand />
             <a href="#" class="side-menu__toggler side-menu__close-btn">
                 <i class="fa fa-times"></i>
             </a>

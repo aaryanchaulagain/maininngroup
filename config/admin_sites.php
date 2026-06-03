@@ -8,7 +8,6 @@ return [
         'description' => 'Corporate site contact enquiries',
         'color' => 'slate',
         'domain_key' => 'main',
-        'public_url' => fn () => domain_url('main', '/'),
         'nav' => [
             ['route' => 'contacts.index', 'label' => 'Contact leads', 'icon' => 'envelope'],
         ],
@@ -20,7 +19,6 @@ return [
         'description' => 'Innovative Associates tax subdomain',
         'color' => 'orange',
         'domain_key' => 'tax',
-        'public_url' => fn () => domain_url('tax', '/'),
         'nav' => [
             ['route' => 'contacts.index', 'label' => 'Contact form', 'icon' => 'envelope'],
             ['route' => 'articles.index', 'label' => 'Articles', 'icon' => 'newspaper'],
@@ -36,7 +34,6 @@ return [
         'description' => 'Loan & mortgage subdomain',
         'color' => 'violet',
         'domain_key' => 'loan',
-        'public_url' => fn () => domain_url('loan', '/'),
         'nav' => [
             ['route' => 'contacts.index', 'label' => 'Contact', 'icon' => 'envelope'],
             ['route' => 'contents.index', 'label' => 'About & pages', 'icon' => 'file'],
@@ -52,7 +49,6 @@ return [
         'description' => 'Innovative Advisory subdomain',
         'color' => 'blue',
         'domain_key' => 'advisory',
-        'public_url' => fn () => domain_url('advisory', '/'),
         'route_prefix' => 'advisory.',
         'nav' => [
             ['route' => 'contacts.index', 'label' => 'Contact', 'icon' => 'envelope'],

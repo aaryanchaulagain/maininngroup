@@ -1,7 +1,3 @@
-@php
-    $logo = 'https://innovativeassociates.com.au/wp-content/uploads/2021/03/cropped-Untitled-1-2.png';
-@endphp
-
 <header
     x-data="{ open: false, about: false, services: false, scrolled: false }"
     x-init="window.addEventListener('scroll', () => { scrolled = window.scrollY > 80 })"
@@ -9,9 +5,7 @@
     class="fixed inset-x-0 top-0 z-[999] transition-all duration-300 ease-linear"
 >
     <div class="mx-auto flex h-[100px] max-w-[1200px] items-center justify-between px-[15px]">
-        <a href="{{ route('tax.home') }}" class="relative z-[2] shrink-0">
-            <img src="{{ $logo }}" alt="Innovative Associates" class="h-[72px] w-auto max-w-[220px] object-contain">
-        </a>
+        <x-tax.brand as="nav" class="relative z-[2] shrink-0" />
 
         <nav class="hidden items-center lg:flex">
             <ul class="flex items-center gap-[32px]">

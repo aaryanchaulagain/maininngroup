@@ -45,7 +45,7 @@
                     <a href="{{ $contactsUrl }}" class="rounded-lg bg-inn-navy px-4 py-2 text-sm font-medium text-white hover:bg-slate-800">
                         Manage {{ $siteKey === 'main' ? 'contacts' : 'site' }}
                     </a>
-                    <a href="{{ is_callable($config['public_url'] ?? null) ? $config['public_url']() : domain_url($config['domain_key'], '/') }}"
+                    <a href="{{ domain_url($config['domain_key'], '/') }}"
                        target="_blank" rel="noopener"
                        class="rounded-lg border border-slate-200 px-4 py-2 text-sm font-medium text-slate-600 hover:bg-slate-50">
                         View live site ↗

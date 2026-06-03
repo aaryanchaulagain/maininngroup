@@ -12,7 +12,7 @@
     <div class="adv-footer__main">
         <div class="adv-footer__inner">
             <div class="adv-footer__brand">
-                <p class="adv-footer__logo">Business Advisory</p>
+                <x-advisory.brand as="footer" />
                 <p class="adv-footer__tagline">Strategic consulting and corporate advisory for ambitious Australian businesses — part of Innovative Group.</p>
                 <a href="{{ domain_url('main') }}" class="adv-footer__inn" target="_blank" rel="noopener">Visit INN Group →</a>
             </div>

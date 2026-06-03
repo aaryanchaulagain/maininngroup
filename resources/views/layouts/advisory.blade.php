@@ -10,7 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous">
     {{-- Standalone CSS only — do not use Vite here (public/hot would block if dev server is off) --}}
-    <link rel="stylesheet" href="{{ asset('assets/css/advisory-premium.css') }}?v=10">
+    <link rel="stylesheet" href="{{ asset('assets/css/advisory-premium.css') }}?v=13">
     @stack('head')
 </head>
 <body class="adv-site">

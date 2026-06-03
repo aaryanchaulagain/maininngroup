@@ -18,13 +18,7 @@
 
 <header class="adv-header" x-data="{ mobile: false, services: false }">
     <div class="adv-header__inner">
-        <a href="{{ route('advisory.home') }}" class="adv-brand">
-            <span class="adv-brand__bar" aria-hidden="true"></span>
-            <span class="adv-brand__text">
-                <span class="adv-brand__title">Business Advisory</span>
-                <span class="adv-brand__sub">Innovative Group</span>
-            </span>
-        </a>
+        <x-advisory.brand />
 
         <nav class="adv-nav" aria-label="Main">
             <a href="{{ route('advisory.home') }}" class="adv-nav__link {{ $active === 'home' ? 'adv-nav__link--active' : '' }}">Home</a>

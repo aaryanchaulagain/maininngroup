@@ -53,7 +53,7 @@
                     </div>
                 </div>
             </div>
-            <img decoding="async" src="{{ $cdn }}/2021/03/Group-5-1-1.png" alt="" class="banner-one__moc">
+            <x-tax.zimed.hero-moc />
         </div>
     </section>
 
