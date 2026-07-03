@@ -1,5 +1,5 @@
 @props([
-    'image' => 'https://innovativeassociates.com.au/wp-content/uploads/2020/12/cta-2-3-1-1.png',
+    'image' => site_image('tax', '2020/12/cta-2-3-1-1.png'),
     'boxes' => [],
     'vision' => '',
 ])

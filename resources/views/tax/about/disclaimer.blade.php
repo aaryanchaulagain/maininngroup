@@ -4,11 +4,6 @@
 
 @section('title', 'Disclaimer – Innovative associates')
 
-@push('head')
-    <link rel="stylesheet" href="https://innovativeassociates.com.au/wp-content/uploads/elementor/css/post-1287.css?ver=1778595449">
-    <link rel="stylesheet" href="https://innovativeassociates.com.au/wp-content/plugins/elementor/assets/css/widget-heading.min.css?ver=3.35.0">
-@endpush
-
 @section('content')
 @include('components.tax.zimed.header', ['active' => 'disclaimer'])
 

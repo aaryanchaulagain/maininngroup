@@ -54,11 +54,23 @@
     text-decoration: underline;
 }
 
-/* —— Header (white, GT-style) —— */
-.adv-header {
+.adv-topbar .inn-site-admin-bar__login {
+    background: rgba(255, 255, 255, 0.14);
+}
+
+.adv-topbar .inn-site-admin-bar__login:hover {
+    background: rgba(255, 255, 255, 0.24);
+}
+
+/* —— Sticky header stack (topbar + nav — login always reachable) —— */
+.adv-header-stack {
     position: sticky;
     top: 0;
     z-index: 50;
+}
+
+/* —— Header (white, GT-style) —— */
+.adv-header {
     background: var(--adv-white);
     border-bottom: 1px solid var(--adv-border);
     box-shadow: 0 1px 0 rgba(11, 35, 64, 0.04);
@@ -102,9 +114,9 @@
 }
 
 .adv-brand__img--footer {
-    max-height: 120px;
-    max-width: min(220px, 55vw);
-    object-position: left center;
+    max-height: 56px;
+    max-width: min(130px, 55vw);
+    object-position: left top;
 }
 
 @media (max-width: 640px) {

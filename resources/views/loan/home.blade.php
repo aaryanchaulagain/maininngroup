@@ -6,7 +6,7 @@
 
 @include('components.loan.avada.header', ['active' => 'home'])
 
-@include('components.loan.avada.hero-slider')
+@include('components.loan.hero')
 
 <main id="main" class="clearfix width-100">
     <div class="fusion-row" style="max-width:100%;">

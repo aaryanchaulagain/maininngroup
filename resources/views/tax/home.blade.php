@@ -2,14 +2,9 @@
 
 @section('title', 'Innovative associates – Business For Your Business')
 
-@push('head')
-    <link rel="stylesheet" href="https://innovativeassociates.com.au/wp-content/uploads/elementor/css/post-28.css?ver=1778579727">
-@endpush
-
 @section('content')
 @php
-    $cdn = 'https://innovativeassociates.com.au/wp-content/uploads';
-    $theme = 'https://innovativeassociates.com.au/wp-content/themes/zimed/assets/images';
+    $cdn = site_uploads('tax');
 
     $coreValues = [
         ['icon' => 'zimed-new-icon-trophy', 'title' => 'Highest standard of Service', 'text' => 'Our Professional holds memberships with various professional bodies that demonstrate our commitment to the highest standard of Services.'],
@@ -38,7 +33,7 @@
 
 <div class="full-width-page">
     {{-- Hero: banner-one --}}
-    <section class="banner-one" style="background-image: url({{ $cdn }}/2021/05/slider-1-2.jpg);">
+    <section class="banner-one">
         <div class="container">
             <img decoding="async" src="" alt="" class="banner-one__shape-moc-1">
             <div class="row">
@@ -140,9 +135,9 @@
 
     {{-- Contact --}}
     <section class="contact-one">
-        <img decoding="async" src="http://layerdrops.com/zimedwp/wp-content/uploads/2020/11/contact-shape-1-2.png" class="contact-one__shape-1" alt="">
-        <img decoding="async" src="http://layerdrops.com/zimedwp/wp-content/uploads/2020/10/contact-shape-2.png" class="contact-one__shape-2" alt="">
-        <img decoding="async" src="http://layerdrops.com/zimedwp/wp-content/uploads/2020/11/contact-shape-1-1.png" class="contact-one__shape-3" alt="">
+        <img decoding="async" src="{{ site_image('tax', 'decor/contact-shape-1.png') }}" class="contact-one__shape-1" alt="">
+        <img decoding="async" src="{{ site_image('tax', 'decor/contact-shape-2.png') }}" class="contact-one__shape-2" alt="">
+        <img decoding="async" src="{{ site_image('tax', 'decor/contact-shape-3.png') }}" class="contact-one__shape-3" alt="">
         <div class="container">
             <div class="row">
                 <div class="col-lg-6">

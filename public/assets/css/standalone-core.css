@@ -1,0 +1,177 @@
+/* Shared reset + layout primitives (no WordPress) */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body { margin: 0; line-height: 1.6; }
+
+img { max-width: 100%; height: auto; display: block; }
+
+a { color: inherit; }
+
+ul, ol { margin: 0; padding: 0; list-style: none; }
+
+/* Bootstrap row/col used in tax templates */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -12px;
+    margin-right: -12px;
+}
+
+.row > [class*="col-"] {
+    padding-left: 12px;
+    padding-right: 12px;
+    width: 100%;
+}
+
+@media (min-width: 992px) {
+    .col-lg-6 { width: 50%; }
+    .col-lg-7 { width: 58.333%; }
+    .col-lg-5 { width: 41.667%; }
+    .d-flex { display: flex !important; }
+    .my-auto { margin-top: auto !important; margin-bottom: auto !important; }
+}
+
+/* Elementor markup used in tax pages */
+.elementor-section { width: 100%; }
+.elementor-container { max-width: 1280px; margin: 0 auto; padding: 0 16px; }
+.elementor-row { display: flex; flex-wrap: wrap; }
+.elementor-column { width: 100%; }
+.elementor-widget-wrap { width: 100%; }
+.elementor-heading-title { margin: 0 0 0.75rem; line-height: 1.25; }
+.elementor-text-editor p { margin: 0 0 1rem; }
+.elementor-widget-image img { width: 100%; height: auto; }
+
+/* Avada / Fusion markup used in loan pages */
+.fusion-row { max-width: 1280px; margin: 0 auto; padding: 0 16px; }
+.fusion-clearfix::after { content: ''; display: table; clear: both; }
+.fusion-wrapper { position: relative; z-index: 1; }
+.screen-reader-text {
+    position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+    overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+}
+
+/* Scroll-to-top (tax + loan) */
+.scroll-to-target.scroll-to-top,
+.loan-scroll-top-wrap {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.25s ease, visibility 0.25s ease;
+}
+
+.scroll-to-target.scroll-to-top.visible,
+.loan-scroll-top-wrap.is-visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Utility top bar — Admin Login always visible without scrolling */
+.inn-site-admin-bar {
+    background: #072f4c;
+    color: #fff;
+    font-size: 0.75rem;
+    line-height: 1.2;
+}
+
+.inn-site-admin-bar__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    max-width: 80rem;
+    margin: 0 auto;
+    padding: 0.4rem 1rem;
+    min-height: 2rem;
+}
+
+.inn-site-admin-bar__social {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+}
+
+.inn-site-admin-bar__social a {
+    color: inherit;
+    opacity: 0.9;
+    text-decoration: none;
+}
+
+.inn-site-admin-bar__social a:hover {
+    opacity: 1;
+}
+
+.inn-site-admin-bar__spacer {
+    flex: 0 0 auto;
+    width: 1px;
+}
+
+.inn-site-admin-bar__right {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-left: auto;
+    flex-shrink: 0;
+}
+
+.inn-site-admin-bar__phone {
+    display: none;
+    white-space: nowrap;
+    opacity: 0.92;
+}
+
+@media (min-width: 640px) {
+    .inn-site-admin-bar__phone {
+        display: inline;
+    }
+}
+
+.inn-site-admin-bar__login {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.2rem 0.65rem;
+    border-radius: 0.25rem;
+    background: rgba(255, 255, 255, 0.12);
+    color: #fff !important;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-decoration: none !important;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.inn-site-admin-bar__login:hover {
+    background: rgba(255, 255, 255, 0.22);
+}
+
+/* Loan site — admin login in secondary header */
+body.loan-inn-platform .loan-header-admin-login {
+    margin-left: 0.5rem;
+    vertical-align: middle;
+}
+
+body.loan-inn-platform .fusion-secondary-header {
+    position: relative;
+    z-index: 100;
+}
+
+/* Advisory topbar */
+.adv-topbar .inn-site-admin-bar {
+    background: transparent;
+}
+
+.adv-topbar .inn-site-admin-bar__inner {
+    max-width: none;
+    padding: 0;
+    min-height: 0;
+    width: 100%;
+}
+
+.adv-topbar__actions {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-left: auto;
+    flex-shrink: 0;
+}

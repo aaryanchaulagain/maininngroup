@@ -1,5 +1,5 @@
 @php
-    $cdn = 'https://innovativewealth.com.au/wp-content/uploads';
+    $cdn = site_uploads('loan');
 @endphp
 
 <section class="loan-about-intro fusion-fullwidth fullwidth-box nonhundred-percent-fullwidth">

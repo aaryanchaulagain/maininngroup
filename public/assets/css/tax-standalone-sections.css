@@ -1,0 +1,294 @@
+/**
+ * Tax homepage sections — standalone (no Zimed theme CSS required)
+ */
+
+/* Block titles */
+.block-title { margin-bottom: 2rem; }
+.block-title.text-center { text-align: center; }
+.block-title.text-left { text-align: left; }
+.block-title h3 {
+    font-size: clamp(1.75rem, 3vw, 2.25rem);
+    font-weight: 700;
+    margin: 0.5rem 0 0;
+    color: var(--inn-tax-text, #101828);
+}
+.block-title__bubbles {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--inn-tax-blue, #1e63d8);
+    margin-right: 6px;
+    box-shadow: 12px 0 0 var(--inn-tax-gold, #c9a96e), 24px 0 0 var(--inn-tax-blue, #1e63d8);
+}
+
+/* Service grid */
+.service-two {
+    padding: 80px 0;
+    background: #fff;
+}
+.service-two__single {
+    background: #fff;
+    border: 1px solid var(--inn-tax-border, #e4e7ec);
+    border-radius: 12px;
+    padding: 32px 24px;
+    margin-bottom: 24px;
+    height: calc(100% - 24px);
+    box-shadow: 0 4px 16px rgba(16, 24, 40, 0.06);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+.service-two__single:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 28px rgba(16, 24, 40, 0.1);
+}
+.service-two__icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: rgba(30, 99, 216, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    font-size: 28px;
+    color: var(--inn-tax-blue, #1e63d8);
+}
+.service-two__title {
+    font-size: 1.15rem;
+    margin: 0 0 12px;
+}
+.service-two__title a {
+    color: var(--inn-tax-text, #101828);
+    text-decoration: none;
+}
+.service-two__title a:hover { color: var(--inn-tax-blue, #1e63d8); }
+.service-two__text {
+    color: var(--inn-tax-text-secondary, #667085);
+    font-size: 15px;
+    line-height: 1.65;
+    margin-bottom: 16px;
+}
+.service-two__btn {
+    display: inline-flex;
+    align-items: center;
+    font-weight: 600;
+    font-size: 14px;
+    color: var(--inn-tax-blue, #1e63d8);
+    text-decoration: none;
+}
+.service-two__btn:hover { text-decoration: underline; }
+
+/* Core values */
+.cta-three {
+    position: relative;
+    padding: 80px 0;
+    background: var(--inn-tax-bg, #f7f9fc);
+    overflow: hidden;
+}
+.cta-three__moc {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    max-width: 42%;
+    height: auto;
+    opacity: 0.15;
+    pointer-events: none;
+}
+.cta-three__box-wrap { display: flex; flex-direction: column; gap: 20px; }
+.cta-three__box {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid var(--inn-tax-border, #e4e7ec);
+}
+.cta-three__box-icon {
+    flex-shrink: 0;
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: rgba(30, 99, 216, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--inn-tax-blue, #1e63d8);
+    font-size: 22px;
+}
+.cta-three__box-content h3 {
+    margin: 0 0 8px;
+    font-size: 1.05rem;
+}
+.cta-three__box-content p {
+    margin: 0;
+    font-size: 14px;
+    color: var(--inn-tax-text-secondary, #667085);
+    line-height: 1.6;
+}
+
+/* Testimonials */
+.testimonials__one {
+    position: relative;
+    padding: 80px 0;
+    background: #fff;
+    overflow: hidden;
+}
+.testimonials__one .map-img {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    max-width: 45%;
+    opacity: 0.08;
+    pointer-events: none;
+}
+#testimonials-slider-pager {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+#testimonials-slider-pager .pager-item {
+    display: block;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid transparent;
+    opacity: 0.6;
+    transition: opacity 0.2s, border-color 0.2s;
+}
+#testimonials-slider-pager .pager-item.active,
+#testimonials-slider-pager .pager-item:hover {
+    opacity: 1;
+    border-color: var(--inn-tax-blue, #1e63d8);
+}
+#testimonials-slider-pager .pager-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.testimonials-slider { list-style: none; margin: 0; padding: 0; }
+.testimonials-slider .slide-item { display: none; }
+.testimonials-slider .slide-item:first-child { display: block; }
+.testimonials__one__single {
+    background: var(--inn-tax-bg, #f7f9fc);
+    border-radius: 12px;
+    padding: 28px;
+    border-left: 4px solid var(--inn-tax-blue, #1e63d8);
+}
+.testimonials__one__single p {
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--inn-tax-text-secondary, #667085);
+    margin: 0 0 16px;
+}
+.testimonials__one__single span {
+    font-weight: 700;
+    font-size: 14px;
+    color: var(--inn-tax-text, #101828);
+}
+
+/* Contact section */
+.contact-one {
+    position: relative;
+    padding: 80px 0;
+    background: var(--inn-tax-navy, #0b1f33);
+    color: #fff;
+    overflow: hidden;
+}
+.contact-one__shape-1,
+.contact-one__shape-2,
+.contact-one__shape-3 {
+    position: absolute;
+    opacity: 0.06;
+    pointer-events: none;
+}
+.contact-one__images {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 24px;
+}
+.contact-one__images img {
+    border-radius: 10px;
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+    background: rgba(255,255,255,0.1);
+}
+.contact-one__infos-single {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 20px;
+}
+.contact-one__infos-icon {
+    flex-shrink: 0;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: rgba(30, 99, 216, 0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 18px;
+}
+.contact-one__infos-content h3 {
+    margin: 0 0 6px;
+    font-size: 1rem;
+    color: #fff;
+}
+.contact-one__infos-content p {
+    margin: 0;
+    font-size: 14px;
+    color: rgba(255,255,255,0.75);
+    line-height: 1.6;
+}
+.contact-one__infos-content a { color: #7eb8ff; }
+.contact-one__form-wrap {
+    background: #fff;
+    border-radius: 12px;
+    padding: 32px;
+    color: var(--inn-tax-text, #101828);
+}
+.contact-one__form-wrap .block-title h3 { color: var(--inn-tax-text, #101828); }
+.contact-one__form-wrap .block-title h3 span { color: var(--inn-tax-blue, #1e63d8); }
+
+/* Icon bubble helper */
+.icon-box-with-bubble::before {
+    content: '';
+    position: absolute;
+    inset: -4px;
+    border-radius: 50%;
+    border: 2px dashed rgba(30, 99, 216, 0.2);
+}
+.icon-box-wrapper { position: relative; }
+
+/* Sub-menu desktop */
+@media (min-width: 1200px) {
+    body.tax-inn-platform .main-nav__navigation-box .menu-item-has-children { position: relative; }
+    body.tax-inn-platform .main-nav__navigation-box .sub-menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        min-width: 220px;
+        background: #fff;
+        box-shadow: 0 12px 32px rgba(0,0,0,0.12);
+        border-radius: 8px;
+        padding: 8px 0;
+        z-index: 100;
+    }
+    body.tax-inn-platform .main-nav__navigation-box .menu-item-has-children:hover > .sub-menu {
+        display: block;
+    }
+}
+
+@media (max-width: 991px) {
+    .cta-three__moc { display: none; }
+    .testimonials__one .map-img { display: none; }
+    .contact-one__images { grid-template-columns: 1fr; }
+}

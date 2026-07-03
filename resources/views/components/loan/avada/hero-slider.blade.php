@@ -1,5 +1,5 @@
 @php
-    $cdn = 'https://innovativewealth.com.au/wp-content/uploads';
+    $cdn = site_uploads('loan');
     $contactUrl = route('loan.contact');
 @endphp
 
@@ -49,7 +49,7 @@ jQuery(function($) {
             navStartStop: false,
             navButtons: false,
             hoverBottomNav: true,
-            skinsPath: 'https://innovativewealth.com.au/wp-content/plugins/LayerSlider/assets/static/layerslider/skins/'
+            skinsPath: @json(legacy_asset('loan', 'plugins/LayerSlider/assets/static/layerslider/skins/'))
         });
     }
 });

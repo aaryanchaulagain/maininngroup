@@ -5,6 +5,7 @@
 @endphp
 
 <header class="main-nav__header-one">
+    <x-site.admin-bar phone="Call: 02 8592 1165 | 0434 392 347" />
     <nav class="header-navigation stricky">
         <div class="container">
             <div class="main-nav__logo-box">

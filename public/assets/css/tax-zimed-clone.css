@@ -232,7 +232,7 @@ img {
 
 @media (max-width: 767px) {
     .banner-one .container {
-        background-image: url(https://innovativeassociates.com.au/wp-content/uploads/2021/05/mobilebg.jpg);
+        background-image: var(--inn-tax-hero-gradient, linear-gradient(135deg, #0b1f33, #122b45));
         background-repeat: no-repeat;
         background-size: cover;
     }
@@ -269,7 +269,7 @@ img {
 
 /* Inner page header bg — navy gradient applied in tax-inn-theme.css */
 .page-header:not(.inn-tax-page-hero) {
-    background-image: url(https://innovativeassociates.com.au/wp-content/uploads/2021/03/page-header-bg-4.jpg) !important;
+    background-image: none !important;
 }
 
 .side-menu__content {
@@ -323,8 +323,8 @@ body.tax-inn-platform .main-nav__logo::after {
 }
 
 .tax-brand__img--footer {
-    max-height: 88px;
-    max-width: min(320px, 90vw);
+    max-height: 48px;
+    max-width: min(160px, 72vw);
 }
 
 .tax-brand__img--nav {
@@ -339,7 +339,7 @@ body.tax-inn-platform .main-nav__logo::after {
     }
 
     .tax-brand__img--footer {
-        max-height: 72px;
+        max-height: 42px;
     }
 }
 

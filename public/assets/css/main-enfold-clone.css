@@ -1,58 +1,25 @@
 #top #header_main > .container,
 #top #header_main > .container .main_menu .av-main-nav > li > a,
 #top #header_main #menu-item-shop .cart_dropdown_link {
-    height: 130px;
-    line-height: 130px;
+    height: auto;
+    line-height: normal;
+    min-height: var(--inn-main-header-h, 88px);
 }
 
 .html_top_nav_header .av-logo-container {
-    height: 130px;
+    height: auto;
+    min-height: var(--inn-main-header-h, 88px);
 }
 
 .html_header_top.html_header_sticky #top #wrap_all #main {
-    padding-top: 160px;
+    padding-top: 0;
 }
 
-@font-face {
-    font-family: 'entypo-fontello';
-    font-weight: normal;
-    font-style: normal;
-    font-display: auto;
-    src: url('https://inngroup.com.au/wp-content/themes/enfold/config-templatebuilder/avia-template-builder/assets/fonts/entypo-fontello.woff2') format('woff2');
-}
-
-#top .avia-font-entypo-fontello,
-body .avia-font-entypo-fontello,
-html body [data-av_iconfont='entypo-fontello']:before {
-    font-family: 'entypo-fontello';
-}
-
-@font-face {
-    font-family: 'justice';
-    font-weight: normal;
-    font-style: normal;
-    font-display: auto;
-    src: url('https://inngroup.com.au/wp-content/uploads/avia_fonts/justice/justice.woff2') format('woff2');
-}
-
-#top .avia-font-justice,
-body .avia-font-justice,
-html body [data-av_iconfont='justice']:before {
-    font-family: 'justice';
-}
-
-@font-face {
-    font-family: 'medical';
-    font-weight: normal;
-    font-style: normal;
-    font-display: auto;
-    src: url('https://inngroup.com.au/wp-content/uploads/avia_fonts/medical/medical.woff2') format('woff2');
-}
-
-#top .avia-font-medical,
-body .avia-font-medical,
-html body [data-av_iconfont='medical']:before {
-    font-family: 'medical';
+/* Icon fonts replaced by Font Awesome in standalone layout */
+html body [data-av_iconfont='entypo-fontello']:before,
+.avia_button_icon:before {
+    font-family: 'Font Awesome 6 Free' !important;
+    font-weight: 900;
 }
 
 /* Areas of expertise — Font Awesome icons */
@@ -545,10 +512,13 @@ html body [data-av_iconfont='medical']:before {
 }
 
 .inn-operate-card__img {
-    width: 100%;
+    width: auto;
     height: auto;
     display: block;
-    max-width: 100%;
+    max-width: 120px;
+    max-height: 100px;
+    margin: 0 auto;
+    object-fit: contain;
 }
 
 .inn-operate-card__text {

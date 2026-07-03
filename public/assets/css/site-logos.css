@@ -1,0 +1,55 @@
+/**
+ * Unified logo sizing — header vs footer across all INN Group sites
+ */
+
+/* —— Footer logos (compact) —— */
+.tax-brand--footer .tax-brand__img,
+.tax-brand__img--footer,
+body.tax-inn-platform .tax-zimed-footer .tax-brand__img {
+    max-height: 48px !important;
+    max-width: min(160px, 72vw) !important;
+    width: auto !important;
+    height: auto !important;
+    object-fit: contain;
+    object-position: left center;
+}
+
+.loan-brand--footer .loan-brand__img,
+.loan-brand__img--footer,
+body.loan-inn-platform .loan-inn-footer .loan-brand__img {
+    max-height: 48px !important;
+    max-width: min(180px, 72vw) !important;
+    width: auto !important;
+    height: auto !important;
+    object-fit: contain;
+    object-position: left center;
+}
+
+.adv-brand--footer .adv-brand__img,
+.adv-brand__img--footer,
+.adv-footer__brand .adv-brand__img {
+    max-height: 56px !important;
+    max-width: min(130px, 55vw) !important;
+    width: auto !important;
+    height: auto !important;
+    object-fit: contain;
+    object-position: left top;
+}
+
+/* Footer badge images (MFAA etc.) */
+.tax-zimed-footer .elementor-element-6c72338 img,
+.tax-zimed-footer .elementor-element-08e4766 img,
+body.loan-inn-platform .loan-inn-footer__badge img {
+    max-height: 44px !important;
+    max-width: 100px !important;
+    width: auto !important;
+}
+
+@media (max-width: 767px) {
+    .tax-brand--footer .tax-brand__img,
+    .tax-brand__img--footer { max-height: 42px !important; max-width: 140px !important; }
+    .loan-brand--footer .loan-brand__img,
+    .loan-brand__img--footer { max-height: 42px !important; max-width: 150px !important; }
+    .adv-brand--footer .adv-brand__img,
+    .adv-brand__img--footer { max-height: 48px !important; max-width: 110px !important; }
+}

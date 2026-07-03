@@ -642,3 +642,295 @@ body.loan-inn-platform a:not(.thm-btn):not(.fusion-button):hover {
         padding-bottom: 40px !important;
     }
 }
+
+/* Animated hero carousel (LayerSlider replacement) */
+.loan-hero--animated {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    background: #081b33;
+}
+
+.loan-hero__viewport {
+    position: relative;
+    width: 100%;
+    height: 600px;
+}
+
+@media (max-width: 768px) {
+    .loan-hero__viewport {
+        height: 300px;
+    }
+}
+
+.loan-hero__slide {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 1;
+    transition: opacity 1s ease, visibility 1s ease;
+}
+
+.loan-hero__slide.is-active {
+    opacity: 1;
+    visibility: visible;
+    z-index: 2;
+}
+
+.loan-hero__media {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+}
+
+.loan-hero__bg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transform: scale(1);
+    will-change: transform;
+}
+
+.loan-hero__slide.is-active .loan-hero__bg {
+    animation: loan-hero-kenburns 5.5s ease-out forwards;
+}
+
+@keyframes loan-hero-kenburns {
+    from { transform: scale(1); }
+    to { transform: scale(1.14); }
+}
+
+.loan-hero__scrim {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        105deg,
+        rgba(8, 27, 51, 0.78) 0%,
+        rgba(8, 27, 51, 0.45) 42%,
+        rgba(18, 52, 90, 0.35) 100%
+    );
+    pointer-events: none;
+    z-index: 1;
+}
+
+.loan-hero__content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    max-width: 420px;
+    padding: 48px 24px;
+    color: #fff;
+}
+
+.loan-hero__slide[data-align="left"] .loan-hero__content {
+    margin-left: clamp(24px, 8vw, 120px);
+    text-align: left;
+    align-items: flex-start;
+}
+
+.loan-hero__slide[data-align="right"] .loan-hero__content {
+    margin-left: auto;
+    margin-right: clamp(24px, 8vw, 120px);
+    text-align: right;
+    align-items: flex-end;
+}
+
+.loan-hero__eyebrow {
+    margin: 0 0 10px;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #1e63d8;
+    opacity: 0;
+    transform: translateY(-24px);
+}
+
+.loan-hero__title {
+    margin: 0 0 12px;
+    font-size: clamp(2rem, 5vw, 3.75rem);
+    font-weight: 900;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+}
+
+.loan-hero__title-line {
+    display: block;
+    opacity: 0;
+    transform: translateY(28px);
+}
+
+.loan-hero__text {
+    margin: 0 0 22px;
+    font-size: 14px;
+    line-height: 1.55;
+    color: rgba(255, 255, 255, 0.82);
+    max-width: 350px;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.loan-hero__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    opacity: 0;
+    transform: translateY(24px);
+}
+
+.loan-hero__slide.is-active .loan-hero__eyebrow {
+    animation: loan-hero-enter 0.75s cubic-bezier(0.22, 1, 0.36, 1) 0.15s forwards;
+}
+
+.loan-hero__slide.is-active .loan-hero__title-line:nth-child(1) {
+    animation: loan-hero-enter 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.25s forwards;
+}
+
+.loan-hero__slide.is-active .loan-hero__title-line:nth-child(2) {
+    animation: loan-hero-enter 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.4s forwards;
+}
+
+.loan-hero__slide.is-active .loan-hero__text {
+    animation: loan-hero-enter 0.75s cubic-bezier(0.22, 1, 0.36, 1) 0.55s forwards;
+}
+
+.loan-hero__slide.is-active .loan-hero__actions {
+    animation: loan-hero-enter 0.75s cubic-bezier(0.22, 1, 0.36, 1) 0.7s forwards;
+}
+
+@keyframes loan-hero-enter {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.loan-hero__btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 28px;
+    border-radius: 4px;
+    font-weight: 700;
+    font-size: 14px;
+    text-decoration: none;
+    transition: transform 0.2s, box-shadow 0.2s, opacity 0.2s;
+}
+
+.loan-hero__btn--primary {
+    background: #1e63d8;
+    color: #fff;
+    border: 2px solid #1e63d8;
+    box-shadow: 0 8px 28px rgba(30, 99, 216, 0.35);
+}
+
+.loan-hero__btn--primary:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+}
+
+.loan-hero__btn--outline {
+    background: #fff;
+    color: #1e63d8;
+    border: 2px solid #1e63d8;
+}
+
+.loan-hero__btn--outline:hover {
+    background: #f4f8ff;
+}
+
+.loan-hero__controls {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 5;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.loan-hero__dots {
+    display: flex;
+    gap: 8px;
+}
+
+.loan-hero__dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: none;
+    padding: 0;
+    background: rgba(255, 255, 255, 0.4);
+    cursor: pointer;
+    transition: transform 0.2s, background 0.2s;
+}
+
+.loan-hero__dot.is-active {
+    background: #fff;
+    transform: scale(1.15);
+}
+
+.loan-hero__arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    border-radius: 50%;
+    background: rgba(8, 27, 51, 0.45);
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.2s, border-color 0.2s;
+}
+
+.loan-hero__arrow:hover {
+    background: rgba(30, 99, 216, 0.85);
+    border-color: transparent;
+}
+
+@media (max-width: 768px) {
+    .loan-hero__content {
+        max-width: 100%;
+        padding: 32px 20px;
+        justify-content: flex-end;
+        padding-bottom: 56px;
+    }
+
+    .loan-hero__slide[data-align="left"] .loan-hero__content,
+    .loan-hero__slide[data-align="right"] .loan-hero__content {
+        margin-left: 0;
+        margin-right: 0;
+        text-align: center;
+        align-items: center;
+    }
+
+    .loan-hero__title {
+        font-size: 1.65rem;
+    }
+
+    .loan-hero__text {
+        font-size: 12px;
+        margin-bottom: 14px;
+    }
+
+    .loan-hero__actions {
+        justify-content: center;
+    }
+
+    .loan-hero__btn {
+        padding: 10px 18px;
+        font-size: 12px;
+    }
+
+    .loan-hero__arrow {
+        display: none;
+    }
+}

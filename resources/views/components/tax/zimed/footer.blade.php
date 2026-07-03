@@ -1,4 +1,4 @@
-@php $cdn = 'https://innovativeassociates.com.au/wp-content/uploads'; @endphp
+@php $cdn = site_uploads('tax'); @endphp
 
 <div data-elementor-type="wp-post" data-elementor-id="831" class="tax-zimed-footer elementor elementor-831">
     <section class="elementor-section elementor-top-section elementor-element-273731a elementor-section-boxed elementor-section-height-default" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
@@ -115,37 +115,3 @@
     </section>
 </div>
 
-@push('scripts')
-<script>
-    jQuery(function ($) {
-        if ($.fn.bxSlider && $('.testimonials-slider').length) {
-            $('.testimonials-slider').bxSlider({
-                pagerCustom: '#testimonials-slider-pager',
-                mode: 'fade',
-                auto: true,
-                pause: 5000,
-                controls: false
-            });
-        }
-        if (typeof WOW !== 'undefined') {
-            new WOW().init();
-        }
-
-        var $scrollTop = $('.scroll-to-target.scroll-to-top');
-        if ($scrollTop.length) {
-            $(window).on('scroll.taxScrollTop', function () {
-                if ($(this).scrollTop() > 200) {
-                    $scrollTop.addClass('visible');
-                } else {
-                    $scrollTop.removeClass('visible');
-                }
-            }).trigger('scroll.taxScrollTop');
-
-            $scrollTop.on('click', function (e) {
-                e.preventDefault();
-                $('html, body').animate({ scrollTop: 0 }, 500);
-            });
-        }
-    });
-</script>
-@endpush

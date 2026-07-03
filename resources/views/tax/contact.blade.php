@@ -4,28 +4,6 @@
 
 @section('title', 'Contact – Innovative associates')
 
-@push('head')
-    <link rel="stylesheet" href="https://innovativeassociates.com.au/wp-content/uploads/elementor/css/post-45.css?ver=1779432971">
-    <link rel="stylesheet" href="https://innovativeassociates.com.au/wp-content/plugins/elementor/assets/css/widget-heading.min.css?ver=4.0.9">
-    <style>
-        .elementor-45 .elementor-element.elementor-element-6fbd63e .elementor-widget-container,
-        .elementor-45 .elementor-element.elementor-element-899018a .elementor-widget-container {
-            text-align: center;
-        }
-
-        .elementor-45 .elementor-element.elementor-element-6fbd63e iframe,
-        .elementor-45 .elementor-element.elementor-element-899018a iframe {
-            display: block;
-            width: 100%;
-            max-width: 430px;
-            height: 430px;
-            margin-left: auto;
-            margin-right: auto;
-            border: 0;
-        }
-    </style>
-@endpush
-
 @section('content')
 @include('components.tax.zimed.header', ['active' => 'contact'])
 

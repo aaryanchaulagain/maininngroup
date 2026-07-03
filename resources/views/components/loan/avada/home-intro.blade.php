@@ -1,5 +1,5 @@
 @php
-    $cdn = 'https://innovativewealth.com.au/wp-content/uploads';
+    $cdn = site_uploads('loan');
     $featured = $featuredTestimonial ?? null;
     $photoSrc = $featured?->imageUrl() ?? $cdn.'/2020/12/dharma-adhikari-300x232.jpg';
     $headline = $featured?->title ?? 'Phenomenal';

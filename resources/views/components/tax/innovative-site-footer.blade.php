@@ -1,5 +1,5 @@
 @php
-    $assetBase = 'https://innovativeassociates.com.au/wp-content/uploads';
+    $assetBase = site_uploads('tax');
     $exploreLinks = [
         ['label' => 'Australian Taxation Office', 'url' => 'https://www.ato.gov.au/'],
         ['label' => 'Tax Practitioners Board', 'url' => 'https://www.tpb.gov.au/'],

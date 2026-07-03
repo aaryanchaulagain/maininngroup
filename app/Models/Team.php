@@ -93,7 +93,7 @@ class Team extends Model
             return $this->photo;
         }
 
-        return asset('storage/'.ltrim($this->photo, '/'));
+        return storage_url($this->photo);
     }
 
     /** @return array<int, string> */

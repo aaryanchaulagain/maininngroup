@@ -1,5 +1,5 @@
 @php
-    $cdn = 'https://innovativewealth.com.au/wp-content/uploads';
+    $cdn = site_uploads('loan');
     $loanEmail = config('domains.loan_contact_email');
 @endphp
 

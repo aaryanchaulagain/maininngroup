@@ -11,7 +11,7 @@
 ])
 
 @php
-    $cdn = 'https://innovativeassociates.com.au/wp-content/uploads';
+    $cdn = site_uploads('tax');
     $intro = is_array($intro) ? $intro : [$intro];
     $body = is_array($body) ? $body : [$body];
 @endphp

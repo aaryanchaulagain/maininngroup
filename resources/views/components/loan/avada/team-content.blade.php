@@ -1,5 +1,5 @@
 @php
-    $cdn = 'https://innovativewealth.com.au/wp-content/uploads';
+    $cdn = site_uploads('loan');
     $members = [
         [
             'name' => 'Shamim Anwar',

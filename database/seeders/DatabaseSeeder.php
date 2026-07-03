@@ -71,7 +71,7 @@ class DatabaseSeeder extends Seeder
             ['role' => 'Senior Mortgage Broker', 'bio' => 'Specialist in luxury residential and investment lending.', 'sort_order' => 0, 'active' => true]
         );
 
-        $loanCdn = 'https://innovativewealth.com.au/wp-content/uploads';
+        $loanCdn = site_uploads('loan');
         Testimonial::updateOrCreate(
             ['source_domain' => 'loan', 'author' => 'Dharma Adhikari'],
             [
@@ -95,7 +95,7 @@ class DatabaseSeeder extends Seeder
             ]
         );
 
-        $cdn = 'https://innovativewealth.com.au/wp-content/uploads';
+        $cdn = site_uploads('loan');
         Article::updateOrCreate(
             ['slug' => 'how-to-buy-a-first-home-with-big-price-growth-potential'],
             [

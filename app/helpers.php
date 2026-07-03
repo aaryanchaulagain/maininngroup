@@ -58,6 +58,138 @@ if (! function_exists('domain_url')) {
     }
 }
 
+if (! function_exists('legacy_asset')) {
+    /** Local vendor URL for a mirrored legacy asset (themes, plugins, uploads). */
+    function legacy_asset(string $site, string $path, ?string $version = null): string
+    {
+        return \App\Support\LegacyAsset::url($site, $path, $version);
+    }
+}
+
+if (! function_exists('legacy_uploads')) {
+    /** Base URL for mirrored uploads (append /year/month/file.ext). */
+    function legacy_uploads(string $site): string
+    {
+        return \App\Support\LegacyAsset::uploads($site);
+    }
+}
+
+if (! function_exists('legacy_wp_include')) {
+    /** Local URL for mirrored wp-includes assets (jQuery, etc.). */
+    function legacy_wp_include(string $path, ?string $version = null): string
+    {
+        return \App\Support\LegacyAsset::wpInclude($path, $version);
+    }
+}
+
+if (! function_exists('legacy_external')) {
+    /** @deprecated Use site_image() — legacy mirror only */
+    function legacy_external(string $key, string $path, ?string $version = null): string
+    {
+        return \App\Support\LegacyAsset::external($key, $path, $version);
+    }
+}
+
+if (! function_exists('vendored_asset')) {
+    /** URL for a file under public/vendor/{site}/ */
+    function vendored_asset(string $site, string $path): string
+    {
+        $path = ltrim(str_replace('\\', '/', $path), '/');
+        $full = public_path('vendor/'.$site.'/'.$path);
+        $url = asset('vendor/'.$site.'/'.$path);
+
+        return is_file($full) ? $url.'?v='.filemtime($full) : $url;
+    }
+}
+
+if (! function_exists('site_uploads')) {
+    /** Base URL for site images — prefers public/vendor/{site}/uploads, then assets/images/{site}. */
+    function site_uploads(string $site): string
+    {
+        if (is_dir(public_path('vendor/'.$site.'/uploads'))) {
+            return vendored_asset($site, 'uploads');
+        }
+
+        return asset('assets/images/'.$site);
+    }
+}
+
+if (! function_exists('site_image')) {
+    /** Local image URL — checks assets/images then vendor/uploads. */
+    function site_image(string $site, string $path): string
+    {
+        $path = ltrim(str_replace('\\', '/', $path), '/');
+
+        foreach ([
+            'assets/images/'.$site.'/'.$path,
+            'vendor/'.$site.'/uploads/'.$path,
+        ] as $rel) {
+            $full = public_path($rel);
+
+            if (is_file($full)) {
+                return asset($rel).'?v='.filemtime($full);
+            }
+        }
+
+        return asset('assets/images/'.$site.'/'.$path);
+    }
+}
+
+if (! function_exists('storage_url')) {
+    /**
+     * Public URL for admin uploads (storage/app/public).
+     * Uses a root-relative path so images work on any domain (inngroup.test, subsites, etc.).
+     */
+    function storage_url(?string $path): ?string
+    {
+        if ($path === null || $path === '') {
+            return null;
+        }
+
+        if (str_starts_with($path, 'http://') || str_starts_with($path, 'https://')) {
+            return $path;
+        }
+
+        return '/storage/'.ltrim(str_replace('\\', '/', $path), '/');
+    }
+}
+
+if (! function_exists('main_logo_url')) {
+    function main_logo_url(): string
+    {
+        foreach ([
+            'assets/images/logo.png',
+            'assets/images/main/inngroup-logo.png',
+            'assets/images/main/inngroup-logo.jpg',
+            'assets/images/main/logo.png',
+        ] as $rel) {
+            $path = public_path($rel);
+
+            if (is_file($path)) {
+                return asset($rel).'?v='.filemtime($path);
+            }
+        }
+
+        foreach (['inngroup-logo.png', 'inngroup-logo.jpg'] as $file) {
+            $path = public_path('assets/images/main/'.$file);
+
+            if (is_file($path)) {
+                return asset('assets/images/main/'.$file).'?v='.filemtime($path);
+            }
+        }
+
+        foreach (['uploads/2021/01/innovative-group-011-300x89.jpg'] as $vendorPath) {
+            $full = public_path('vendor/main/'.$vendorPath);
+
+            if (is_file($full)) {
+                return vendored_asset('main', $vendorPath);
+            }
+        }
+
+        return asset('assets/images/innovativetax-logo.png');
+    }
+}
+
 if (! function_exists('tax_logo_url')) {
     /** Public URL for the Innovative Tax logo (cache-busted when the file exists). */
     function tax_logo_url(): string

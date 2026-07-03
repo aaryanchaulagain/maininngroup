@@ -8,13 +8,13 @@
         <div class="container">
             <ul class="noLightbox social_bookmarks icon_count_3">
                 <li class="social_bookmarks_facebook av-social-link-facebook social_icon_1">
-                    <a aria-label="Link to Facebook" href="#" data-av_icon="" data-av_iconfont="entypo-fontello" title="Facebook"><span class="avia_hidden_link_text">Facebook</span></a>
+                    <a aria-label="Link to Facebook" href="#" title="Facebook"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i><span class="avia_hidden_link_text">Facebook</span></a>
                 </li>
                 <li class="social_bookmarks_twitter av-social-link-twitter social_icon_2">
-                    <a target="_blank" rel="noopener" aria-label="Link to Twitter" href="https://twitter.com/#/" data-av_icon="" data-av_iconfont="entypo-fontello" title="Twitter"><span class="avia_hidden_link_text">Twitter</span></a>
+                    <a target="_blank" rel="noopener" aria-label="Link to Twitter" href="https://twitter.com/#/" title="Twitter"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i><span class="avia_hidden_link_text">Twitter</span></a>
                 </li>
                 <li class="social_bookmarks_instagram av-social-link-instagram social_icon_3">
-                    <a aria-label="Link to Instagram" href="#" data-av_icon="" data-av_iconfont="entypo-fontello" title="Instagram"><span class="avia_hidden_link_text">Instagram</span></a>
+                    <a aria-label="Link to Instagram" href="#" title="Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i><span class="avia_hidden_link_text">Instagram</span></a>
                 </li>
             </ul>
             <nav class="sub_menu" role="navigation" itemscope itemtype="https://schema.org/SiteNavigationElement">
@@ -31,8 +31,9 @@
         <div class="container av-logo-container">
             <div class="inner-container">
                 <span class="logo">
-                    <a href="{{ route('main.home') }}">
-                        <img height="100" width="300" src="https://inngroup.com.au/wp-content/uploads/2021/01/innovative-group-011-300x89.jpg" alt="Innovative Group" title="">
+                    <a href="{{ route('main.home') }}" class="inn-main-brand">
+                        <img height="100" width="300" src="{{ main_logo_url() }}" alt="Innovative Group" title="" onerror="this.style.display='none';this.nextElementSibling.style.display='inline-block';">
+                        <span class="inn-main-wordmark" style="display:none;">INN Group</span>
                     </a>
                 </span>
                 <nav class="main_menu" data-selectname="Select a page" role="navigation" itemscope itemtype="https://schema.org/SiteNavigationElement">
@@ -50,6 +51,21 @@
                                     <span class="avia-bullet"></span>
                                     <span class="avia-menu-text">Contact</span>
                                     <span class="avia-menu-fx"><span class="avia-arrow-wrap"><span class="avia-arrow"></span></span></span>
+                                </a>
+                            </li>
+                            <li class="menu-item menu-item-top-level menu-item-subsite">
+                                <a href="{{ domain_url('tax', '/') }}" itemprop="url">
+                                    <span class="avia-menu-text">Tax</span>
+                                </a>
+                            </li>
+                            <li class="menu-item menu-item-top-level menu-item-subsite">
+                                <a href="{{ domain_url('loan', '/') }}" itemprop="url">
+                                    <span class="avia-menu-text">Finance</span>
+                                </a>
+                            </li>
+                            <li class="menu-item menu-item-top-level menu-item-subsite">
+                                <a href="{{ domain_url('advisory', '/') }}" itemprop="url">
+                                    <span class="avia-menu-text">Advisory</span>
                                 </a>
                             </li>
                             <li id="menu-item-search" class="noMobile menu-item menu-item-search-dropdown menu-item-avia-special">

@@ -46,6 +46,6 @@ class Article extends Model
             return $this->image;
         }
 
-        return asset('storage/'.ltrim($this->image, '/'));
+        return storage_url($this->image);
     }
 }

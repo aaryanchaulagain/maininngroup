@@ -39,7 +39,7 @@
     <div class="avia-button-wrap avia-button-center avia-builder-el-last">
         <a href="{{ $link }}" class="avia-button av-icon-on-hover avia-icon_select-yes-right-icon avia-size-large avia-position-center" style="background-color:#ffffff; border-color:#ffffff; color:#000000;">
             <span class="avia_iconbox_title">Learn more</span>
-            <span class="avia_button_icon avia_button_icon_right" aria-hidden="true" data-av_icon="" data-av_iconfont="entypo-fontello"></span>
+            <i class="fa-solid fa-arrow-right avia_button_icon_right" aria-hidden="true"></i>
         </a>
     </div>
 </div>

@@ -4,15 +4,9 @@
 
 @section('title', 'Accounting and Taxation Services – Innovative associates')
 
-@push('head')
-    <link rel="stylesheet" href="https://innovativeassociates.com.au/wp-content/uploads/elementor/css/post-49.css?ver=1779431804">
-    <link rel="stylesheet" href="https://innovativeassociates.com.au/wp-content/plugins/elementor/assets/css/widget-image.min.css?ver=4.0.9">
-    <link rel="stylesheet" href="https://innovativeassociates.com.au/wp-content/plugins/elementor/assets/css/widget-heading.min.css?ver=4.0.9">
-@endpush
-
 @section('content')
 @php
-    $cdn = 'https://innovativeassociates.com.au/wp-content/uploads';
+    $cdn = site_uploads('tax');
 
     $servicesInclude = [
         'All types of Tax Returns',

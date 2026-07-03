@@ -3,7 +3,7 @@
 @endpush
 
 @props([
-    'image' => 'https://innovativeassociates.com.au/wp-content/uploads/2021/04/innovative-01.jpg',
+    'image' => site_image('tax', '2021/04/innovative-01.jpg'),
     'teamUrl' => null,
 ])
 

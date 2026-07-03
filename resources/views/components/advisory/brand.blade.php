@@ -11,7 +11,7 @@
         default => 'adv-brand__img',
     };
     [$imgWidth, $imgHeight] = match ($as) {
-        'footer' => [220, 140],
+        'footer' => [130, 56],
         default => [180, 110],
     };
 @endphp

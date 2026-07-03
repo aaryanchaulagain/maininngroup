@@ -1,7 +1,6 @@
 @props(['active' => 'home'])
 
 @php
-    $cdn = 'https://innovativewealth.com.au';
     $loanEmail = config('domains.loan_contact_email');
     $inngroupUrl = domain_url('main');
     $serviceMenu = [
@@ -52,6 +51,7 @@
                         <span class="fusion-contact-info-email-address">
                             <a href="mailto:{{ $loanEmail }}">{{ $loanEmail }}</a>
                         </span>
+                        <a href="{{ route('login') }}" class="inn-site-admin-bar__login loan-header-admin-login">Admin Login</a>
                     </div>
                 </div>
             </div>

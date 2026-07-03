@@ -13,7 +13,7 @@
         default => 'tax-brand__img',
     };
     [$imgWidth, $imgHeight] = match ($as) {
-        'footer' => [320, 98],
+        'footer' => [160, 48],
         'nav' => [220, 68],
         default => [480, 100],
     };

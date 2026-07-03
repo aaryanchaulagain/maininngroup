@@ -4,10 +4,6 @@
 
 @section('title', 'Services – Innovative associates')
 
-@push('head')
-    <link rel="stylesheet" href="https://innovativeassociates.com.au/wp-content/uploads/elementor/css/post-1312.css?ver=1779405246">
-@endpush
-
 @section('content')
 @include('components.tax.zimed.header', ['active' => 'services'])
 

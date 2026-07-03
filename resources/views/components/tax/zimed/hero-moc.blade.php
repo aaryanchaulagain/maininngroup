@@ -1,5 +1,5 @@
 @php
-    $cdn = 'https://innovativeassociates.com.au/wp-content/uploads';
+    $cdn = site_uploads('tax');
     $logoUrl = tax_logo_url();
     $badges = [
         ['src' => $cdn . '/2021/05/Bedge-1.png', 'alt' => 'IPA'],

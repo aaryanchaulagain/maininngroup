@@ -920,10 +920,35 @@ body.tax-inn-platform .scroll-to-target.scroll-to-top:hover {
    ══════════════════════════════════════════════════════════════ */
 
 body.tax-inn-platform .banner-one {
-    /* keep background-image from inline/theme; tighten vertical space */
+    background-image: var(--inn-tax-hero-gradient) !important;
+    background-size: cover;
+    background-position: center;
     min-height: 0 !important;
     padding-top: 92px !important;
     padding-bottom: 48px !important;
+}
+
+body.tax-inn-platform .main-nav__navigation-box.is-open {
+    display: flex !important;
+}
+
+@media (max-width: 1199px) {
+    body.tax-inn-platform .main-nav__main-navigation .main-nav__navigation-box {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: #fff;
+        box-shadow: var(--inn-tax-shadow-md);
+        padding: 12px 0;
+        z-index: 999;
+    }
+
+    body.tax-inn-platform .main-nav__navigation-box.is-open {
+        display: flex !important;
+    }
 }
 
 body.tax-inn-platform .banner-one > .container {

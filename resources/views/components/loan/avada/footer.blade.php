@@ -1,5 +1,5 @@
 @php
-    $cdn = 'https://innovativeassociates.com.au/wp-content/uploads';
+    $cdn = site_uploads('loan');
     $loanEmail = config('domains.loan_contact_email');
     $loanPhone = '0403054593';
     $loanPhoneDisplay = '0403 054 593';

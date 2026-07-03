@@ -11,7 +11,7 @@
         default => 'loan-brand__img',
     };
     [$imgWidth, $imgHeight] = match ($as) {
-        'footer' => [360, 110],
+        'footer' => [180, 48],
         default => [480, 100],
     };
 @endphp

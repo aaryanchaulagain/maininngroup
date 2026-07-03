@@ -4,11 +4,6 @@
 
 @section('title', 'Mentoring – Innovative associates')
 
-@push('head')
-    <link rel="stylesheet" href="https://innovativeassociates.com.au/wp-content/uploads/elementor/css/post-53.css?ver=1779417167">
-    <link rel="stylesheet" href="https://innovativeassociates.com.au/wp-content/plugins/elementor/assets/css/widget-heading.min.css?ver=4.0.9">
-@endpush
-
 @section('content')
 @include('components.tax.zimed.header', ['active' => 'mentoring'])
 

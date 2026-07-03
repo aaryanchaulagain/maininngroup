@@ -4,13 +4,6 @@
 
 @section('title', 'Meet The Team – Innovative associates')
 
-@push('head')
-    <link rel="stylesheet" href="https://innovativeassociates.com.au/wp-content/uploads/elementor/css/post-1292.css?ver=1778603285">
-    <link rel="stylesheet" href="https://innovativeassociates.com.au/wp-content/plugins/elementor/assets/css/widget-social-icons.min.css?ver=3.35.0">
-    <link rel="stylesheet" href="https://innovativeassociates.com.au/wp-content/plugins/elementor/assets/lib/font-awesome/css/solid.min.css?ver=5.15.3">
-    <link rel="stylesheet" href="https://innovativeassociates.com.au/wp-content/plugins/elementor/assets/lib/font-awesome/css/regular.min.css?ver=5.15.3">
-@endpush
-
 @section('content')
 @include('components.tax.zimed.header', ['active' => 'team'])
 

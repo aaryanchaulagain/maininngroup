@@ -4,13 +4,9 @@
 
 @section('title', 'About Page – Innovative associates')
 
-@push('head')
-    <link rel="stylesheet" href="https://innovativeassociates.com.au/wp-content/uploads/elementor/css/post-37.css?ver=1778603281">
-@endpush
-
 @section('content')
 @php
-    $cdn = 'https://innovativeassociates.com.au/wp-content/uploads';
+    $cdn = site_uploads('tax');
 
     $ethicsBoxes = [
         ['icon' => 'zimed-new-icon-idea', 'text' => 'We always believe on integrity, fairness and equality.'],

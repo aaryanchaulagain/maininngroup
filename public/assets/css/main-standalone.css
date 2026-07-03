@@ -1,0 +1,303 @@
+/**
+ * INN Group main site — standalone (no Enfold / WordPress)
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,700;1,400&family=Open+Sans:wght@400;600;700&display=swap');
+
+:root {
+    --inn-main-blue: #2388c2;
+    --inn-main-blue-dark: #084a79;
+    --inn-main-navy: #094978;
+    --inn-main-text: #333;
+    --inn-main-muted: #7a7a7a;
+    --inn-main-font: 'Open Sans', system-ui, sans-serif;
+    --inn-main-display: 'Cormorant Garamond', Georgia, serif;
+    --inn-main-header-h: 88px;
+}
+
+body { font-family: var(--inn-main-font); color: var(--inn-main-text); background: #fff; }
+
+#wrap_all { min-height: 100vh; display: flex; flex-direction: column; }
+#main { flex: 1; }
+
+/* Header */
+#header { position: sticky; top: 0; z-index: 1000; background: #fff; box-shadow: 0 1px 0 rgba(0,0,0,.06); }
+#header_meta { background: #f7f7f7; border-bottom: 1px solid #e8e8e8; font-size: 13px; }
+#header_meta .container,
+#header_main .container,
+.container { max-width: 1310px; margin: 0 auto; padding: 0 20px; }
+
+#header_meta .container {
+    display: flex; align-items: center; justify-content: space-between;
+    min-height: 40px; gap: 16px; flex-wrap: wrap;
+}
+
+.social_bookmarks { display: flex; gap: 10px; list-style: none; margin: 0; padding: 0; }
+.social_bookmarks a {
+    display: flex; align-items: center; justify-content: center;
+    width: 28px; height: 28px; color: #555; text-decoration: none;
+}
+.social_bookmarks a:hover { color: var(--inn-main-blue); }
+
+.phone-info span { color: #555; }
+
+#header_main .av-logo-container .inner-container {
+    display: flex; align-items: center; justify-content: space-between;
+    min-height: var(--inn-main-header-h); gap: 20px;
+}
+
+.logo img { max-height: 72px; width: auto; }
+
+.main_menu { flex: 1; display: flex; justify-content: flex-end; }
+.av-main-nav { display: flex; align-items: center; gap: 4px; list-style: none; margin: 0; padding: 0; }
+.av-main-nav > li > a {
+    display: block; padding: 12px 18px; text-decoration: none; color: #333;
+    font-weight: 600; font-size: 14px; text-transform: uppercase; letter-spacing: 0.04em;
+}
+.av-main-nav > li.current-menu-item > a,
+.av-main-nav > li > a:hover { color: var(--inn-main-blue); }
+
+.av-burger-menu-main { display: none; }
+.av-hamburger-box { display: inline-flex; flex-direction: column; gap: 5px; padding: 8px; }
+.av-hamburger-inner,
+.av-hamburger-inner::before,
+.av-hamburger-inner::after {
+    display: block; width: 22px; height: 2px; background: #333; content: '';
+}
+.av-hamburger-inner { position: relative; }
+.av-hamburger-inner::before { position: absolute; top: -7px; left: 0; }
+.av-hamburger-inner::after { position: absolute; top: 7px; left: 0; }
+
+html.inn-main-nav-open .av-main-nav-wrap {
+    display: block !important;
+    position: absolute; top: 100%; left: 0; right: 0;
+    background: #fff; border-top: 1px solid #eee; padding: 12px 20px;
+    box-shadow: 0 12px 24px rgba(0,0,0,.08);
+}
+html.inn-main-nav-open .av-main-nav { flex-direction: column; align-items: stretch; }
+
+@media (max-width: 989px) {
+    .av-burger-menu-main { display: list-item; }
+    .main_menu { position: relative; }
+    .av-main-nav-wrap { display: none; }
+    #menu-item-search { display: none; }
+}
+
+/* Sections */
+.avia-section { position: relative; background-size: cover; background-position: center; }
+.avia-section.inn-main-hero {
+    background-image: linear-gradient(135deg, #062a45 0%, #084a79 45%, #0a5f96 100%) !important;
+}
+.av-section-color-overlay-wrap { position: relative; }
+.av-section-color-overlay { position: absolute; inset: 0; pointer-events: none; }
+.avia-section > .av-section-color-overlay-wrap > .container,
+.avia-section > .container { position: relative; z-index: 1; }
+
+.template-page { padding: 0; }
+.entry-content-wrapper { width: 100%; }
+
+/* Flex columns (service cards row) */
+.flex_column_table {
+    display: flex; flex-wrap: wrap; width: 100%; gap: 0;
+}
+.flex_column_table_cell,
+.flex_column.av_one_third {
+    flex: 1 1 280px; min-width: 0;
+}
+@media (max-width: 989px) {
+    .flex_column.av_one_third { flex: 1 1 100%; }
+}
+
+.av-special-heading { text-align: center; margin-bottom: 1rem; }
+.av-special-heading-tag {
+    font-family: var(--inn-main-display); font-weight: 400; margin: 0;
+    line-height: 1.15;
+}
+.av-special-heading-h2 .av-special-heading-tag { font-size: clamp(2rem, 5vw, 3.5rem); }
+.av-special-heading-h3 .av-special-heading-tag { font-size: clamp(1.75rem, 4vw, 2.75rem); }
+.special-heading-border { display: flex; justify-content: center; margin-top: 12px; }
+.special-heading-inner-border { width: 60px; border-bottom: 2px solid var(--inn-main-blue); }
+
+.avia_textblock p { text-align: center; line-height: 1.7; }
+
+.avia-button {
+    display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+    padding: 14px 28px; border-radius: 4px; text-decoration: none; font-weight: 600;
+    font-size: 14px; border: 2px solid transparent; transition: opacity .2s;
+}
+.avia-button:hover { opacity: .88; }
+.avia-button.avia-color-theme-color {
+    background: var(--inn-main-blue); color: #fff; border-color: var(--inn-main-blue);
+}
+.avia-button-wrap { text-align: center; margin-top: 8px; }
+
+/* Expertise icons row */
+.inn-expertise-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 24px; text-align: center;
+}
+
+/* Scroll top */
+#scroll-top-link {
+    position: fixed; right: 20px; bottom: 20px; z-index: 999;
+    width: 44px; height: 44px; border-radius: 50%;
+    background: var(--inn-main-blue); color: #fff;
+    display: flex; align-items: center; justify-content: center;
+    text-decoration: none; opacity: 0; visibility: hidden; transition: .25s;
+}
+#scroll-top-link.is-visible { opacity: 1; visibility: visible; }
+
+.inn-main-wordmark {
+    font-family: var(--inn-main-display);
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--inn-main-blue-dark);
+    text-decoration: none;
+}
+
+#av_section_1.inn-main-hero { min-height: 480px; }
+#av_section_1 .av-section-color-overlay-wrap { width: 100%; }
+#av_section_1 .entry-content-wrapper { padding: 48px 0 56px; }
+#av_section_1 .av-special-heading-tag { color: #fff !important; }
+#av_section_1 .av-subheading p { color: rgba(255,255,255,0.92); font-size: 1.2rem; }
+#av_section_1 .special-heading-inner-border { border-color: #fff !important; }
+
+.flex_column.av_one_third {
+    padding: 40px !important;
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-sizing: border-box;
+}
+
+.avia-section.container_wrap.fullsize { padding: 56px 20px; }
+.avia-section .container { max-width: 1310px; margin: 0 auto; padding: 0 20px; }
+
+#footer-page.inn-main-footer { background: #fff; padding: 40px 0; }
+
+/* Hero headline — balanced spacing (replaces excessive inline margins) */
+.inn-hero-headline {
+    padding: 48px 0 40px;
+    margin: 0 !important;
+    color: #fff;
+    text-align: center;
+}
+.inn-hero-headline .av-special-heading-tag {
+    font-size: clamp(2rem, 4.5vw, 3.25rem) !important;
+}
+.inn-hero-headline .av-subheading p {
+    font-size: clamp(1rem, 2vw, 1.35rem);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    opacity: 0.9;
+}
+
+/* Service cards row in hero */
+.inn-hero-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0;
+    margin-bottom: 48px !important;
+}
+.inn-hero-cards > .flex_column {
+    flex: 1 1 300px;
+    min-width: 0;
+}
+@media (max-width: 989px) {
+    .inn-hero-cards { flex-direction: column; }
+    .inn-hero-cards > .flex_column { flex: 1 1 100%; }
+}
+
+/* Section spacing */
+#av_section_2,
+#av_section_4 {
+    padding: 64px 0;
+}
+#av_section_3,
+#av_section_5 {
+    padding: 56px 0;
+}
+
+/* Expertise rows */
+.inn-expertise-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    margin: 32px 0;
+}
+.inn-expertise-row > .flex_column {
+    flex: 1 1 280px;
+    min-width: 0;
+    margin: 0 !important;
+}
+.inn-expertise-row .av-flex-placeholder { display: none; }
+
+/* Stats strip */
+.inn-stats-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: center;
+}
+.inn-stats-row > .flex_column.av_one_fourth {
+    flex: 1 1 180px;
+    max-width: 280px;
+    text-align: center;
+    padding: 20px 16px;
+}
+.inn-stats-row .av-flex-placeholder { display: none; }
+.avia-animated-number-title {
+    display: block;
+    font-size: clamp(2rem, 4vw, 2.75rem);
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.2;
+    margin-bottom: 8px;
+}
+.avia-animated-number-content p {
+    color: rgba(255,255,255,0.88);
+    font-size: 0.95rem;
+    margin: 0;
+}
+
+/* Subsite nav links */
+.av-main-nav .menu-item-subsite > a {
+    font-size: 13px;
+    color: var(--inn-main-muted);
+}
+.av-main-nav .menu-item-subsite > a:hover {
+    color: var(--inn-main-blue);
+}
+@media (min-width: 990px) {
+    .av-main-nav .menu-item-subsite {
+        border-left: 1px solid #e8e8e8;
+        margin-left: 8px;
+        padding-left: 4px;
+    }
+}
+
+/* Button FA icons */
+.avia-button .fa-arrow-right {
+    margin-left: 6px;
+    font-size: 0.85em;
+}
+
+/* Operate section */
+.inn-operate-columns {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px;
+    justify-content: center;
+    margin: 40px 0 !important;
+}
+.inn-operate-columns > .flex_column {
+    flex: 1 1 260px;
+    max-width: 360px;
+}
+
+/* Mission CTA */
+.inn-mission-cta .av-special-heading-tag {
+    font-size: clamp(1.35rem, 3vw, 1.75rem) !important;
+    line-height: 1.35;
+}

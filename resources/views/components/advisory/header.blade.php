@@ -9,10 +9,14 @@
     $servicesActive = str_starts_with($active, 'services');
 @endphp
 
+<div class="adv-header-stack">
 <div class="adv-topbar" aria-label="Utility">
     <div class="adv-topbar__inner">
         <span class="adv-topbar__tag">Audit · Tax · Advisory — Innovative Group</span>
-        <a href="{{ domain_url('main') }}" class="adv-topbar__link" target="_blank" rel="noopener">INN Group website ↗</a>
+        <div class="adv-topbar__actions">
+            <a href="{{ domain_url('main') }}" class="adv-topbar__link" target="_blank" rel="noopener">INN Group website ↗</a>
+            <a href="{{ route('login') }}" class="inn-site-admin-bar__login">Admin Login</a>
+        </div>
     </div>
 </div>
 
@@ -64,3 +68,4 @@
         <a href="{{ domain_url('main') }}" class="adv-mobile-nav__inn" target="_blank" rel="noopener">INN Group ↗</a>
     </div>
 </header>
+</div>

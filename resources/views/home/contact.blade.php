@@ -5,7 +5,7 @@
 @section('body-class', 'wp-singular page-template-default page page-id-954 wp-theme-enfold rtl_columns stretched cormorant_garamond open_sans no_sidebar_border')
 
 @push('head')
-    <link rel="stylesheet" href="https://inngroup.com.au/wp-content/themes/enfold/config-templatebuilder/avia-shortcodes/contact/contact.css?ver=6.9.4">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.3/themes/base/jquery-ui.min.css" crossorigin="anonymous">
 @endpush
 
 @section('content')
@@ -93,8 +93,8 @@
 @endsection
 
 @push('scripts')
-<script src="https://inngroup.com.au/wp-includes/js/jquery/ui/core.min.js?ver=1.13.3"></script>
-<script src="https://inngroup.com.au/wp-includes/js/jquery/ui/datepicker.min.js?ver=1.13.3"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.3/jquery-ui.min.js" crossorigin="anonymous"></script>
 <script>
     var AviaDatepickerTranslation = {
         closeText: "Close",

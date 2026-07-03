@@ -18,8 +18,8 @@
                     src="{{ str_starts_with($image, 'http') ? $image : asset($image) }}"
                     alt="{{ $imageAlt ?: $heading }}"
                     title="{{ $imageAlt ?: $heading }}"
-                    width="845"
-                    height="321"
+                    width="120"
+                    height="100"
                     itemprop="thumbnailUrl"
                 >
             </div>

@@ -1,5 +1,5 @@
 @php
-    $cdn = 'https://innovativewealth.com.au/wp-content/uploads';
+    $cdn = site_uploads('loan');
     $fallback = [
         (object) [
             'slug' => 'how-to-buy-a-first-home-with-big-price-growth-potential',

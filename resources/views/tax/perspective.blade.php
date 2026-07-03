@@ -4,13 +4,8 @@
 
 @section('title', 'Perspective – Innovative associates')
 
-@push('head')
-    <link rel="stylesheet" href="https://innovativeassociates.com.au/wp-content/uploads/elementor/css/post-47.css?ver=1779432497">
-    <link rel="stylesheet" href="https://innovativeassociates.com.au/wp-content/plugins/elementor/assets/css/widget-image.min.css?ver=4.0.9">
-@endpush
-
 @section('content')
-@php $cdn = 'https://innovativeassociates.com.au/wp-content/uploads'; @endphp
+@php $cdn = site_uploads('tax'); @endphp
 
 @include('components.tax.zimed.header', ['active' => 'perspective'])
 

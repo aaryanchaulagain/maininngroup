@@ -1,6 +1,6 @@
 @php
-    $heroDesktop = 'https://innovativeassociates.com.au/wp-content/uploads/2021/05/slider-1-2.jpg';
-    $heroMobile = 'https://innovativeassociates.com.au/wp-content/uploads/2021/05/mobilebg.jpg';
+    $heroDesktop = site_image('tax', '2021/05/slider-1-2.jpg');
+    $heroMobile = site_image('tax', '2021/05/mobilebg.jpg');
 @endphp
 
 <section class="inn-hero relative min-h-screen w-full">

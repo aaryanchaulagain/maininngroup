@@ -1,7 +1,7 @@
 @props(['showHeader' => true])
 
 @php
-    $cdn = 'https://innovativewealth.com.au/wp-content/uploads';
+    $cdn = site_uploads('loan');
     $cards = [
         ['icon' => 'fa-house-user', 'title' => 'First Home', 'slug' => 'home-loan', 'text' => 'Ready to buy your first home? Let us Help! Contact us today and get a free consultation. We\'ll hold your hand until you moved in.', 'tone' => 'light'],
         ['icon' => 'fa-hand-holding-usd', 'title' => 'Refinance', 'slug' => 'refinancing', 'text' => 'Refinance to get your home loan rates even lower, cash back and consolidate all your loans into one and save thousands!', 'tone' => 'dark', 'stagger' => true],
